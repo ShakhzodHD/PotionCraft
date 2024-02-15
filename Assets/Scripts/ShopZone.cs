@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShopZone : MonoBehaviour
 {
-    [SerializeField] private int itemCost;
-    [SerializeField] private int fullPrice;
+    [Header("Parameters about the object being purchased")]
     [SerializeField] GameObject itemToBuy;
+    [SerializeField] private int fullPrice;
+    [SerializeField] private int itemCost;
 
     [SerializeField] private float framesPerUpdate = 3;
     private float frameCount = 0;
@@ -17,7 +16,6 @@ public class ShopZone : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                PlayerController playerController = other.GetComponent<PlayerController>();
                 if (CurrencyManager.instance.CanAfford(itemCost))
                 {
                     CurrencyManager.instance.SpendCurrency(itemCost);
@@ -39,10 +37,7 @@ public class ShopZone : MonoBehaviour
     {
         if (fullPrice <= 0)
         {
-            Instantiate(itemToBuy);
-            Vector3 newPosition = gameObject.transform.position;
-            newPosition.z += 2;
-            itemToBuy.transform.position = newPosition;
+            itemToBuy.SetActive(true);
             Destroy(gameObject);
         }
     }
