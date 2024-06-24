@@ -19,11 +19,10 @@ public class CraftingSystem : MonoBehaviour
 
     private void Update()
     {
-        if (storageManager.currentItem >= requiredItemCount) isCrafting = true;
-        if (isCrafting == true)
+        if (!isCrafting && storageManager.currentItem >= requiredItemCount)
         {
+            isCrafting = true;
             CraftItem();
-            isCrafting = false;
         }
     }
     private void CraftItem()
@@ -31,8 +30,10 @@ public class CraftingSystem : MonoBehaviour
         if (storageManager.currentItem >= requiredItemCount)
         {
             storageManager.TakeItemForCraft();
-            Instantiate(craftObjectModel);
+            GameObject craftedObj = Instantiate(craftObjectModel, transform.position, Quaternion.identity);
+            craftedObj.transform.SetParent(transform);
             craftObjectModel.tag = "Selling";
+            isCrafting = false;
         }
     }
 }

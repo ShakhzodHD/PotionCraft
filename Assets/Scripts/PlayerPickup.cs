@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerPickup : MonoBehaviour
 {
@@ -22,6 +20,5 @@ public class PlayerPickup : MonoBehaviour
         {
             objToPickUp.transform.SetParent(transform);
         }
-
     }
 }

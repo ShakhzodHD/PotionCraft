@@ -94,4 +94,9 @@ public class ShopperAI : MonoBehaviour
         float t = currentLerpTime / timeFinish;
         transform.position = Vector3.Lerp(transform.position, targetPosition, t);
     }
+
+    private void DestroyObj()
+    {
+        Destroy(gameObject);
+    }
 }

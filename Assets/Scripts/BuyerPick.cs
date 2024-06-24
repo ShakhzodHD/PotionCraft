@@ -8,7 +8,6 @@ public class BuyerPick : MonoBehaviour
     private GameObject item;
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("ПОИСК ИДЕТ");
         item = other.gameObject;
         if (item.tag == "Sell")
         {
@@ -20,6 +19,7 @@ public class BuyerPick : MonoBehaviour
     {
         isItemInPurchase = true;
         item.transform.SetParent(transform);
+        item.tag = "Untagged";
     }
 
 }

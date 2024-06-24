@@ -1853,7 +1853,7 @@ namespace UnityEngine.UI
         {
             Rect spriteRect = activeSprite.rect;
             if (type == Type.Simple || type == Type.Filled)
-                return new Vector2(local.x * spriteRect.width / rect.width, local.y * spriteRect.height / rect.height);
+                return new Vector2(spriteRect.position.x + local.x * spriteRect.width / rect.width, spriteRect.position.y + local.y * spriteRect.height / rect.height);
 
             Vector4 border = activeSprite.border;
             Vector4 adjustedBorder = GetAdjustedBorders(border / pixelsPerUnit, rect);
@@ -1882,7 +1882,7 @@ namespace UnityEngine.UI
                 }
             }
 
-            return local;
+            return local + spriteRect.position;
         }
 
         // To track textureless images, which will be rebuild if sprite atlas manager registered a Sprite Atlas that will give this image new texture

@@ -1,10 +1,6 @@
-ECHO is on.
-/Library/
-/Temp/
-/.vscode/
-/.vsconfig/
-.vsconfig
 /Logs/
-*.log
-
-Library
+/Library/
+/obj/
+.vsconfig
+Assembly-CSharp.csproj
+PosionCraft.sln
