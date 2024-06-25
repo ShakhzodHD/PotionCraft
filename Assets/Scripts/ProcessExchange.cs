@@ -5,37 +5,32 @@ public class ProcessExchange : MonoBehaviour
     public bool isTradeable = false;
     private bool inReadyPlayer = false;
     private bool inReadyBuyer = false;
-    private void OnTriggerEnter(Collider other)
+
+    public void SetPlayerReady(bool ready)
     {
-        if (inReadyPlayer == true && inReadyBuyer == true)
+        inReadyPlayer = ready;
+        CheckTrade();
+    }
+
+    public void SetBuyerReady(bool ready)
+    {
+        inReadyBuyer = ready;
+        CheckTrade();
+    }
+
+    private void CheckTrade()
+    {
+        if (inReadyPlayer && inReadyBuyer)
         {
             Trade();
         }
-        if (other.tag == "Player")
-        {
-            inReadyPlayer = true;
-        }
-        if (other.tag == "Buyer")
-        {
-            inReadyBuyer = true;
-        }
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            isTradeable = false;
-            inReadyPlayer = false;
-        }
-        if (other.tag == "Buyer")
-        {
-            inReadyBuyer = false;
-        }
-    }
+
     private void Trade()
     {
         CurrencyManager.instance.AddCurrency(20);
         isTradeable = true;
         inReadyPlayer = false;
+        inReadyBuyer = false;
     }
 }

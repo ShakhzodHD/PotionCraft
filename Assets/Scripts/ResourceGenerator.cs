@@ -12,7 +12,6 @@ public class ResourceGenerator : MonoBehaviour
 
     public ResourceType resourceType;
 
-    private int generatedCount;
     private bool isGenerate = true;
 
     public enum ResourceType
@@ -29,8 +28,9 @@ public class ResourceGenerator : MonoBehaviour
 
     private void Update()
     {
-        CheckLimitGenerate();
-        if (isGenerate == false && generatedCount < maxObj)
+        float numberÑhildObj = gameObject.transform.childCount;
+        CheckLimitGenerate(numberÑhildObj);
+        if (isGenerate == false && numberÑhildObj < maxObj)
         {
             isGenerate = true;
             StartGenerate();
@@ -47,7 +47,6 @@ public class ResourceGenerator : MonoBehaviour
         {
             yield return new WaitForSeconds(interval);
             GenerateResources(resourceType);
-            generatedCount++;
         }
     }
 
@@ -55,25 +54,21 @@ public class ResourceGenerator : MonoBehaviour
     {
         GameObject spawnedObj = Instantiate(resourcePrefab);
         spawnedObj.tag = tagObj;
-        Vector3 spawnPos = spawnedObj.transform.position;
-        spawnPos = gameObject.transform.position;
+
+        Vector3 spawnPos = gameObject.transform.position;
         spawnPos.y += 1;
         spawnedObj.transform.position = spawnPos;
-        
+        spawnedObj.transform.SetParent(transform);
+
         ResourceProperties resourceProperties = spawnedObj.GetComponent<ResourceProperties>();
         resourceProperties.typeResource = type.ToString();
     }
 
-    private void CheckLimitGenerate()
+    private void CheckLimitGenerate(float number)
     {
-        if (generatedCount >= maxObj)
+        if (number >= maxObj)
         {
             isGenerate = false;
         }
-    }
-
-    public void OnTakenObj()
-    {
-        generatedCount--;
     }
 }

@@ -26,14 +26,15 @@ public class ShopperAI : MonoBehaviour
     {
        Takeupable,
        Wearing,
-       Buying
-       
+       Buying,
+       Return
     }
 
     private void Start()
     {
         currentState = State.Takeupable;
         buyerPick = GetComponent<BuyerPick>();
+        exchange = FindObjectOfType<ProcessExchange>();
     }
 
     private void Update()
@@ -65,18 +66,27 @@ public class ShopperAI : MonoBehaviour
             case State.Buying:
                 if (exchange.isTradeable == true)
                 {
-                    targetPosition = pointExit;                   
+                    currentState = State.Return;
+                    currentLerpTime = 0f;
+                    return;
                 }
                 else
                 {
-                    targetPosition = pointB;
                     return;
                 }
+            case State.Return:
+                exchange.isTradeable = false;
+                targetPosition = pointExit;
+                Invoke("DestroyObj", timeOfDestroying);
                 break;
         }
 
-        currentLerpTime += Time.deltaTime;
-        if (currentLerpTime >= timeFinish)
+        float distance = Vector3.Distance(transform.position, targetPosition);
+        float step = movementSpeed * Time.deltaTime;
+
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+
+        if (transform.position == targetPosition)
         {
             switch (currentState)
             {
@@ -85,14 +95,13 @@ public class ShopperAI : MonoBehaviour
                 case State.Wearing:
                     break;
                 case State.Buying:
+                    break;
+                case State.Return:
                     isProcessed = true;
                     break;
             }
             currentState = (State)(((int)currentState + 1) % System.Enum.GetValues(typeof(State)).Length);
-            currentLerpTime = 0f; 
         }
-        float t = currentLerpTime / timeFinish;
-        transform.position = Vector3.Lerp(transform.position, targetPosition, t);
     }
 
     private void DestroyObj()

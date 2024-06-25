@@ -2,7 +2,6 @@
 
 public class PlayerPickup : MonoBehaviour
 {
-    [SerializeField] private ResourceGenerator generator;
     private void OnTriggerEnter(Collider other)
     {
         PickUpObj(other.gameObject);
@@ -14,7 +13,6 @@ public class PlayerPickup : MonoBehaviour
         {
             objToPickUp.transform.SetParent(transform);
             objToPickUp.tag = "UnPickupable";
-            generator.OnTakenObj();
         }
         if (objToPickUp.CompareTag("Selling"))
         {

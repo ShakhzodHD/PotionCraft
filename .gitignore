@@ -6,3 +6,6 @@ Assembly-CSharp.csproj
 PosionCraft.sln
 Logs
 Library
+.vs
+Temp
+/Temp/

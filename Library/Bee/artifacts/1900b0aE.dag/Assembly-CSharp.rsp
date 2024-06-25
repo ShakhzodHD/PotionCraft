@@ -364,7 +364,9 @@
 "Assets/Scripts/ResourceProperties.cs"
 "Assets/Scripts/ShopperAI.cs"
 "Assets/Scripts/ShopZone.cs"
+"Assets/Scripts/SpawnerBuyers.cs"
 "Assets/Scripts/StorageManager.cs"
+"Assets/Scripts/TriggerZoneForExchange.cs"
 "Assets/Scripts/UI/CurrencyUI.cs"
 -langversion:9.0
 /deterministic
