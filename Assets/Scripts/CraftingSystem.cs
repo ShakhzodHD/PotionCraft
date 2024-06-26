@@ -5,12 +5,16 @@ using UnityEngine;
 public class CraftingSystem : MonoBehaviour
 {
     public itemCraft typeItem;
-    [SerializeField] private GameObject craftObjectModel;
-    [SerializeField] private StorageManager storageManager;
+    [SerializeField] private GameObject craftObjectPrefab;
+    private StorageManager storageManager;
 
     public int requiredItemCount;
     [SerializeField] private bool isCrafting = false;
 
+    private void Start()
+    {
+        storageManager = GetComponent<StorageManager>();
+    }
     public enum itemCraft
     {
         Potion,
@@ -30,9 +34,9 @@ public class CraftingSystem : MonoBehaviour
         if (storageManager.currentItem >= requiredItemCount)
         {
             storageManager.TakeItemForCraft();
-            GameObject craftedObj = Instantiate(craftObjectModel, transform.position, Quaternion.identity);
+            GameObject craftedObj = Instantiate(craftObjectPrefab, transform.position, Quaternion.identity);
             craftedObj.transform.SetParent(transform);
-            craftObjectModel.tag = "Selling";
+            craftObjectPrefab.tag = "Selling";
             isCrafting = false;
         }
     }

@@ -171,8 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fbe3509e9a407d45aa74aaec7bdad5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {x: -5, y: 1, z: -5}
-  pointB: {x: 0, y: 1, z: -2}
+  pointA: {x: -6, y: 1, z: 9}
+  pointB: {x: 0, y: 1, z: -1.7}
   pointExit: {x: 0, y: 1, z: -10}
   exchange: {fileID: 0}
   buyerPick: {fileID: 4751960312824662024}

@@ -3,24 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\assets\\scripts\\shopperai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shopperai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|c:\\users\\khali\\documents\\github\\posioncraft\\assets\\scripts\\storagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\storagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|c:\\users\\khali\\documents\\github\\posioncraft\\assets\\scripts\\triggerzoneforexchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\triggerzoneforexchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|c:\\users\\khali\\documents\\github\\posioncraft\\assets\\scripts\\processexchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\processexchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|c:\\users\\khali\\documents\\github\\posioncraft\\assets\\scripts\\craftingsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\craftingsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\assets\\scripts\\resourcegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\resourcegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\assets\\scripts\\playerpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\assets\\scripts\\resourceproperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\resourceproperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|c:\\users\\khali\\documents\\github\\posioncraft\\assets\\scripts\\shopzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shopzone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|c:\\users\\khali\\documents\\github\\posioncraft\\assets\\scripts\\playerpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerpickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\assets\\scripts\\shopperai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shopperai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\assets\\scripts\\triggerzoneforexchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\triggerzoneforexchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\assets\\scripts\\processexchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\processexchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\assets\\scripts\\spawnerbuyers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\assets\\scripts\\buyerpick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\buyerpick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\assets\\scripts\\resourceproperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\resourceproperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A4BE41ED-0AA9-430C-FBB1-B0F8D4C00CF3}|Assembly-CSharp.csproj|C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\assets\\scripts\\currencymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,11 +62,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StorageManager.cs",
+              "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\StorageManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\StorageManager.cs",
+              "ToolTip": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\StorageManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\StorageManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T00:13:42.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CraftingSystem.cs",
+              "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\CraftingSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CraftingSystem.cs",
+              "ToolTip": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\CraftingSystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CraftingSystem.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T00:08:49.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ShopZone.cs",
+              "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\ShopZone.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ShopZone.cs",
+              "ToolTip": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\ShopZone.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ShopZone.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwCcAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T23:56:58.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAgwAgAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T18:41:02.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlayerPickup.cs",
+              "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\PlayerPickup.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerPickup.cs",
+              "ToolTip": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\PlayerPickup.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerPickup.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T17:22:42.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "TriggerZoneForExchange.cs",
               "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\TriggerZoneForExchange.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TriggerZoneForExchange.cs",
@@ -58,12 +138,11 @@
               "RelativeToolTip": "Assets\\Scripts\\TriggerZoneForExchange.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAA1wBQAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T23:39:02.979Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-24T23:39:02.979Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "ProcessExchange.cs",
               "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\ProcessExchange.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ProcessExchange.cs",
@@ -71,38 +150,36 @@
               "RelativeToolTip": "Assets\\Scripts\\ProcessExchange.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAYwB8AAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T19:01:32.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-22T19:01:32.225Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ResourceGenerator.cs",
               "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\ResourceGenerator.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ResourceGenerator.cs",
               "ToolTip": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\ResourceGenerator.cs",
               "RelativeToolTip": "Assets\\Scripts\\ResourceGenerator.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAA1wDYAAAA8AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-24T17:29:37.123Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PlayerPickup.cs",
-              "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\PlayerPickup.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerPickup.cs",
-              "ToolTip": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\PlayerPickup.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerPickup.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAAFAAAA",
+              "DocumentIndex": 7,
+              "Title": "ShopperAI.cs",
+              "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\ShopperAI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ShopperAI.cs",
+              "ToolTip": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\ShopperAI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ShopperAI.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAkwEQAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T17:22:42.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-24T15:58:20.33Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "SpawnerBuyers.cs",
               "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\SpawnerBuyers.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpawnerBuyers.cs",
@@ -110,25 +187,11 @@
               "RelativeToolTip": "Assets\\Scripts\\SpawnerBuyers.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T16:14:54.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-24T16:14:54.827Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ShopperAI.cs",
-              "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\ShopperAI.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ShopperAI.cs",
-              "ToolTip": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\ShopperAI.cs*",
-              "RelativeToolTip": "Assets\\Scripts\\ShopperAI.cs*",
-              "ViewState": "AQIAADYAAAAAAAAAAAAQwEoAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T15:58:20.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "BuyerPick.cs",
               "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\BuyerPick.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BuyerPick.cs",
@@ -136,24 +199,24 @@
               "RelativeToolTip": "Assets\\Scripts\\BuyerPick.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAAAA0AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T23:39:15.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-22T23:39:15.612Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "ResourceProperties.cs",
               "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\ResourceProperties.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ResourceProperties.cs",
               "ToolTip": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\ResourceProperties.cs",
               "RelativeToolTip": "Assets\\Scripts\\ResourceProperties.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAADwvwgAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T23:15:07.081Z"
+              "WhenOpened": "2024-06-24T23:15:07.081Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "CurrencyManager.cs",
               "DocumentMoniker": "C:\\Users\\khali\\Documents\\GitHub\\PosionCraft\\Assets\\Scripts\\CurrencyManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CurrencyManager.cs",

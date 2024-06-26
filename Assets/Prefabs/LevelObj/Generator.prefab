@@ -121,5 +121,5 @@ MonoBehaviour:
   resourcePrefab: {fileID: 0}
   tagObj: 
   intervalGenerate: 0
-  maxObj: 0
+  maxObj: 1
   resourceType: 0
