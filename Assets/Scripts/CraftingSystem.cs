@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CraftingSystem : MonoBehaviour
 {
-    public itemCraft typeItem;
     [SerializeField] private GameObject craftObjectPrefab;
     private StorageManager storageManager;
 
@@ -14,11 +13,6 @@ public class CraftingSystem : MonoBehaviour
     private void Start()
     {
         storageManager = GetComponent<StorageManager>();
-    }
-    public enum itemCraft
-    {
-        Potion,
-        Huy
     }
 
     private void Update()

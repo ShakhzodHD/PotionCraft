@@ -10,16 +10,7 @@ public class ResourceGenerator : MonoBehaviour
     [SerializeField] private float intervalGenerate;
     [SerializeField, Range(1, byte.MaxValue)] private byte maxObj;
 
-    public ResourceType resourceType;
-
     private bool isGenerate = true;
-
-    public enum ResourceType
-    {
-        Leaf,
-        Wood,
-        Hide
-    }
 
     void Start()
     {
@@ -46,11 +37,11 @@ public class ResourceGenerator : MonoBehaviour
         while (isGenerate == true)
         {
             yield return new WaitForSeconds(interval);
-            GenerateResources(resourceType);
+            GenerateResources();
         }
     }
 
-    private void GenerateResources(ResourceType type)
+    private void GenerateResources()
     {
         GameObject spawnedObj = Instantiate(resourcePrefab);
         spawnedObj.tag = tagObj;
@@ -59,9 +50,6 @@ public class ResourceGenerator : MonoBehaviour
         spawnPos.y += 1;
         spawnedObj.transform.position = spawnPos;
         spawnedObj.transform.SetParent(transform);
-
-        ResourceProperties resourceProperties = spawnedObj.GetComponent<ResourceProperties>();
-        resourceProperties.typeResource = type.ToString();
     }
 
     private void CheckLimitGenerate(float number)

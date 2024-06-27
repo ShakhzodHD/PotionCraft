@@ -63,8 +63,8 @@
     <Compile Include="Assets\Scripts\SpawnerBuyers.cs" />
     <Compile Include="Assets\Scripts\PlayerPickup.cs" />
     <Compile Include="Assets\Scripts\CurrencyManager.cs" />
-    <Compile Include="Assets\Scripts\ResourceProperties.cs" />
     <Compile Include="Assets\Scripts\StorageManager.cs" />
+    <Compile Include="Assets\Scripts\Resource.cs" />
     <Compile Include="Assets\Scripts\ShopZone.cs" />
     <Compile Include="Assets\Scripts\Animation\CarryngAnimation.cs" />
     <Compile Include="Assets\Scripts\BuyerPick.cs" />

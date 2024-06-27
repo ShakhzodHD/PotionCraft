@@ -104,6 +104,11 @@ public class ShopperAI : MonoBehaviour
         }
     }
 
+    private void SearchProduct()
+    {
+        
+    }
+
     private void DestroyObj()
     {
         Destroy(gameObject);
