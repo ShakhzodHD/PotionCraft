@@ -581,6 +581,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: CashBox
       objectReference: {fileID: 0}
+    - target: {fileID: 5063997540700840552, guid: ed564bae4cd28b945a491296abaa2a1a, type: 3}
+      propertyPath: m_Name
+      value: ForBuyer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163536932470968296, guid: ed564bae4cd28b945a491296abaa2a1a, type: 3}
+      propertyPath: m_Name
+      value: ForPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365142826435634207, guid: ed564bae4cd28b945a491296abaa2a1a, type: 3}
+      propertyPath: isPlayerZone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507032547144473264, guid: ed564bae4cd28b945a491296abaa2a1a, type: 3}
+      propertyPath: isPlayerZone
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

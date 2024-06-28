@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,6 +11,10 @@ public class ShopperAI : MonoBehaviour
     [SerializeField] private Vector3 pointA;
     [SerializeField] private Vector3 pointB;
     [SerializeField] private Vector3 pointExit;
+
+    [Header("Желание покупателя")]
+    [SerializeField] private string[] possibleNeeds;
+    [SerializeField] private string currentNeed;
 
     [SerializeField] private ProcessExchange exchange;
     [SerializeField] private BuyerPick buyerPick;
@@ -29,19 +34,23 @@ public class ShopperAI : MonoBehaviour
        Buying,
        Return
     }
-
-    private void Start()
+    private void Awake()
     {
-        currentState = State.Takeupable;
+        InitializeNeeds();
+
         buyerPick = GetComponent<BuyerPick>();
         exchange = FindObjectOfType<ProcessExchange>();
     }
-
+    private void Start()
+    {
+        currentState = State.Takeupable;
+        
+        GenerateNeed();
+    }
     private void Update()
     {
         Movement();
     }
-
     private void Movement()
     {
         if (isProcessed) return;
@@ -103,12 +112,21 @@ public class ShopperAI : MonoBehaviour
             currentState = (State)(((int)currentState + 1) % System.Enum.GetValues(typeof(State)).Length);
         }
     }
-
-    private void SearchProduct()
+    private void InitializeNeeds()
     {
-        
+        Array enumValues = Enum.GetValues(typeof(Resource.Potions));
+        possibleNeeds = new string[enumValues.Length];
+        for (int i = 0; i < enumValues.Length; i++)
+        {
+            possibleNeeds[i] = enumValues.GetValue(i).ToString();
+        }
     }
-
+    private void GenerateNeed()
+    {
+        int randomIndex = UnityEngine.Random.Range(0, possibleNeeds.Length);
+        currentNeed = possibleNeeds[randomIndex];
+        Debug.Log("Customer needs: " + currentNeed);
+    }
     private void DestroyObj()
     {
         Destroy(gameObject);
