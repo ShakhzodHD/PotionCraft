@@ -14,7 +14,7 @@ public class ShopperAI : MonoBehaviour
 
     [Header("Желание покупателя")]
     [SerializeField] private string[] possibleNeeds;
-    [SerializeField] private string currentNeed;
+    [SerializeField] public string currentNeed;
 
     [SerializeField] private ProcessExchange exchange;
     [SerializeField] private BuyerPick buyerPick;
@@ -125,7 +125,6 @@ public class ShopperAI : MonoBehaviour
     {
         int randomIndex = UnityEngine.Random.Range(0, possibleNeeds.Length);
         currentNeed = possibleNeeds[randomIndex];
-        Debug.Log("Customer needs: " + currentNeed);
     }
     private void DestroyObj()
     {

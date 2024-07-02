@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class StorageManager : MonoBehaviour
 {
-    public byte maxCountItem;
-    public int currentItem = 0;
+    public int maxCount;
 
-    [SerializeField] private ItemState statusItem;
-    private enum ItemState
+    public ItemState statusItem;
+    public enum ItemState
     {
         UnPickupable,
         Selling
     }
-    private void OnTriggerEnter(Collider other)
+
+    public virtual void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (gameObject.transform.childCount > maxCountItem - 1) return;
             foreach (Transform child in other.transform)
             {
                 if (child.tag == statusItem.ToString()) 
@@ -28,24 +27,22 @@ public class StorageManager : MonoBehaviour
         }
     }
 
-    private void PutObj(GameObject objToPickUp)
+    public void PutObj(GameObject obj)
     {
-        objToPickUp.transform.SetParent(transform);
-        currentItem++;
-        if (objToPickUp.tag == "Selling")
-        {        
-            objToPickUp.tag = "Sell";     
+        if (obj.tag == "Selling")
+        {
+            obj.tag = "Sell";     
         }
+        obj.transform.SetParent(transform);
+        obj.transform.localPosition = Vector3.zero;
     }
-
-    public void TakeItemForCraft()
+    public virtual void CleaningAfterCraft()
     {
         foreach (Transform child in gameObject.transform)
         {
             if (child.tag == "UnPickupable")
             {
                 Destroy(child.gameObject);
-                currentItem--;
             }
         }
     }
