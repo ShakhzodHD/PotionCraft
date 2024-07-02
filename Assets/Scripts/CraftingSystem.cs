@@ -9,7 +9,7 @@ public class CraftingSystem : MonoBehaviour
     [SerializeField] private bool isCrafting = false;
 
     private StoragePlants plants;
-    private StorageCrystal crystals; // Изменение на StorageCrystal
+    private StorageCrystal crystals;
 
     public int requiredItemCount;
     public Resource.Ingredients requiredObj;
@@ -20,26 +20,37 @@ public class CraftingSystem : MonoBehaviour
     private void Start()
     {
         plants = GetComponent<StoragePlants>();
-        crystals = GetComponent<StorageCrystal>(); // Получаем ссылку на StorageCrystal
+        crystals = GetComponent<StorageCrystal>();
+
+        if (plants == null)
+        {
+            Debug.LogError("Компонент StoragePlants отсутствует.");
+        }
+
+        if (isUseCrystal && crystals == null)
+        {
+            Debug.LogError("Компонент StorageCrystal отсутствует, но isUseCrystal установлено в true.");
+        }
     }
 
     private void Update()
     {
         if (!isCrafting)
         {
-            int firstIngredientCount = CountChildrenWithName(requiredObj.ToString() + "(Clone)", plants.transform);
-            int secondIngredientCount = isUseCrystal ? CountChildrenWithName(secondRequiredObj.ToString() + "(Clone)", crystals.transform) : 0;
+            int firstIngredientCount = CountChildrenWithName(requiredObj.ToString() + "(Clone)", plants?.transform);
+            int secondIngredientCount = isUseCrystal ? CountChildrenWithName(secondRequiredObj.ToString() + "(Clone)", crystals?.transform) : 0;
 
             if (firstIngredientCount >= requiredItemCount && (!isUseCrystal || secondIngredientCount >= requiredSecondItemCount))
             {
-                isCrafting = true;
-                CraftItem();
+                StartCoroutine(CraftItem());
             }
         }
     }
 
-    private void CraftItem()
+    private IEnumerator CraftItem()
     {
+        isCrafting = true;
+
         RemoveItems(requiredObj.ToString() + "(Clone)", requiredItemCount, plants.transform);
         if (isUseCrystal)
         {
@@ -51,13 +62,20 @@ public class CraftingSystem : MonoBehaviour
         craftedObj.tag = "Selling";
 
         plants.CleaningAfterCraft();
-        crystals.CleaningAfterCraft();
+        if (isUseCrystal)
+        {
+            crystals.CleaningAfterCraft();
+        }
+
+        yield return new WaitForSeconds(1f);
 
         isCrafting = false;
     }
 
     private int CountChildrenWithName(string name, Transform parent)
     {
+        if (parent == null) return 0;
+
         int count = 0;
         foreach (Transform child in parent)
         {
@@ -71,18 +89,26 @@ public class CraftingSystem : MonoBehaviour
 
     private void RemoveItems(string name, int count, Transform parent)
     {
+        if (parent == null) return;
+
         int removedCount = 0;
+        List<GameObject> toRemove = new List<GameObject>();
         foreach (Transform child in parent)
         {
             if (child.name == name)
             {
-                Destroy(child.gameObject);
+                toRemove.Add(child.gameObject);
                 removedCount++;
                 if (removedCount >= count)
                 {
                     break;
                 }
             }
+        }
+
+        foreach (GameObject obj in toRemove)
+        {
+            Destroy(obj);
         }
     }
 }
