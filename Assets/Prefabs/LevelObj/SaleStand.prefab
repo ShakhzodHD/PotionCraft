@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1023604359341266849}
   - component: {fileID: 7790391741245414733}
   - component: {fileID: 4943275945118102181}
-  - component: {fileID: 839426934331761109}
   m_Layer: 0
   m_Name: SaleStand
   m_TagString: Untagged
@@ -156,18 +155,3 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &839426934331761109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3682195343068504253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 986fbe025f7d8464c927cfc12bd52488, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxCountItem: 0
-  currentItem: 0
-  statusItem: 0

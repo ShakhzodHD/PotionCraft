@@ -371,6 +371,7 @@
 "Assets/Scripts/StoragePlants.cs"
 "Assets/Scripts/TriggerZoneForExchange.cs"
 "Assets/Scripts/UI/CurrencyUI.cs"
+"Assets/Scripts/UI/DelayUIUpdater.cs"
 "Assets/Scripts/UI/TriggerZoneUI.cs"
 -langversion:9.0
 /deterministic

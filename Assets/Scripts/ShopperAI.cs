@@ -12,12 +12,11 @@ public class ShopperAI : MonoBehaviour
     [SerializeField] private Vector3 pointB;
     [SerializeField] private Vector3 pointExit;
 
-    [Header("Желание покупателя")]
-    [SerializeField] private string[] possibleNeeds;
-    [SerializeField] public string currentNeed;
+    private string[] possibleNeeds;
+    public string currentNeed;
 
-    [SerializeField] private ProcessExchange exchange;
-    [SerializeField] private BuyerPick buyerPick;
+    private ProcessExchange exchange;
+    private BuyerPick buyerPick;
 
     [SerializeField] private float movementSpeed = 3f;
     [SerializeField] private float timeFinish = 2f;
@@ -26,7 +25,7 @@ public class ShopperAI : MonoBehaviour
     private bool isProcessed = false;
     private float currentLerpTime;
 
-    [SerializeField] private State currentState;
+    private State currentState;
     public enum State
     {
        Takeupable,

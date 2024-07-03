@@ -1,12 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StorageCrystal : StorageManager
 {
-    public Resource.Ingredients statusIngredients;
+    private Coroutine putCoroutine;
     private int localCount = 0;
-    public override void OnTriggerEnter(Collider other)
+
+    public Resource.Ingredients statusIngredients;
+
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -16,21 +19,63 @@ public class StorageCrystal : StorageManager
                 {
                     if (localCount < maxCount)
                     {
-                        PutObj(child.gameObject);
-                        localCount++;
+                        if (putCoroutine == null)
+                        {
+                            putCoroutine = StartCoroutine(PutObjWithDelay(child.gameObject));
+                        }
                     }
                     else
                     {
                         Debug.Log("ƒостигнут лимит хранилища кристаллов!");
-                        // «десь можно добавить обработку, если хотите предприн€ть какие-то действи€ при достижении лимита
                     }
-                    break; 
+                    break;
                 }
             }
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            foreach (Transform child in other.transform)
+            {
+                if (child.tag == statusItem.ToString() && child.name == statusIngredients.ToString() + "(Clone)")
+                {
+                    if (putCoroutine != null)
+                    {
+                        StopCoroutine(putCoroutine);
+                        putCoroutine = null;
+                        UpdatePutProgressUI(0); 
+                    }
+                }
+            }
+        }
+    }
+
+    private IEnumerator PutObjWithDelay(GameObject obj)
+    {
+        float timer = 0f;
+
+        while (timer < putDelay)
+        {
+            timer += Time.deltaTime;
+            UpdatePutProgressUI(timer / putDelay);
+            yield return null;
+        }
+
+        PutObj(obj);
+        localCount++;
+        putCoroutine = null;
+    }
+
     public override void CleaningAfterCraft()
     {
         localCount = 0;
+    }
+
+    private void UpdatePutProgressUI(float progress)
+    {
+        if (putProgressBar != null)
+            putProgressBar.fillAmount = progress;
     }
 }
