@@ -52,7 +52,7 @@ public class StoragePlants : StorageManager
         }
     }
 
-    private IEnumerator PutObjWithDelay(GameObject obj)
+    public override IEnumerator PutObjWithDelay(GameObject obj)
     {
         float timer = 0f;
 
@@ -71,11 +71,5 @@ public class StoragePlants : StorageManager
     public override void CleaningAfterCraft()
     {
         localCount = 0;
-    }
-
-    private void UpdatePutProgressUI(float progress)
-    {
-        if (putProgressBar != null)
-            putProgressBar.fillAmount = progress;
     }
 }

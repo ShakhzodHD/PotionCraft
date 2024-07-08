@@ -1,7 +1,12 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProcessExchange : MonoBehaviour
 {
+    [SerializeField] private Image putProgressBar;
+    [SerializeField] private float putDelay = 1f;
+
     public bool isTradeable = false;
     private bool inReadyPlayer = false;
     private bool inReadyBuyer = false;
@@ -22,15 +27,32 @@ public class ProcessExchange : MonoBehaviour
     {
         if (inReadyPlayer && inReadyBuyer)
         {
-            Trade();
+            StartCoroutine(Trade());
         }
     }
 
-    private void Trade()
+    private IEnumerator Trade()
     {
+        float timer = 0f;
+
+        while (timer < putDelay)
+        {
+            timer += Time.deltaTime;
+            UpdatePutProgressUI(timer / putDelay);
+            yield return null;
+        }
+
         CurrencyManager.instance.AddCurrency(20);
         isTradeable = true;
         inReadyPlayer = false;
         inReadyBuyer = false;
+        UpdatePutProgressUI(0);
+    }
+    public void UpdatePutProgressUI(float progress)
+    {
+        if (putProgressBar != null)
+        {
+            putProgressBar.fillAmount = progress;
+        }
     }
 }

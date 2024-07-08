@@ -597,6 +597,10 @@ PrefabInstance:
       propertyPath: isPlayerZone
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8039420693218853742, guid: ed564bae4cd28b945a491296abaa2a1a, type: 3}
+      propertyPath: putProgressBar
+      value: 
+      objectReference: {fileID: 189679357}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1899,9 +1903,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986fbe025f7d8464c927cfc12bd52488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  putProgressBar: {fileID: 0}
+  putProgressBar: {fileID: 189679357}
   putDelay: 1
   maxCount: 4
+  namePotionForKeep: Necromancy(Clone)
   statusItem: 1
 --- !u!1 &747619668
 GameObject:
@@ -2104,6 +2109,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fe6cec01f1ce20f4b8f6f9d7a71154b7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1920699987}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fe6cec01f1ce20f4b8f6f9d7a71154b7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1920699994}
   m_SourcePrefab: {fileID: 100100000, guid: fe6cec01f1ce20f4b8f6f9d7a71154b7, type: 3}
 --- !u!1 &823932220 stripped
 GameObject:
@@ -2232,9 +2240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986fbe025f7d8464c927cfc12bd52488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  putProgressBar: {fileID: 0}
+  putProgressBar: {fileID: 189679357}
   putDelay: 1
   maxCount: 4
+  namePotionForKeep: Regen(Clone)
   statusItem: 1
 --- !u!1 &931474506
 GameObject:
@@ -3220,9 +3229,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986fbe025f7d8464c927cfc12bd52488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  putProgressBar: {fileID: 0}
+  putProgressBar: {fileID: 189679357}
   putDelay: 1
   maxCount: 4
+  namePotionForKeep: Power(Clone)
   statusItem: 1
 --- !u!114 &1405733462 stripped
 MonoBehaviour:
@@ -4276,9 +4286,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986fbe025f7d8464c927cfc12bd52488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  putProgressBar: {fileID: 0}
+  putProgressBar: {fileID: 189679357}
   putDelay: 1
   maxCount: 4
+  namePotionForKeep: Cursed(Clone)
   statusItem: 1
 --- !u!1 &1804642853
 GameObject:
@@ -4422,7 +4433,7 @@ MonoBehaviour:
   posStandCurse: {x: -5.5, y: 0, z: 2.5}
   currentNeed: 
   exchange: {fileID: 1405733462}
-  movementSpeed: 3
+  movementSpeed: 2
   timeOfDestroying: 6
 --- !u!135 &1920699989
 SphereCollider:
@@ -4495,6 +4506,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1920699994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920699984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7462bd30a493ec540aafb0193a22332f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1969963349
 PrefabInstance:
   m_ObjectHideFlags: 0

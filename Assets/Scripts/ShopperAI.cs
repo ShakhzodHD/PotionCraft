@@ -21,12 +21,12 @@ public class ShopperAI : MonoBehaviour
 
     [SerializeField] private ProcessExchange exchange;
     private BuyerPick buyerPick;
+    private Animator animator;
 
     [SerializeField] private float movementSpeed = 3f;
     [SerializeField] private float timeOfDestroying = 2f;
 
     private bool isProcessed = false;
-    private bool isItemPicked = false;
 
     public enum State
     {
@@ -44,6 +44,7 @@ public class ShopperAI : MonoBehaviour
     {
         InitializeNeeds();
         buyerPick = GetComponent<BuyerPick>();
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -122,12 +123,24 @@ public class ShopperAI : MonoBehaviour
         Vector3 targetPosition = currentPath[currentWaypointIndex];
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
 
+        Vector3 direction = (targetPosition - transform.position).normalized;
+        if (direction != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * movementSpeed);
+        }
+
+        if (!animator.GetBool("isRunning"))
+        {
+            animator.SetBool("isRunning", true);
+        }
+
         if (Vector3.Distance(transform.position, targetPosition) <= 0.1f)
         {
             currentWaypointIndex++;
             if (currentWaypointIndex >= currentPath.Count)
             {
                 StartCoroutine(WaitUntilItemPicked());
+                animator.SetBool("isRunning", false);
             }
         }
     }
@@ -177,7 +190,7 @@ public class ShopperAI : MonoBehaviour
 
     private void InitializeNeeds()
     {
-        Array enumValues = Enum.GetValues(typeof(Resource.Potions)); // Подставьте свой собственный тип данных
+        Array enumValues = Enum.GetValues(typeof(Resource.Potions)); 
         possibleNeeds = new string[enumValues.Length];
         for (int i = 0; i < enumValues.Length; i++)
         {

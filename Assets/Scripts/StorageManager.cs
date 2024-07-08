@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ public class StorageManager : MonoBehaviour
     public float putDelay = 1f;
     public int maxCount;
 
+    [SerializeField] private string namePotionForKeep;
+
     private Coroutine putCoroutine;
 
     public ItemState statusItem;
@@ -18,19 +21,13 @@ public class StorageManager : MonoBehaviour
         UnPickupable,
         Selling
     }
-
-    private void Start()
-    {
-        putProgressBar = FindObjectOfType<Image>();
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             foreach (Transform child in other.transform)
             {
-                if (child.tag == statusItem.ToString())
+                if (child.tag == statusItem.ToString() && child.name == namePotionForKeep) 
                 {
                     if (putCoroutine == null)
                     {
@@ -52,7 +49,7 @@ public class StorageManager : MonoBehaviour
             }
         }
     }
-    private IEnumerator PutObjWithDelay(GameObject obj)
+    public virtual IEnumerator PutObjWithDelay(GameObject obj)
     {
         float timer = 0f;
 
@@ -89,7 +86,7 @@ public class StorageManager : MonoBehaviour
         }
     }
 
-    private void UpdatePutProgressUI(float progress)
+    public void UpdatePutProgressUI(float progress)
     {
         if (putProgressBar != null)
         {
