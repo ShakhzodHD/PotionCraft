@@ -9,6 +9,10 @@ public class StoragePlants : StorageManager
 
     public Resource.Ingredients statusIngredients;
 
+    public override void Awake()
+    {
+        
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))

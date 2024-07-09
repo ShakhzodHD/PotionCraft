@@ -21,6 +21,10 @@ public class StorageManager : MonoBehaviour
         UnPickupable,
         Selling
     }
+    public virtual void Awake()
+    {
+        ShopperAI.numberStands--;
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))

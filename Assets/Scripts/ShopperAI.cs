@@ -18,6 +18,7 @@ public class ShopperAI : MonoBehaviour
 
     private string[] possibleNeeds;
     public string currentNeed;
+    public static int numberStands = 4;
 
     [SerializeField] private ProcessExchange exchange;
     private BuyerPick buyerPick;
@@ -42,13 +43,13 @@ public class ShopperAI : MonoBehaviour
 
     private void Awake()
     {
-        InitializeNeeds();
         buyerPick = GetComponent<BuyerPick>();
         animator = GetComponent<Animator>();
     }
 
     private void Start()
     {
+        InitializeNeeds();
         currentState = State.Takeupable;
         GenerateNeed();
         MoveToNextState();
@@ -190,9 +191,13 @@ public class ShopperAI : MonoBehaviour
 
     private void InitializeNeeds()
     {
-        Array enumValues = Enum.GetValues(typeof(Resource.Potions)); 
-        possibleNeeds = new string[enumValues.Length];
-        for (int i = 0; i < enumValues.Length; i++)
+
+        Array enumValues = Enum.GetValues(typeof(Resource.Potions));
+        int needsCount = enumValues.Length - numberStands;
+
+        possibleNeeds = new string[needsCount];
+
+        for (int i = 0; i < needsCount; i++)
         {
             possibleNeeds[i] = enumValues.GetValue(i).ToString();
         }

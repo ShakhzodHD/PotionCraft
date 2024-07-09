@@ -4,9 +4,10 @@ using System.Collections;
 
 public class PlayerPickup : MonoBehaviour
 {
-    [SerializeField] private int inventoryLimit = 2;
+    public int inventoryLimit = 2;
+
     [SerializeField] private float pickupDelay = 1f;
-    [SerializeField] private Image pickupProgressBar; // Ссылка на изображение прогресс-бара
+    [SerializeField] private Image pickupProgressBar; 
 
     private bool isPickingUp = false;
     private Coroutine pickupCoroutine;
@@ -52,8 +53,6 @@ public class PlayerPickup : MonoBehaviour
         {
             objToPickUp.transform.SetParent(transform);
         }
-
-        Debug.Log("Подобран объект: " + objToPickUp.name);
 
         ResetPickupProgressUI();
         isPickingUp = false;

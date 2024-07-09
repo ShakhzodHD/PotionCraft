@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     private CharacterController characterController;
     private Animator anim;
 
+    private float gravity = -10f; 
+    private float verticalSpeed = 0f; 
+
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -42,5 +46,16 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("IsRunning", false);
         }
+
+        if (characterController.isGrounded)
+        {
+            verticalSpeed = 0f; 
+        }
+        else
+        {
+            verticalSpeed += gravity * Time.deltaTime; 
+        }
+
+        characterController.Move(new Vector3(0, verticalSpeed, 0) * Time.deltaTime);
     }
 }
