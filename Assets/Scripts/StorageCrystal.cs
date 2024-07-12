@@ -14,7 +14,7 @@ public class StorageCrystal : StorageManager
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("GoblinWorker"))
         {
             foreach (Transform child in other.transform)
             {
@@ -38,7 +38,7 @@ public class StorageCrystal : StorageManager
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("GoblinWorker"))
         {
             foreach (Transform child in other.transform)
             {

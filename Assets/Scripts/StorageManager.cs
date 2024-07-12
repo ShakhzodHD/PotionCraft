@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class StorageManager : MonoBehaviour
 {
     public Image putProgressBar;
-    public float putDelay = 1f;
+    public static float putDelay = 1f;
     public int maxCount;
 
     [SerializeField] private string namePotionForKeep;
@@ -27,7 +27,7 @@ public class StorageManager : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("GoblinWorker"))
         {
             foreach (Transform child in other.transform)
             {
@@ -43,7 +43,7 @@ public class StorageManager : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("GoblinWorker"))
         {
             if (putCoroutine != null)
             {

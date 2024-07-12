@@ -11,11 +11,11 @@ public class StoragePlants : StorageManager
 
     public override void Awake()
     {
-        
+
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("GoblinWorker"))
         {
             foreach (Transform child in other.transform)
             {
@@ -28,10 +28,6 @@ public class StoragePlants : StorageManager
                             putCoroutine = StartCoroutine(PutObjWithDelay(child.gameObject));
                         }
                     }
-                    else
-                    {
-                        Debug.Log("Достигнут лимит хранилища растений!");
-                    }
                     break;
                 }
             }
@@ -39,7 +35,7 @@ public class StoragePlants : StorageManager
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("GoblinWorker"))
         {
             foreach (Transform child in other.transform)
             {
@@ -49,7 +45,7 @@ public class StoragePlants : StorageManager
                     {
                         StopCoroutine(putCoroutine);
                         putCoroutine = null;
-                        UpdatePutProgressUI(0); // Сброс UI прогресса
+                        UpdatePutProgressUI(0); 
                     }
                 }
             }

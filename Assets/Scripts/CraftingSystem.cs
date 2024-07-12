@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class CraftingSystem : MonoBehaviour
 {
+    [SerializeField] private GoblinWorkerAI worker;
+
     [SerializeField] private GameObject craftObjectPrefab;
     [SerializeField] private bool isUseCrystal = false;
     [SerializeField] private bool isCrafting = false;
+
 
     private StoragePlants plants;
     private StorageCrystal crystals;
@@ -70,6 +73,12 @@ public class CraftingSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         isCrafting = false;
+
+        worker.SetIsCraft(true);
+        if (isUseCrystal == true)
+        {
+            worker.SetNeedsCrystalForCraft(true);
+        }     
     }
 
     private int CountChildrenWithName(string name, Transform parent)

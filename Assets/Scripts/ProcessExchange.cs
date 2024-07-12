@@ -8,7 +8,7 @@ public class ProcessExchange : MonoBehaviour
     [SerializeField] private float putDelay = 1f;
 
     public bool isTradeable = false;
-    private bool inReadyPlayer = false;
+    public bool inReadyPlayer = false;
     private bool inReadyBuyer = false;
 
     public void SetPlayerReady(bool ready)

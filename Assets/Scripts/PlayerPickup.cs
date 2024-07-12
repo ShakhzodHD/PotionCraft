@@ -5,8 +5,8 @@ using System.Collections;
 public class PlayerPickup : MonoBehaviour
 {
     public int inventoryLimit = 2;
+    public float pickupDelay = 1f;
 
-    [SerializeField] private float pickupDelay = 1f;
     [SerializeField] private Image pickupProgressBar; 
 
     private bool isPickingUp = false;
@@ -15,9 +15,8 @@ public class PlayerPickup : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (!other.CompareTag("Pickupable") && !other.CompareTag("Selling")) return;
-
         int temp = gameObject.transform.childCount;
-        if (temp > inventoryLimit + 1 || isPickingUp) return;
+        if (temp > inventoryLimit || isPickingUp) return;
 
         pickupCoroutine = StartCoroutine(PickUpObj(other.gameObject));
     }

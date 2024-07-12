@@ -9,6 +9,10 @@ TagManager:
   - Selling
   - Sell
   - Buyer
+  - GoblinWorker
+  - Generator
+  - Stand
+  - Craft
   layers:
   - Default
   - TransparentFX

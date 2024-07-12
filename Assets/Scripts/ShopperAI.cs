@@ -45,6 +45,7 @@ public class ShopperAI : MonoBehaviour
     {
         buyerPick = GetComponent<BuyerPick>();
         animator = GetComponent<Animator>();
+        exchange = FindObjectOfType<ProcessExchange>();
     }
 
     private void Start()
