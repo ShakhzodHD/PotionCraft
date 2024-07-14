@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CapacityUpgrade : MonoBehaviour, IUpgrade
 {
+    [SerializeField] private PlayerPickup playerPickup;
+
     [SerializeField] private int basePrice;
     [SerializeField] private int maxLevels = 3;
     private int level;
@@ -17,8 +19,8 @@ public class CapacityUpgrade : MonoBehaviour, IUpgrade
 
     public int GetPrice()
     {
-        int price = basePrice * (level + 1);
-        Debug.Log(price);
+        if (level >= maxLevels) return -1; 
+        int price = basePrice * (level + 1); // ждет обновлений реализации
         return price;
     }
     public void ApplyUpgrade()
@@ -27,7 +29,7 @@ public class CapacityUpgrade : MonoBehaviour, IUpgrade
         {
             level++;
             Debug.Log("Улучшена грузоподьемность до уровня " + level);
-            // Дополнительная логика для грузоподьемности
+            playerPickup.inventoryLimit = 0; // ждет обновлений реализации
         }
         else
         {

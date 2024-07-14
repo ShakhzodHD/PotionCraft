@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 130872412}
   - component: {fileID: 130872413}
   m_Layer: 0
-  m_Name: UpgradeManager
+  m_Name: UpgradeSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -583,9 +583,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e7951a7e9606e4688cea222a439325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMovementUpgrade: {fileID: 970062460}
-  capacityUpgrade: {fileID: 1697566045}
-  speedActionUpgrade: {fileID: 568311843}
+  _speedMovementUpgrade: {fileID: 970062460}
+  _capacityUpgrade: {fileID: 1697566045}
+  _speedActionUpgrade: {fileID: 568311843}
+  _speedPriceText: {fileID: 2057887699}
+  _capacityPriceText: {fileID: 1588421065}
+  _actionPriceText: {fileID: 519913400}
 --- !u!1001 &132645214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1935,6 +1938,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516636052}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &519913400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1177094790000761356, guid: 185105da6654412499d37d6f379598c8, type: 3}
+  m_PrefabInstance: {fileID: 1564699601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &533897147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,6 +2026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28c8a23a12cbbe4bae4aa0a4527dbbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPickup: {fileID: 1594680353}
   basePrice: 20
   maxLevels: 3
 --- !u!1 &571996422 stripped
@@ -5134,6 +5149,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 488746704534546992, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_Name
+      value: TextActionCraft
+      objectReference: {fileID: 0}
     - target: {fileID: 762862578351501210, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -5290,6 +5309,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4248909337345892595, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_Name
+      value: TextSpeedMovement
+      objectReference: {fileID: 0}
     - target: {fileID: 5346391755356263745, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -5305,18 +5328,18 @@ PrefabInstance:
     - target: {fileID: 5722250349067537207, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1594680361}
+      objectReference: {fileID: 130872413}
     - target: {fileID: 5722250349067537207, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5722250349067537207, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpActionSpeed
+      value: UpgradeSpeedAction
       objectReference: {fileID: 0}
     - target: {fileID: 5722250349067537207, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelingPlayer, Assembly-CSharp
+      value: UpgradeSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5722250349067537207, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5324,7 +5347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5795112868072793274, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_Name
-      value: ButtonSpeed
+      value: ButtonSpeedMovement
       objectReference: {fileID: 0}
     - target: {fileID: 5808494890096533857, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_IsActive
@@ -5341,22 +5364,26 @@ PrefabInstance:
     - target: {fileID: 5949304408984406673, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1594680361}
+      objectReference: {fileID: 130872413}
     - target: {fileID: 5949304408984406673, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5949304408984406673, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpSpeed
+      value: UpgradeSpeedMovement
       objectReference: {fileID: 0}
     - target: {fileID: 5949304408984406673, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelingPlayer, Assembly-CSharp
+      value: UpgradeSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5949304408984406673, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542483830709027886, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_Name
+      value: TextCapacity
       objectReference: {fileID: 0}
     - target: {fileID: 6759394291632112213, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_Name
@@ -5409,18 +5436,18 @@ PrefabInstance:
     - target: {fileID: 8865304546916908081, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1594680361}
+      objectReference: {fileID: 130872413}
     - target: {fileID: 8865304546916908081, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8865304546916908081, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpCapacity
+      value: UpgradeCapacity
       objectReference: {fileID: 0}
     - target: {fileID: 8865304546916908081, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelingPlayer, Assembly-CSharp
+      value: UpgradeSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8865304546916908081, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5560,6 +5587,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565345588}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1588421065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6819989869062656368, guid: 185105da6654412499d37d6f379598c8, type: 3}
+  m_PrefabInstance: {fileID: 1564699601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1594680350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 196ee4c13cc1a3a4e8f982ca800c92a3, type: 3}
@@ -5597,7 +5635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf0343884d136f438507218644a6da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   rotationSpeed: 500
 --- !u!143 &1594680355
 CharacterController:
@@ -5699,9 +5736,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76eba28c50af8a43943d3825725d2c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  capacity: 1
-  actionSpeed: 0.1
   seller: {fileID: 431605970}
   regen: {fileID: 8363598277097232974}
   power: {fileID: 180648255}
@@ -5989,6 +6023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecadecf7b7ee5c44fa327a64e2eb490e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPickup: {fileID: 1594680353}
   basePrice: 15
   maxLevels: 3
 --- !u!1001 &1708707327
@@ -7016,6 +7051,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047384785}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2057887699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6612553755528260085, guid: 185105da6654412499d37d6f379598c8, type: 3}
+  m_PrefabInstance: {fileID: 1564699601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2082697096
 GameObject:
   m_ObjectHideFlags: 0

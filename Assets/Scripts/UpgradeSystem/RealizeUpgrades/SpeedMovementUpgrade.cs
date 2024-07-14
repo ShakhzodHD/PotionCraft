@@ -17,8 +17,8 @@ public class SpeedMovementUpgrade : MonoBehaviour, IUpgrade
 
     public  int GetPrice()
     {
-        int price = basePrice * (level + 1);
-        Debug.Log(price);
+        if (level >= maxLevels) return -1;
+        int price = basePrice * (level + 1); // ждет обновлений реализации
         return price;
     }
 
@@ -28,7 +28,8 @@ public class SpeedMovementUpgrade : MonoBehaviour, IUpgrade
         {
             level++;
             Debug.Log("Улучшена скорость передвижения до уровня " + level);
-            // Дополнительная логика для мувспида
+            PlayerController.moveSpeed = 0;
+            StorageManager.putDelay = 0;
         }
         else
         {

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class SpeedActionUpgrade : MonoBehaviour, IUpgrade
 {
+    [SerializeField] private PlayerPickup playerPickup;
+
     [SerializeField] private int basePrice;
     [SerializeField] private int maxLevels = 3;
     private int level;
@@ -18,8 +20,8 @@ public class SpeedActionUpgrade : MonoBehaviour, IUpgrade
 
     public int GetPrice()
     {
+        if (level >= maxLevels) return -1;
         int price = basePrice * (level + 1);
-        Debug.Log(price);
         return price;
     }
 
@@ -29,7 +31,7 @@ public class SpeedActionUpgrade : MonoBehaviour, IUpgrade
         {
             level++;
             Debug.Log("Улучшена скорость крафта до уровня " + level);
-            // Дополнительная логика скорости крафта
+            playerPickup.pickupDelay = 0; // ждет обновлений реализации
         }
         else
         {
