@@ -4,6 +4,9 @@ public class SpeedMovementUpgrade : MonoBehaviour, IUpgrade
 {
     [SerializeField] private int basePrice;
     [SerializeField] private int maxLevels = 3;
+
+    [SerializeField] private int[] priceUpgradeForLevels;
+
     private int level;
 
     public int Level => level;
@@ -14,11 +17,14 @@ public class SpeedMovementUpgrade : MonoBehaviour, IUpgrade
         this.maxLevels = maxLevels;
         this.level = 0;
     }
-
+    private void Awake()
+    {
+        priceUpgradeForLevels[0] = basePrice;
+    }
     public  int GetPrice()
     {
         if (level >= maxLevels) return -1;
-        int price = basePrice * (level + 1); // ждет обновлений реализации
+        int price = priceUpgradeForLevels[level]; 
         return price;
     }
 

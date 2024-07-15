@@ -2028,7 +2028,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPickup: {fileID: 1594680353}
   basePrice: 20
-  maxLevels: 3
+  maxLevels: 2
+  priceUpgradeForLevels: 000000002800000032000000
 --- !u!1 &571996422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3682195343068504253, guid: 54150f4f07aa06c4db9ad5ddb2f2c341, type: 3}
@@ -3130,7 +3131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basePrice: 10
-  maxLevels: 3
+  maxLevels: 2
+  priceUpgradeForLevels: 00000000140000001e000000
 --- !u!1 &1001847189
 GameObject:
   m_ObjectHideFlags: 0
@@ -6025,7 +6027,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPickup: {fileID: 1594680353}
   basePrice: 15
-  maxLevels: 3
+  maxLevels: 2
+  priceUpgradeForLevels: 000000001e0000002d000000
 --- !u!1001 &1708707327
 PrefabInstance:
   m_ObjectHideFlags: 0
