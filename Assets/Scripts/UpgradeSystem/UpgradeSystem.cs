@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class UpgradeSystem : MonoBehaviour
 {
@@ -12,9 +11,15 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] private SpeedActionUpgrade _speedActionUpgrade;
 
     [Header("Ссылки на текст в UI")]
+
+    [Header("Цены")]
     [SerializeField] private Text _speedPriceText;
     [SerializeField] private Text _capacityPriceText;
     [SerializeField] private Text _actionPriceText;
+    [Header("Названия")]
+    [SerializeField] private Text nameSpeedMovementText;
+    [SerializeField] private Text nameCapacityText;
+    [SerializeField] private Text nameSpeedActionText;
 
     private void Start()
     {
@@ -34,6 +39,10 @@ public class UpgradeSystem : MonoBehaviour
         UpdateUpgradePrice(_speedPriceText, _speedMovementUpgrade);
         UpdateUpgradePrice(_capacityPriceText, _capacityUpgrade);
         UpdateUpgradePrice(_actionPriceText, _speedActionUpgrade);
+
+        UpdateNameText(nameSpeedMovementText, _speedMovementUpgrade, "Скорость передвижения ");
+        UpdateNameText(nameCapacityText, _capacityUpgrade, "Грузоподъемность ");
+        UpdateNameText(nameSpeedActionText, _speedActionUpgrade, "Скорость действия ");
     }
     private void UpdateUpgradePrice(Text text, IUpgrade _upgrade)
     {
@@ -47,6 +56,21 @@ public class UpgradeSystem : MonoBehaviour
             else
             {
                 text.text = "Цена: " + price;
+            }
+        }
+    }
+    private void UpdateNameText(Text text, IUpgrade upgrade, string name)
+    {
+        if (upgrade != null)
+        {
+            int level = upgrade.Level;
+            if (level <= 0)
+            {
+                text.text = name;
+            }
+            else
+            {
+                text.text = name + level.ToString();
             }
         }
     }

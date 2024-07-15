@@ -5,9 +5,11 @@ public class CapacityUpgrade : MonoBehaviour, IUpgrade
     [SerializeField] private PlayerPickup playerPickup;
 
     [SerializeField] private int basePrice;
+    [SerializeField] private int baseInventoryLimit;
     [SerializeField] private int maxLevels = 3;
 
     [SerializeField] private int[] priceUpgradeForLevels;
+    [SerializeField] private int[] inventoryLimitUpgradeForLevels;
 
     private int level;
 
@@ -16,6 +18,7 @@ public class CapacityUpgrade : MonoBehaviour, IUpgrade
     private void Awake()
     {
         priceUpgradeForLevels[0] = basePrice;
+        inventoryLimitUpgradeForLevels[0] = baseInventoryLimit;
     }
 
     public int GetPrice()
@@ -30,7 +33,7 @@ public class CapacityUpgrade : MonoBehaviour, IUpgrade
         {
             level++;
             Debug.Log("Улучшена грузоподьемность до уровня " + level);
-            playerPickup.inventoryLimit = 0; // ждет обновлений реализации
+            playerPickup.inventoryLimit = inventoryLimitUpgradeForLevels[level];
         }
         else
         {

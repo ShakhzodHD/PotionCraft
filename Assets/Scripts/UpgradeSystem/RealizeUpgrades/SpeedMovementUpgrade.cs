@@ -1,11 +1,14 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SpeedMovementUpgrade : MonoBehaviour, IUpgrade
 {
+    [SerializeField] private float baseSpeed;
     [SerializeField] private int basePrice;
     [SerializeField] private int maxLevels = 3;
 
     [SerializeField] private int[] priceUpgradeForLevels;
+    [SerializeField] private float[] numberUpgradeForMovementSpeed;
 
     private int level;
 
@@ -20,6 +23,7 @@ public class SpeedMovementUpgrade : MonoBehaviour, IUpgrade
     private void Awake()
     {
         priceUpgradeForLevels[0] = basePrice;
+        numberUpgradeForMovementSpeed[0] = baseSpeed;
     }
     public  int GetPrice()
     {
@@ -33,8 +37,7 @@ public class SpeedMovementUpgrade : MonoBehaviour, IUpgrade
         if (level < maxLevels)
         {
             level++;
-            Debug.Log("Улучшена скорость передвижения до уровня " + level);
-            PlayerController.moveSpeed = 0;
+            PlayerController.moveSpeed = numberUpgradeForMovementSpeed[level];
             StorageManager.putDelay = 0;
         }
         else

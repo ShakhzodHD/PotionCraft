@@ -5,9 +5,11 @@ public class SpeedActionUpgrade : MonoBehaviour, IUpgrade
     [SerializeField] private PlayerPickup playerPickup;
 
     [SerializeField] private int basePrice;
+    [SerializeField] private float baseDelay;
     [SerializeField] private int maxLevels = 3;
 
     [SerializeField] private int[] priceUpgradeForLevels;
+    [SerializeField] private float[] delayUpgradeForLevels;
 
     private int level;
 
@@ -32,7 +34,7 @@ public class SpeedActionUpgrade : MonoBehaviour, IUpgrade
         {
             level++;
             Debug.Log("Улучшена скорость крафта до уровня " + level);
-            playerPickup.pickupDelay = 0; // ждет обновлений реализации
+            playerPickup.pickupDelay = delayUpgradeForLevels[level];
         }
         else
         {
