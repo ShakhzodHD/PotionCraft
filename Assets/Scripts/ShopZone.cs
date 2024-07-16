@@ -2,6 +2,8 @@
 
 public class ShopZone : MonoBehaviour
 {
+    [SerializeField] private BuyZoneSystem buyZoneSystem;
+
     [Header("Parameters about the object being purchased")]
     [SerializeField] GameObject itemToBuy;
     [SerializeField] private int fullPrice;
@@ -38,6 +40,7 @@ public class ShopZone : MonoBehaviour
         if (fullPrice <= 0)
         {
             itemToBuy.SetActive(true);
+            buyZoneSystem.CountZone++;
             Destroy(gameObject);
         }
     }

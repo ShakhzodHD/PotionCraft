@@ -137,6 +137,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1784047504609875789, guid: 5df1dd6b780e18c468ee5219fc9fbf30, type: 3}
   m_PrefabInstance: {fileID: 261081404}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &56906587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+  m_PrefabInstance: {fileID: 1492594243}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &85084710
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: itemCost
@@ -804,6 +809,10 @@ PrefabInstance:
       propertyPath: itemToBuy
       value: 
       objectReference: {fileID: 2037083431}
+    - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+      propertyPath: buyZoneSystem
+      value: 
+      objectReference: {fileID: 1779950786}
     - target: {fileID: 4807058284035557778, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1267,7 +1276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: itemCost
@@ -1281,6 +1290,10 @@ PrefabInstance:
       propertyPath: itemToBuy
       value: 
       objectReference: {fileID: 571996422}
+    - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+      propertyPath: buyZoneSystem
+      value: 
+      objectReference: {fileID: 1779950786}
     - target: {fileID: 4807058284035557778, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -1349,11 +1362,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_Name
-      value: BuyZone
+      value: BuyZoneDracoWind
       objectReference: {fileID: 0}
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: itemCost
@@ -1367,6 +1380,10 @@ PrefabInstance:
       propertyPath: itemToBuy
       value: 
       objectReference: {fileID: 933861977}
+    - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+      propertyPath: buyZoneSystem
+      value: 
+      objectReference: {fileID: 1779950786}
     - target: {fileID: 4807058284035557778, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1535,6 +1552,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe10c3e1cd15b242aba775e21951144, type: 3}
+--- !u!1 &399204824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+  m_PrefabInstance: {fileID: 1969963349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &431605970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,6 +1892,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &532328111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+  m_PrefabInstance: {fileID: 1491677646}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &533897147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,7 +2019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: itemCost
@@ -2006,6 +2033,10 @@ PrefabInstance:
       propertyPath: itemToBuy
       value: 
       objectReference: {fileID: 35008325}
+    - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+      propertyPath: buyZoneSystem
+      value: 
+      objectReference: {fileID: 1779950786}
     - target: {fileID: 4807058284035557778, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2534,6 +2565,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1784047504609875789, guid: 5df1dd6b780e18c468ee5219fc9fbf30, type: 3}
   m_PrefabInstance: {fileID: 715498414}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &816596834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+  m_PrefabInstance: {fileID: 1708707327}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &823932220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3682195343068504253, guid: 54150f4f07aa06c4db9ad5ddb2f2c341, type: 3}
@@ -3030,6 +3066,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003204572}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1004758990 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+  m_PrefabInstance: {fileID: 1450763837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1047667504
 GameObject:
   m_ObjectHideFlags: 0
@@ -3347,6 +3388,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066422207}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1078956484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+  m_PrefabInstance: {fileID: 1155521512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1114307096
 GameObject:
   m_ObjectHideFlags: 0
@@ -3539,7 +3585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: itemCost
@@ -3553,6 +3599,10 @@ PrefabInstance:
       propertyPath: itemToBuy
       value: 
       objectReference: {fileID: 746203134}
+    - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+      propertyPath: buyZoneSystem
+      value: 
+      objectReference: {fileID: 1779950786}
     - target: {fileID: 4807058284035557778, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -3717,6 +3767,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198381658}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1231116878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+  m_PrefabInstance: {fileID: 318021515}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1258898367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3923,6 +3978,11 @@ MonoBehaviour:
   maxCount: 4
   namePotionForKeep: Power(Clone)
   statusItem: 1
+--- !u!1 &1361156426 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+  m_PrefabInstance: {fileID: 151543370}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1405733462 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8039420693218853742, guid: ed564bae4cd28b945a491296abaa2a1a, type: 3}
@@ -4047,7 +4107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: itemCost
@@ -4061,6 +4121,10 @@ PrefabInstance:
       propertyPath: itemToBuy
       value: 
       objectReference: {fileID: 823932220}
+    - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+      propertyPath: buyZoneSystem
+      value: 
+      objectReference: {fileID: 1779950786}
     - target: {fileID: 4807058284035557778, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -4173,11 +4237,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_Name
-      value: BuyZone
+      value: BuyZoneTreeLiving
       objectReference: {fileID: 0}
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: itemCost
@@ -4191,6 +4255,10 @@ PrefabInstance:
       propertyPath: itemToBuy
       value: 
       objectReference: {fileID: 1725820478}
+    - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+      propertyPath: buyZoneSystem
+      value: 
+      objectReference: {fileID: 1779950786}
     - target: {fileID: 4807058284035557778, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4255,7 +4323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: itemCost
@@ -4269,6 +4337,10 @@ PrefabInstance:
       propertyPath: itemToBuy
       value: 
       objectReference: {fileID: 1823130310}
+    - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+      propertyPath: buyZoneSystem
+      value: 
+      objectReference: {fileID: 1779950786}
     - target: {fileID: 4807058284035557778, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4318,6 +4390,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4807058284035557778, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
   m_PrefabInstance: {fileID: 1492594243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1519851439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+  m_PrefabInstance: {fileID: 268003393}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1547920166 stripped
 MonoBehaviour:
@@ -5002,7 +5079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: itemCost
@@ -5016,6 +5093,10 @@ PrefabInstance:
       propertyPath: itemToBuy
       value: 
       objectReference: {fileID: 800424135}
+    - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+      propertyPath: buyZoneSystem
+      value: 
+      objectReference: {fileID: 1779950786}
     - target: {fileID: 4807058284035557778, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5285,6 +5366,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6515138021516706230, guid: abe10c3e1cd15b242aba775e21951144, type: 3}
   m_PrefabInstance: {fileID: 388889288}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1741104764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+  m_PrefabInstance: {fileID: 671809211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1751242889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5430,6 +5516,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34a96bfa311b284887febe3a42d541a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1779950785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1779950787}
+  - component: {fileID: 1779950786}
+  m_Layer: 0
+  m_Name: BuyZoneSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1779950786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779950785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1a7464bec9a1e4da5b17f619140b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buyZones:
+  - {fileID: 532328111}
+  - {fileID: 56906587}
+  - {fileID: 1231116878}
+  - {fileID: 1361156426}
+  - {fileID: 1004758990}
+  - {fileID: 399204824}
+  - {fileID: 1741104764}
+  - {fileID: 1078956484}
+  - {fileID: 816596834}
+  - {fileID: 1519851439}
+--- !u!4 &1779950787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779950785}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1804642853
 GameObject:
   m_ObjectHideFlags: 0
@@ -5601,11 +5742,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_Name
-      value: BuyZone
+      value: BuyZoneCrystal
       objectReference: {fileID: 0}
     - target: {fileID: 2670486479820705085, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: itemCost
@@ -5619,6 +5760,10 @@ PrefabInstance:
       propertyPath: itemToBuy
       value: 
       objectReference: {fileID: 166355899}
+    - target: {fileID: 4620554612872147977, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
+      propertyPath: buyZoneSystem
+      value: 
+      objectReference: {fileID: 1779950786}
     - target: {fileID: 4807058284035557778, guid: 6f2f18d6ed8d1b044812e10c388ce1fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.57
@@ -6372,8 +6517,10 @@ SceneRoots:
   - {fileID: 791879820}
   - {fileID: 1893720471}
   - {fileID: 1429641540}
+  - {fileID: 1779950787}
   - {fileID: 1778548599}
   - {fileID: 130872412}
+  - {fileID: 1564699601}
   - {fileID: 1977795977}
   - {fileID: 2005990927}
   - {fileID: 747619669}
@@ -6385,4 +6532,3 @@ SceneRoots:
   - {fileID: 180648254}
   - {fileID: 1720073080}
   - {fileID: 1258898367}
-  - {fileID: 1564699601}
