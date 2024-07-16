@@ -5587,7 +5587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1804642854
 Transform:
   m_ObjectHideFlags: 0
@@ -6359,18 +6359,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 443116574431534549, guid: 7156c13d636df9348b8c06aec2f666ee, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 911493705040340697, guid: 7156c13d636df9348b8c06aec2f666ee, type: 3}
       propertyPath: exchange
       value: 
       objectReference: {fileID: 1405733462}
-    - target: {fileID: 2976600259424736076, guid: 7156c13d636df9348b8c06aec2f666ee, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8204786471992809457, guid: 7156c13d636df9348b8c06aec2f666ee, type: 3}
       propertyPath: m_Name
       value: Buyer
