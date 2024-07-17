@@ -4617,9 +4617,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5949304408984406673, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949304408984406673, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 130872413}
+    - target: {fileID: 5949304408984406673, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeSpeedMovement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949304408984406673, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949304408984406673, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 8363598277097232974}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949304408984406673, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6151907210935189348, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_Text
       value: "3000 \u0437\u043E\u043B\u043E\u0442\u043E"
