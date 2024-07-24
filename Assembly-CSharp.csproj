@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\ResourceGenerator.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\IUpgrade.cs" />
     <Compile Include="Assets\Scripts\ProcessExchange.cs" />
+    <Compile Include="Assets\Scripts\Animtaion\AnimationDoor.cs" />
     <Compile Include="Assets\Scripts\CraftingSystem.cs" />
     <Compile Include="Assets\Scripts\ShopperAI.cs" />
     <Compile Include="Assets\Scripts\UI\CurrencyUI.cs" />

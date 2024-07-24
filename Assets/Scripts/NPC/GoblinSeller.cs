@@ -5,7 +5,6 @@ using UnityEngine;
 public class GoblinSeller : MonoBehaviour
 {
     [SerializeField] private ProcessExchange exchange;
-    [SerializeField] private GameObject zoneProcessForPlayer;
     private void Start()
     {
         Transform child = exchange.transform.GetChild(0);
