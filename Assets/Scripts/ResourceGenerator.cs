@@ -10,6 +10,11 @@ public class ResourceGenerator : MonoBehaviour
     [SerializeField] private float intervalGenerate;
     [SerializeField, Range(1, byte.MaxValue)] private byte maxObj;
 
+    [Header("Position spawn object")]
+    [SerializeField] private float offsetX;
+    [SerializeField] private float offsetY;
+    [SerializeField] private float offsetZ;
+
     private bool isGenerate = true;
 
     void Start()
@@ -47,7 +52,10 @@ public class ResourceGenerator : MonoBehaviour
         spawnedObj.tag = tagObj;
 
         Vector3 spawnPos = gameObject.transform.position;
-        spawnPos.y += 1;
+        spawnPos.x += offsetX;
+        spawnPos.y += offsetY;
+        spawnPos.z += offsetZ;
+
         spawnedObj.transform.position = spawnPos;
         spawnedObj.transform.SetParent(transform);
     }

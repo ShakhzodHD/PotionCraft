@@ -35,6 +35,7 @@ public class PlayerPickup : MonoBehaviour
     {
         isPickingUp = true;
         float timer = 0f;
+        MeshRenderer meshRenderer = objToPickUp.GetComponent<MeshRenderer>();
 
         while (timer < pickupDelay)
         {
@@ -47,6 +48,7 @@ public class PlayerPickup : MonoBehaviour
         {
             objToPickUp.transform.SetParent(transform);
             objToPickUp.tag = "UnPickupable";
+            meshRenderer.enabled = true;
         }
         else if (objToPickUp.CompareTag("Selling"))
         {
