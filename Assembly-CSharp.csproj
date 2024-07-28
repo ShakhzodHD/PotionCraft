@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\UpgradeSystem\RealizeUpgrades\SpeedMovementUpgrade.cs" />
     <Compile Include="Assets\Scripts\StorageManager.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\UpgradeSystem.cs" />
+    <Compile Include="Assets\Scripts\Animation\Plant\PlantAnimationController.cs" />
     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\Scripts\Resource.cs" />
     <Compile Include="Assets\Scripts\ShopZone.cs" />

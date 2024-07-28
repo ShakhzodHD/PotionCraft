@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,6 +15,8 @@ public class ResourceGenerator : MonoBehaviour
     [SerializeField] private float offsetX;
     [SerializeField] private float offsetY;
     [SerializeField] private float offsetZ;
+
+    private event Action OnResourceGenerated;
 
     private bool isGenerate = true;
 
@@ -58,6 +61,8 @@ public class ResourceGenerator : MonoBehaviour
 
         spawnedObj.transform.position = spawnPos;
         spawnedObj.transform.SetParent(transform);
+
+        OnResourceGenerated?.Invoke();
     }
 
     private void CheckLimitGenerate(float number)
@@ -66,5 +71,14 @@ public class ResourceGenerator : MonoBehaviour
         {
             isGenerate = false;
         }
+    }
+
+    public void SubscribeResourceGenerated(Action listener)
+    {
+        OnResourceGenerated += listener;
+    }
+    public void UnsubscribeResourceGenerated(Action listener)
+    {
+        OnResourceGenerated -= listener;
     }
 }

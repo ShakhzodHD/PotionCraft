@@ -1,13 +1,12 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using System;
 
 public class GoblinWorkerAI : MonoBehaviour
 {
     private NavMeshAgent agent;
-    private StorageManager storageManager; // Ссылка на компонент StorageManager
-
-    // Возможные состояния гоблина
+    private StorageManager storageManager; 
     private enum GoblinState
     {
         MovingToGenerator,
@@ -15,18 +14,18 @@ public class GoblinWorkerAI : MonoBehaviour
         MovingToStand
     }
 
-    private GoblinState currentState; // Текущее состояние гоблина
+    private GoblinState currentState; 
 
     [SerializeField] private Transform generator;
     [SerializeField] private Transform craft;
     [SerializeField] private Transform stand;
 
-    [SerializeField] private float waitTimeGenerator = 3f; // Время ожидания после достижения генератора
-    [SerializeField] private float waitTimeCraft = 3f;     // Время ожидания после достижения крафта
-    [SerializeField] private float waitTimeStand = 2f;     // Время ожидания после достижения стенда
+    [SerializeField] private float waitTimeGenerator = 3f; 
+    [SerializeField] private float waitTimeCraft = 3f;     
+    [SerializeField] private float waitTimeStand = 2f;     
 
-    private bool isWaiting = false; // Флаг для проверки состояния ожидания
-    private bool isCraft = false;   // Флаг для проверки выполнения задачи крафта
+    private bool isWaiting = false; 
+    private bool isCraft = false;   
 
     [SerializeField] private bool needsCrystalForCraft = false;
     [SerializeField] private Transform crystalGenerator;
@@ -34,9 +33,8 @@ public class GoblinWorkerAI : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        storageManager = stand.GetComponent<StorageManager>(); // Получаем компонент StorageManager у стенда
+        storageManager = stand.GetComponent<StorageManager>(); 
 
-        // Начальное состояние - движение к генератору
         currentState = GoblinState.MovingToGenerator;
         MoveToCurrentTarget();
     }

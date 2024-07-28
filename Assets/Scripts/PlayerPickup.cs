@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
 public class PlayerPickup : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerPickup : MonoBehaviour
 
     private bool isPickingUp = false;
     private Coroutine pickupCoroutine;
+    private static event Action OnResourceTaked;
 
     private void OnTriggerStay(Collider other)
     {
@@ -46,6 +48,7 @@ public class PlayerPickup : MonoBehaviour
 
         if (objToPickUp.CompareTag("Pickupable"))
         {
+            OnResourceTaked?.Invoke();
             objToPickUp.transform.SetParent(transform);
             objToPickUp.tag = "UnPickupable";
             meshRenderer.enabled = true;
@@ -57,6 +60,14 @@ public class PlayerPickup : MonoBehaviour
 
         ResetPickupProgressUI();
         isPickingUp = false;
+    }
+    public void SubscribeResourceTaked(Action listener)
+    {
+        OnResourceTaked += listener;
+    }
+    public void UnsubscribeResourceTaked(Action listener)
+    {
+        OnResourceTaked -= listener;
     }
 
     private void UpdatePickupProgressUI(float progress)
