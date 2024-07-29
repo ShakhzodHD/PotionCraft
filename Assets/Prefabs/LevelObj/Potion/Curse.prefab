@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4666894885200229734}
   m_Layer: 0
   m_Name: Curse
-  m_TagString: Untagged
+  m_TagString: Selling
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
