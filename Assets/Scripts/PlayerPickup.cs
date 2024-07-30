@@ -5,8 +5,8 @@ using System;
 
 public class PlayerPickup : MonoBehaviour
 {
-    [HideInInspector] public int inventoryLimit;
-    [HideInInspector] public float pickupDelay;
+    public int inventoryLimit;
+    public float pickupDelay;
 
     [SerializeField] private Image pickupProgressBar; 
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CarryngAnimation : MonoBehaviour
 {
+    [SerializeField] int countItem;
+
     private int number;
     private Animator anim;
     private void Start()
@@ -13,7 +15,7 @@ public class CarryngAnimation : MonoBehaviour
     private void Update()
     {
         number = transform.childCount;
-        if (number > 2)
+        if (number > countItem)
         {
             anim.SetLayerWeight(1, 1);
         }
