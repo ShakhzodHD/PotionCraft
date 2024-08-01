@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpawnerBuyers : MonoBehaviour
 {
-    [SerializeField] private GameObject buyerPrefab;
+    [SerializeField] private GameObject[] buyerPrefab;
     [SerializeField] private float spawnInterval = 3f;
 
     private void Start()
@@ -11,6 +11,9 @@ public class SpawnerBuyers : MonoBehaviour
     }
     private void Spawner()
     {
-        Instantiate(buyerPrefab, gameObject.transform.position, gameObject.transform.rotation);
+        int index = Random.Range(0, buyerPrefab.Length);
+        GameObject customerPrefab = buyerPrefab[index];
+
+        Instantiate(customerPrefab, transform.position, Quaternion.identity);
     }
 }
