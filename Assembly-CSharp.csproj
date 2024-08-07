@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\NPC\GoblinSeller.cs" />
     <Compile Include="Assets\Scripts\PlayerPickup.cs" />
     <Compile Include="Assets\Scripts\CurrencyManager.cs" />
+    <Compile Include="Assets\Scripts\Animation\GoblinAnimationController.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\RealizeUpgrades\SpeedMovementUpgrade.cs" />
     <Compile Include="Assets\Scripts\StorageManager.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\UpgradeSystem.cs" />

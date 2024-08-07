@@ -7,6 +7,7 @@ public class GoblinWorkerAI : MonoBehaviour
 {
     private NavMeshAgent agent;
     private StorageManager storageManager; 
+    private GoblinAnimationController goblinAnimator;
     private enum GoblinState
     {
         MovingToGenerator,
@@ -24,16 +25,21 @@ public class GoblinWorkerAI : MonoBehaviour
     [SerializeField] private float waitTimeCraft = 3f;     
     [SerializeField] private float waitTimeStand = 2f;     
 
-    private bool isWaiting = false; 
-    private bool isCraft = false;   
-
     [SerializeField] private bool needsCrystalForCraft = false;
     [SerializeField] private Transform crystalGenerator;
 
+    private bool isWaiting = false; 
+    private bool isCraft = false;
+
+    private int currentCountChild;
+
     private void Start()
     {
+        currentCountChild = gameObject.transform.childCount;
+
         agent = GetComponent<NavMeshAgent>();
         storageManager = stand.GetComponent<StorageManager>(); 
+        goblinAnimator = GetComponent<GoblinAnimationController>();
 
         currentState = GoblinState.MovingToGenerator;
         MoveToCurrentTarget();
@@ -47,6 +53,7 @@ public class GoblinWorkerAI : MonoBehaviour
 
             StartCoroutine(WaitAndMoveToNextTarget());
         }
+        goblinAnimator.TriggerAnim(isWaiting);
     }
     private IEnumerator WaitAndMoveToNextTarget()
     {
@@ -56,25 +63,21 @@ public class GoblinWorkerAI : MonoBehaviour
         {
             case GoblinState.MovingToGenerator:
                 waitTime = waitTimeGenerator;
-                yield return new WaitUntil(() => gameObject.transform.childCount > 0);
+                yield return new WaitUntil(() => gameObject.transform.childCount > currentCountChild);
                 break;
             case GoblinState.MovingToCraft:
                 waitTime = waitTimeCraft;
                 break;
             case GoblinState.MovingToStand:
                 waitTime = waitTimeStand;
-                // Ожидаем, пока количество дочерних объектов у стенда не станет меньше maxCount
                 yield return new WaitUntil(() => stand.childCount < storageManager.maxCount);
                 break;
         }
 
-        // Ждем заданное время
         yield return new WaitForSeconds(waitTime);
 
-        // Снимаем флаг ожидания
         isWaiting = false;
 
-        // Переходим к следующей цели в зависимости от текущего состояния
         switch (currentState)
         {
             case GoblinState.MovingToGenerator:
