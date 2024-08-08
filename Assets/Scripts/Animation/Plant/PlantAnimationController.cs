@@ -1,29 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlantAnimationController : MonoBehaviour
 {
-    [SerializeField] private PlayerPickup playerPickup;
+    [SerializeField] private PlayerPickup[] playerPickups; 
 
     private Animator animator;
     private ResourceGenerator resourceGenerator;
 
     private int countTriggerRecovery = 0;
     private int countTriggerRemove = 2;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         resourceGenerator = GetComponent<ResourceGenerator>();
 
         resourceGenerator.SubscribeResourceGenerated(PlayAnimationRecovery);
-        playerPickup.SubscribeResourceTaked(PlayAnimationRemove);
+
+        foreach (var playerPickup in playerPickups)
+        {
+            playerPickup.SubscribeResourceTaked(OnResourceTaked);
+        }
     }
+
     private void OnDestroy()
     {
         resourceGenerator.UnsubscribeResourceGenerated(PlayAnimationRecovery);
-        playerPickup.UnsubscribeResourceTaked(PlayAnimationRemove);
+
+        foreach (var playerPickup in playerPickups)
+        {
+            playerPickup.UnsubscribeResourceTaked(OnResourceTaked);
+        }
     }
+
+    private void OnResourceTaked(GameObject plant, PlayerPickup playerPickup)
+    {
+        if (plant == gameObject)
+        {
+            PlayAnimationRemove();
+        }
+    }
+
     private void PlayAnimationRecovery()
     {
         countTriggerRecovery++;
@@ -38,6 +55,7 @@ public class PlantAnimationController : MonoBehaviour
             animator.SetBool("IsSecordPart", true);
         }
     }
+
     private void PlayAnimationRemove()
     {
         countTriggerRemove++;

@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuyerWarrior
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f6b35d0be65bed448b5f8021ef07dcc7, type: 3}
+      propertyPath: m_TagString
+      value: Buyer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -7199352476660280535, guid: f6b35d0be65bed448b5f8021ef07dcc7, type: 3}
@@ -207,7 +211,7 @@ MonoBehaviour:
   currentNeed: 
   exchange: {fileID: 0}
   movementSpeed: 2
-  timeOfDestroying: 6
+  timeOfDestroying: 7
 --- !u!114 &5624624880745638763
 MonoBehaviour:
   m_ObjectHideFlags: 0

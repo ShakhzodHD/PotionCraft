@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System;
+using UnityEngine.Events;
 
 public class PlayerPickup : MonoBehaviour
 {
     public int inventoryLimit;
     public float pickupDelay;
 
-    [SerializeField] private Image pickupProgressBar; 
+    [SerializeField] private Image pickupProgressBar;
 
     private bool isPickingUp = false;
     private Coroutine pickupCoroutine;
-    private static event Action OnResourceTaked;
+    private UnityEvent<GameObject, PlayerPickup> OnResourceTaked = new UnityEvent<GameObject, PlayerPickup>();
 
     private void OnTriggerStay(Collider other)
     {
@@ -48,7 +48,11 @@ public class PlayerPickup : MonoBehaviour
 
         if (objToPickUp.CompareTag("Pickupable"))
         {
-            OnResourceTaked?.Invoke();
+            GameObject plant = objToPickUp.transform.parent?.gameObject;
+            if (plant != null)
+            {
+                OnResourceTaked?.Invoke(plant, this);  // Передаем растение и текущий PlayerPickup
+            }
             objToPickUp.transform.SetParent(transform);
             objToPickUp.tag = "UnPickupable";
             meshRenderer.enabled = true;
@@ -61,13 +65,15 @@ public class PlayerPickup : MonoBehaviour
         ResetPickupProgressUI();
         isPickingUp = false;
     }
-    public void SubscribeResourceTaked(Action listener)
+
+    public void SubscribeResourceTaked(UnityAction<GameObject, PlayerPickup> listener)
     {
-        OnResourceTaked += listener;
+        OnResourceTaked.AddListener(listener);
     }
-    public void UnsubscribeResourceTaked(Action listener)
+
+    public void UnsubscribeResourceTaked(UnityAction<GameObject, PlayerPickup> listener)
     {
-        OnResourceTaked -= listener;
+        OnResourceTaked.RemoveListener(listener);
     }
 
     private void UpdatePickupProgressUI(float progress)
