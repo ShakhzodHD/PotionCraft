@@ -51,7 +51,7 @@ public class PlayerPickup : MonoBehaviour
             GameObject plant = objToPickUp.transform.parent?.gameObject;
             if (plant != null)
             {
-                OnResourceTaked?.Invoke(plant, this);  // Передаем растение и текущий PlayerPickup
+                OnResourceTaked?.Invoke(plant, this);  
             }
             objToPickUp.transform.SetParent(transform);
             objToPickUp.tag = "UnPickupable";

@@ -27,9 +27,18 @@ public class UpgradeSystem : MonoBehaviour
     }
     private void Upgrade(IUpgrade _upgrade)
     {
-        upgradeManager.ApplyUpgrade(_upgrade);
-        upgradeManager.GetUpgradePrice(_upgrade);
-        UpdateUI();
+        int upgradePrice = upgradeManager.GetUpgradePrice(_upgrade);
+
+        if (CurrencyManager.instance.CanAfford(upgradePrice))
+        {
+            upgradeManager.ApplyUpgrade(_upgrade);
+            CurrencyManager.instance.SpendCurrency(upgradePrice);
+            UpdateUI();
+        }
+        else
+        {
+            Debug.LogWarning("Недостаточно валюты для апгрейда!");
+        }
     }
     public void UpgradeSpeedMovement() { Upgrade(_speedMovementUpgrade); }
     public void UpgradeCapacity() { Upgrade(_capacityUpgrade); }
