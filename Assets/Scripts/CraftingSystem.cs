@@ -10,6 +10,12 @@ public class CraftingSystem : MonoBehaviour
     [SerializeField] private bool isUseCrystal = false;
     [SerializeField] private bool isCrafting = false;
 
+    [Header("Offset Position and Rotation Craft Obj")]
+    [SerializeField] private float offsetX;
+    [SerializeField] private float offsetY;
+    [SerializeField] private float offsetZ;
+    [SerializeField] private Vector3 rotationOffset = new Vector3(90, 0, 0);
+
 
     private StoragePlants plants;
     private StorageCrystal crystals;
@@ -60,7 +66,14 @@ public class CraftingSystem : MonoBehaviour
             RemoveItems(secondRequiredObj.ToString() + "(Clone)", requiredSecondItemCount, crystals.transform);
         }
 
-        GameObject craftedObj = Instantiate(craftObjectPrefab, transform.position, Quaternion.identity);
+        Vector3 spawnPos = gameObject.transform.position;
+        spawnPos.x += offsetX;
+        spawnPos.y += offsetY;
+        spawnPos.z += offsetZ;
+
+        Quaternion rotation = Quaternion.Euler(rotationOffset);
+
+        GameObject craftedObj = Instantiate(craftObjectPrefab, spawnPos, Quaternion.identity * rotation);
         craftedObj.transform.SetParent(transform);
         craftedObj.tag = "Selling";
 
