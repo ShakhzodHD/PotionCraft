@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\UpgradeSystem\UpgradeManager.cs" />
     <Compile Include="Assets\Scripts\StoragePlants.cs" />
     <Compile Include="Assets\Scripts\BuyZoneSystem\BuyZoneSystem.cs" />
+    <Compile Include="Assets\Scripts\UI\BuyDecorSystem.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\TriggerZoneUI.cs" />
     <Compile Include="Assets\Scripts\UI\TogglePanel.cs" />

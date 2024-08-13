@@ -1,20 +1,23 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CurrencyUI : MonoBehaviour
 {
     [SerializeField] private Text currencyText;
-    private void Update()
+
+    private void OnEnable()
     {
-        UpdateCurrencyUI();
+        CurrencyManager.OnCurrencyChanged += UpdateCurrencyUI;
+        UpdateCurrencyUI(CurrencyManager.instance.currencyAmount);
     }
 
-    public void UpdateCurrencyUI()
+    private void OnDisable()
     {
-        int currencyAmount = CurrencyManager.instance.currencyAmount;
-        currencyText.text = "Gold: " + currencyAmount.ToString();
+        CurrencyManager.OnCurrencyChanged -= UpdateCurrencyUI;
+    }
+
+    private void UpdateCurrencyUI(int newAmount)
+    {
+        currencyText.text = "Gold: " + newAmount.ToString();
     }
 }
