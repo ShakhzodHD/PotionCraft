@@ -9010,6 +9010,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1230260969}
+    - target: {fileID: 3315735699253427122, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 550
+      objectReference: {fileID: 0}
+    - target: {fileID: 3315735699253427122, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 210
+      objectReference: {fileID: 0}
     - target: {fileID: 4144392724726968014, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9142,9 +9150,25 @@ PrefabInstance:
       propertyPath: m_Text
       value: "3000 \u0437\u043E\u043B\u043E\u0442\u043E"
       objectReference: {fileID: 0}
+    - target: {fileID: 6512133150074942395, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 220
+      objectReference: {fileID: 0}
     - target: {fileID: 6571225479635320293, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_Text
       value: "3000 \u0437\u043E\u043B\u043E\u0442\u043E"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775877026704095577, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775877026704095577, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 036dc8dccdf31a7418c947bea2cd4095, type: 3}
+    - target: {fileID: 6775877026704095577, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 7263455518551683015, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_Text
@@ -9158,6 +9182,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1236593700}
+    - target: {fileID: 8592609832809021097, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592609832809021097, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 036dc8dccdf31a7418c947bea2cd4095, type: 3}
+    - target: {fileID: 8592609832809021097, guid: 185105da6654412499d37d6f379598c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 8611937471243268934, guid: 185105da6654412499d37d6f379598c8, type: 3}
       propertyPath: m_Text
       value: "3000 \u0437\u043E\u043B\u043E\u0442\u043E"
@@ -11745,7 +11781,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 400}
+  m_SizeDelta: {x: 700, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1952869049
 MonoBehaviour:
@@ -11767,8 +11803,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 036dc8dccdf31a7418c947bea2cd4095, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
