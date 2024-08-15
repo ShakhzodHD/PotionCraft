@@ -1,22 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TriggerZoneUI : MonoBehaviour
 {
-    [SerializeField] private RectTransform objUI;
+    [SerializeField] private UIManager uiManager; 
+    [SerializeField] private RectTransform panelToActivate; 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            objUI.gameObject.SetActive(true);
+            uiManager.SetPanelState(panelToActivate, true);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            objUI.gameObject.SetActive(false);
+            if (uiManager.GetActivePanel() == panelToActivate)
+            {
+                uiManager.HideAllPanels(); 
+            }
         }
     }
 }

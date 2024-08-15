@@ -1,12 +1,4 @@
-﻿//
-//  Outline.cs
-//  QuickOutline
-//
-//  Created by Chris Nolet on 3/30/18.
-//  Copyright © 2018 Chris Nolet. All rights reserved.
-//
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -82,27 +74,22 @@ public class Outline : MonoBehaviour {
 
   void Awake() {
 
-    // Cache renderers
     renderers = GetComponentsInChildren<Renderer>();
 
-    // Instantiate outline materials
     outlineMaskMaterial = Instantiate(Resources.Load<Material>(@"Materials/OutlineMask"));
     outlineFillMaterial = Instantiate(Resources.Load<Material>(@"Materials/OutlineFill"));
 
     outlineMaskMaterial.name = "OutlineMask (Instance)";
     outlineFillMaterial.name = "OutlineFill (Instance)";
 
-    // Retrieve or generate smooth normals
     LoadSmoothNormals();
 
-    // Apply material properties immediately
     needsUpdate = true;
   }
 
   void OnEnable() {
     foreach (var renderer in renderers) {
 
-      // Append outline shaders
       var materials = renderer.sharedMaterials.ToList();
 
       materials.Add(outlineMaskMaterial);
@@ -306,4 +293,37 @@ public class Outline : MonoBehaviour {
         break;
     }
   }
+    public void DisableOutline()
+    {
+        foreach (var renderer in renderers)
+        {
+            var materials = renderer.sharedMaterials.ToList();
+
+            materials.Remove(outlineMaskMaterial);
+            materials.Remove(outlineFillMaterial);
+
+            renderer.materials = materials.ToArray();
+        }
+    }
+
+    public void EnableOutline()
+    {
+        foreach (var renderer in renderers)
+        {
+            var materials = renderer.sharedMaterials.ToList();
+
+            if (!materials.Contains(outlineMaskMaterial))
+            {
+                materials.Add(outlineMaskMaterial);
+            }
+
+            if (!materials.Contains(outlineFillMaterial))
+            {
+                materials.Add(outlineFillMaterial);
+            }
+
+            renderer.materials = materials.ToArray();
+        }
+    }
+
 }

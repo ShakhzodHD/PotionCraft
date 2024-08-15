@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class TogglePanel : MonoBehaviour
 {
-    [SerializeField] private GameObject panel;
+    [SerializeField] private UIManager uiManager; 
 
     public void TogglePanelVisibility()
     {
-        if (panel != null)
+        if (uiManager != null)
         {
-            panel.SetActive(!panel.activeSelf);
+            uiManager.ToggleAdditionalPanel(); 
         }
     }
 }
