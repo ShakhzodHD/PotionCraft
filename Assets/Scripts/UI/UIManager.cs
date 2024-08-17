@@ -4,11 +4,16 @@ public class UIManager : MonoBehaviour
 {
     [Header("Panels")]
     [SerializeField] private RectTransform panel1; 
-    [SerializeField] private RectTransform panel2; 
-    [SerializeField] private RectTransform additionalPanel; 
+    [SerializeField] private RectTransform panel2;
+    [SerializeField] private RectTransform escPanel;
+
+    [SerializeField] private RectTransform additionalPanel;
 
     [Header("Outline")]
     [SerializeField] private Outline outlinePlayer;
+
+    [Header("Pause")]
+    [SerializeField] private PauseSystem pause;
 
     private RectTransform activePanel = null; 
 
@@ -80,6 +85,23 @@ public class UIManager : MonoBehaviour
             if (outlinePlayer != null)
             {
                 outlinePlayer.EnableOutline();
+            }
+        }
+    }
+    public void ToggleEscPanel()
+    {
+        if (escPanel != null)
+        {
+            bool isActive = !escPanel.gameObject.activeSelf;
+            SetPanelState(escPanel, isActive);
+            
+            if (isActive == true)
+            {
+                pause.SetPause();
+            }
+            else
+            {
+                pause.RemovePause();
             }
         }
     }
