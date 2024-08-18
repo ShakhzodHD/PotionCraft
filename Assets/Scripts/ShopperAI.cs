@@ -21,6 +21,8 @@ public class ShopperAI : MonoBehaviour
     public static int numberStands = 4;
 
     [SerializeField] private ProcessExchange exchange;
+    [SerializeField] private SpawnerBuyers buyers;
+
     private BuyerPick buyerPick;
     private Animator animator;
 
@@ -46,6 +48,7 @@ public class ShopperAI : MonoBehaviour
         buyerPick = GetComponent<BuyerPick>();
         animator = GetComponent<Animator>();
         exchange = FindObjectOfType<ProcessExchange>();
+        buyers = FindObjectOfType<SpawnerBuyers>();
     }
 
     private void Start()
@@ -212,6 +215,7 @@ public class ShopperAI : MonoBehaviour
 
     private void DestroyObj()
     {
+        buyers.CurrentBuyerCount--;
         Destroy(gameObject);
     }
 

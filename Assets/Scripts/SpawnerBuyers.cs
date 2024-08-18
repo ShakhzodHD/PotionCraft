@@ -2,18 +2,38 @@ using UnityEngine;
 
 public class SpawnerBuyers : MonoBehaviour
 {
-    [SerializeField] private GameObject[] buyerPrefab;
-    [SerializeField] private float spawnInterval = 3f;
+    [SerializeField] private GameObject[] buyerPrefabs;
+    [SerializeField] private float spawnInterval;
+    [SerializeField] private int maxBuyers;
+
+    private int currentBuyerCount = 0;
+    public int CurrentBuyerCount
+    {
+        get { return currentBuyerCount; }
+        set
+        {
+            if (currentBuyerCount <= 0) return;
+
+            currentBuyerCount = value;
+        }
+    }
 
     private void Start()
     {
-        InvokeRepeating("Spawner", 0.0f, spawnInterval);
+        if (buyerPrefabs.Length > 0)
+        {
+            InvokeRepeating("Spawner", 0.0f, spawnInterval);
+        }
     }
+
     private void Spawner()
     {
-        int index = Random.Range(0, buyerPrefab.Length);
-        GameObject customerPrefab = buyerPrefab[index];
+        if (currentBuyerCount >= maxBuyers) return;
+
+        int index = Random.Range(0, buyerPrefabs.Length);
+        GameObject customerPrefab = buyerPrefabs[index];
 
         Instantiate(customerPrefab, transform.position, Quaternion.identity);
+        currentBuyerCount++; 
     }
 }
