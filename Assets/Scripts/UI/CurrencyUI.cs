@@ -18,6 +18,6 @@ public class CurrencyUI : MonoBehaviour
 
     private void UpdateCurrencyUI(int newAmount)
     {
-        currencyText.text = "Gold: " + newAmount.ToString();
+        currencyText.text = newAmount.ToString();
     }
 }

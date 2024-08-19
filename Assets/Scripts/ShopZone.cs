@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class ShopZone : MonoBehaviour
 {
     [SerializeField] private BuyZoneSystem buyZoneSystem;
+    [SerializeField] private TextMeshPro priceText;
 
     [Header("Parameters about the object being purchased")]
     [SerializeField] GameObject itemToBuy;
@@ -10,7 +12,12 @@ public class ShopZone : MonoBehaviour
     [SerializeField] private int itemCost;
 
     [SerializeField] private float framesPerUpdate = 3;
+
     private float frameCount = 0;
+    private void Start()
+    {
+        priceText.text = fullPrice.ToString();
+    }
     private void OnTriggerStay(Collider other)
     {
         frameCount++;
@@ -22,6 +29,8 @@ public class ShopZone : MonoBehaviour
                 {
                     CurrencyManager.instance.SpendCurrency(itemCost);
                     fullPrice--;
+                    priceText.text = fullPrice.ToString();
+                    //Возможная логика вставки звука траты монет
                 }
                 else
                 {

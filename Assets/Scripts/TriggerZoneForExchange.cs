@@ -18,10 +18,9 @@ public class TriggerZoneForExchange : MonoBehaviour
         }
         else if (!isPlayerZone && other.CompareTag("Buyer"))
         {
-            if (other.transform.childCount > 0)
-            {
-                processExchange.SetBuyerReady(true);
-            }
+            PotionPrice potionPrice = other.GetComponentInChildren<PotionPrice>();
+            processExchange.SetBuyerReady(true);
+            processExchange.SetPotionToSell(potionPrice);
         }
     }
 

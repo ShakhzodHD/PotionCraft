@@ -1,24 +1,16 @@
-using System.Diagnostics;
 using UnityEngine;
 
 public class RecruitGoblinSystem : MonoBehaviour
 {
-    [SerializeField] private int priceForWorkers;
-    [SerializeField] private int priceForSeller;
-    public void GoblinBuy(GameObject gameObject)
+    [SerializeField] private GameObject[] goblins;
+    [SerializeField] private int[] pricesGoblins;
+    public void BuyGoblin(int index)
     {
-        if (gameObject.tag == "GoblinWorker" && CurrencyManager.instance.CanAfford(priceForWorkers))
+        if (index < 0 || index >= goblins.Length) return;
+        if (CurrencyManager.instance.CanAfford(pricesGoblins[index]))
         {
-            gameObject.SetActive(true);
-            CurrencyManager.instance.SpendCurrency(priceForWorkers);
-        }
-        else
-        {
-            if (CurrencyManager.instance.CanAfford(priceForSeller))
-            {
-                gameObject.SetActive(true);
-                CurrencyManager.instance.SpendCurrency(priceForSeller);
-            }
+            goblins[index].gameObject.SetActive(true);
+            CurrencyManager.instance.SpendCurrency(pricesGoblins[index]);
         }
     }
 }

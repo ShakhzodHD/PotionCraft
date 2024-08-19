@@ -48,10 +48,12 @@ public class CurrencyManager : MonoBehaviour
         if (CanAfford(amount))
         {
             currencyAmount -= amount;
+            //Логика проигрывания звука покупки
         }
         else
         {
             Debug.LogWarning("Not enough currency!");
+            //Логика проигрывания звука нет золото
         }
     }
 }

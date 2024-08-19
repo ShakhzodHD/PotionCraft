@@ -11,6 +11,7 @@ public class ProcessExchange : MonoBehaviour
     public bool inReadyPlayer = false;
     private bool inReadyBuyer = false;
 
+    private PotionPrice potionPrice;
     public void SetPlayerReady(bool ready)
     {
         inReadyPlayer = ready;
@@ -22,7 +23,10 @@ public class ProcessExchange : MonoBehaviour
         inReadyBuyer = ready;
         CheckTrade();
     }
-
+    public void SetPotionToSell(PotionPrice price) 
+    {
+        potionPrice = price;
+    }
     private void CheckTrade()
     {
         if (inReadyPlayer && inReadyBuyer)
@@ -42,10 +46,15 @@ public class ProcessExchange : MonoBehaviour
             yield return null;
         }
 
-        CurrencyManager.instance.AddCurrency(20);
+        if (potionPrice != null)
+        {
+            CurrencyManager.instance.AddCurrency(potionPrice.GetPrice());
+        }
+
         isTradeable = true;
         inReadyPlayer = false;
         inReadyBuyer = false;
+        potionPrice = null;
         UpdatePutProgressUI(0);
     }
     public void UpdatePutProgressUI(float progress)
