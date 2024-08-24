@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +9,7 @@ public class StorageManager : MonoBehaviour
     public int maxCount;
 
     [SerializeField] private string namePotionForKeep;
+    [SerializeField] private PickupObject playerPickup;
 
     private Coroutine putCoroutine;
 
@@ -21,77 +19,97 @@ public class StorageManager : MonoBehaviour
         UnPickupable,
         Selling
     }
-    public virtual void Awake()
+
+    protected virtual void Awake()
     {
         ShopperAI.numberStands--;
     }
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("GoblinWorker"))
+        bool isPlayer = other.CompareTag("Player");
+        bool isAI = other.CompareTag("GoblinWorker");
+
+        if (isPlayer || isAI)
         {
             foreach (Transform child in other.transform)
             {
-                if (child.tag == statusItem.ToString() && child.name == namePotionForKeep) 
+                if (child.CompareTag(statusItem.ToString()) && child.name == namePotionForKeep)
                 {
                     if (putCoroutine == null)
                     {
-                        putCoroutine = StartCoroutine(PutObjWithDelay(child.gameObject));
+                        putCoroutine = StartCoroutine(PutObjWithDelay(child.gameObject, isPlayer));
                     }
                 }
             }
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player") || other.CompareTag("GoblinWorker"))
         {
-            if (putCoroutine != null)
+            foreach (Transform child in other.transform)
             {
-                StopCoroutine(putCoroutine);
-                putCoroutine = null;
-                UpdatePutProgressUI(0); 
+                if (child.CompareTag(statusItem.ToString()) && child.name == namePotionForKeep)
+                {
+                    if (putCoroutine != null)
+                    {
+                        StopCoroutine(putCoroutine);
+                        putCoroutine = null;
+                        UpdatePutProgressUI(0, false);
+                    }
+                }
             }
         }
     }
-    public virtual IEnumerator PutObjWithDelay(GameObject obj)
+
+    public virtual IEnumerator PutObjWithDelay(GameObject obj, bool isPlayer)
     {
         float timer = 0f;
 
         while (timer < putDelay)
         {
             timer += Time.deltaTime;
-            UpdatePutProgressUI(timer / putDelay);
+            UpdatePutProgressUI(timer / putDelay, isPlayer);
             yield return null;
         }
 
-        PutObj(obj);
+        PutObj(obj, isPlayer);
         putCoroutine = null;
     }
 
-    public void PutObj(GameObject obj)
+    public void PutObj(GameObject obj, bool isPlayer)
     {
-        if (obj.tag == "Selling")
+        if (obj.CompareTag("Selling"))
         {
             obj.tag = "Sell";
-            UpdatePutProgressUI(0);
+            UpdatePutProgressUI(0, isPlayer);
         }
+
         obj.transform.SetParent(transform);
         obj.transform.localPosition = Vector3.zero;
+
+        if (isPlayer)
+        {
+            playerPickup.RemoveItem(obj);
+        }
     }
 
     public virtual void CleaningAfterCraft()
     {
-        foreach (Transform child in gameObject.transform)
+        foreach (Transform child in transform)
         {
-            if (child.tag == "UnPickupable")
+            if (child.CompareTag("UnPickupable"))
             {
                 Destroy(child.gameObject);
             }
         }
     }
 
-    public void UpdatePutProgressUI(float progress)
+    public void UpdatePutProgressUI(float progress, bool isPlayer)
     {
+        if (!isPlayer) return;
         if (putProgressBar != null)
         {
             putProgressBar.fillAmount = progress;

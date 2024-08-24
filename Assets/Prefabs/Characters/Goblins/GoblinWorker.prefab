@@ -178,12 +178,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4140687500405857028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d37dce2c5e7b54eb8134b4967077c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c45c2ec3f7ed1d44ba9875c297f95a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryLimit: 2
   pickupDelay: 1
+  isPlayer: 0
   pickupProgressBar: {fileID: 0}
+  basePosition: {x: 0, y: 1.2, z: -0.5}
 --- !u!114 &5272177390861941867
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,17 +2,23 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
-public class PlayerPickup : MonoBehaviour
+public class PickupObject : MonoBehaviour
 {
     public int inventoryLimit;
     public float pickupDelay;
 
+    [SerializeField] private bool isPlayer;
     [SerializeField] private Image pickupProgressBar;
+    [SerializeField] private Vector3 basePosition;
 
+    private List<GameObject> items = new List<GameObject>();
+
+    private int currentCountItem = 0;
     private bool isPickingUp = false;
     private Coroutine pickupCoroutine;
-    private UnityEvent<GameObject, PlayerPickup> OnResourceTaked = new UnityEvent<GameObject, PlayerPickup>();
+    private UnityEvent<GameObject, PickupObject> OnResourceTaked = new UnityEvent<GameObject, PickupObject>();
 
     private void OnTriggerStay(Collider other)
     {
@@ -53,31 +59,66 @@ public class PlayerPickup : MonoBehaviour
             {
                 OnResourceTaked?.Invoke(plant, this);  
             }
-            objToPickUp.transform.SetParent(transform);
             objToPickUp.tag = "UnPickupable";
+            SetTransfromObj(objToPickUp);
             meshRenderer.enabled = true;
+            //Логика проигрывания звука поднятие предмета
         }
         else if (objToPickUp.CompareTag("Selling"))
         {
-            objToPickUp.transform.SetParent(transform);
+            SetTransfromObj(objToPickUp);
         }
 
         ResetPickupProgressUI();
         isPickingUp = false;
     }
+    private void SetTransfromObj(GameObject obj)
+    {
+        if (isPlayer == true)
+        {
+            obj.transform.SetParent(transform);
 
-    public void SubscribeResourceTaked(UnityAction<GameObject, PlayerPickup> listener)
+            Vector3 newPosition = basePosition + new Vector3(0, 0.8f * items.Count, 0);
+
+            obj.transform.localPosition = newPosition;
+
+            items.Add(obj);
+            currentCountItem = items.Count;
+        }
+        else
+        {
+            obj.transform.SetParent(transform);
+            obj.transform.localPosition = basePosition;
+        }
+    }
+    public void RemoveItem(GameObject obj)
+    {
+        if (items.Contains(obj))
+        {
+            items.Remove(obj);
+            currentCountItem = items.Count;
+
+            for (int i = 0; i < items.Count; i++)
+            {
+                Vector3 newPosition = basePosition + new Vector3(0, 0.8f * i, 0);
+                items[i].transform.localPosition = newPosition;
+            }
+        }
+    }
+
+    public void SubscribeResourceTaked(UnityAction<GameObject, PickupObject> listener)
     {
         OnResourceTaked.AddListener(listener);
     }
 
-    public void UnsubscribeResourceTaked(UnityAction<GameObject, PlayerPickup> listener)
+    public void UnsubscribeResourceTaked(UnityAction<GameObject, PickupObject> listener)
     {
         OnResourceTaked.RemoveListener(listener);
     }
 
     private void UpdatePickupProgressUI(float progress)
     {
+        if (isPlayer == false) return;
         if (pickupProgressBar != null)
             pickupProgressBar.fillAmount = progress;
     }

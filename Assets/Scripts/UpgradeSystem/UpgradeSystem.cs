@@ -27,6 +27,8 @@ public class UpgradeSystem : MonoBehaviour
     }
     private void Upgrade(IUpgrade _upgrade)
     {
+        if (_upgrade.GetPrice() == -1) return;
+
         int upgradePrice = upgradeManager.GetUpgradePrice(_upgrade);
 
         if (CurrencyManager.instance.CanAfford(upgradePrice))
@@ -34,10 +36,6 @@ public class UpgradeSystem : MonoBehaviour
             upgradeManager.ApplyUpgrade(_upgrade);
             CurrencyManager.instance.SpendCurrency(upgradePrice);
             UpdateUI();
-        }
-        else
-        {
-            Debug.LogWarning("Недостаточно валюты для апгрейда!");
         }
     }
     public void UpgradeSpeedMovement() { Upgrade(_speedMovementUpgrade); }

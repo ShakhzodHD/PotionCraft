@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpeedActionUpgrade : MonoBehaviour, IUpgrade
 {
-    [SerializeField] private PlayerPickup playerPickup;
+    [SerializeField] private PickupObject playerPickup;
 
     [SerializeField] private int basePrice;
     [SerializeField] private float baseDelay;

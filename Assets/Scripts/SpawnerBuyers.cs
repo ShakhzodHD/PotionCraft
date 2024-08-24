@@ -34,6 +34,6 @@ public class SpawnerBuyers : MonoBehaviour
         GameObject customerPrefab = buyerPrefabs[index];
 
         Instantiate(customerPrefab, transform.position, Quaternion.identity);
-        currentBuyerCount++; 
+        currentBuyerCount++;
     }
 }

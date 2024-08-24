@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlantAnimationController : MonoBehaviour
 {
-    [SerializeField] private PlayerPickup[] playerPickups; 
+    [SerializeField] private PickupObject[] playerPickups; 
 
     private Animator animator;
     private ResourceGenerator resourceGenerator;
@@ -33,7 +33,7 @@ public class PlantAnimationController : MonoBehaviour
         }
     }
 
-    private void OnResourceTaked(GameObject plant, PlayerPickup playerPickup)
+    private void OnResourceTaked(GameObject plant, PickupObject playerPickup)
     {
         if (plant == gameObject)
         {

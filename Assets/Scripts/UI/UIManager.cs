@@ -59,6 +59,7 @@ public class UIManager : MonoBehaviour
         {
             bool isActive = !additionalPanel.gameObject.activeSelf;
             SetPanelState(additionalPanel, isActive);
+            pause.RemovePause();
         }
     }
 

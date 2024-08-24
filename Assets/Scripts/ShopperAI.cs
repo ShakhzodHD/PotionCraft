@@ -6,9 +6,9 @@ using UnityEngine;
 public class ShopperAI : MonoBehaviour
 {
     [Header("Позиции точек передвижения")]
-    [SerializeField] private List<Vector3> pathToPointA;   
-    [SerializeField] private List<Vector3> pathToPointB;  
-    [SerializeField] private List<Vector3> pathToPointExit; 
+    [SerializeField] private List<Vector3> pathToPointA;
+    [SerializeField] private List<Vector3> pathToPointB;
+    [SerializeField] private List<Vector3> pathToPointExit;
 
     [Header("Позиции стендов с зельям")]
     [SerializeField] private Vector3 posStandRegen;
@@ -33,10 +33,10 @@ public class ShopperAI : MonoBehaviour
 
     public enum State
     {
-        Takeupable,
-        Wearing,
-        Buying,
-        Return
+            Takeupable,
+            Wearing,
+            Buying,
+            Return
     }
 
     private State currentState;
