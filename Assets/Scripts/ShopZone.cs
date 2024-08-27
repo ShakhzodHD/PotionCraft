@@ -5,6 +5,7 @@ public class ShopZone : MonoBehaviour
 {
     [SerializeField] private BuyZoneSystem buyZoneSystem;
     [SerializeField] private TextMeshPro priceText;
+    [SerializeField] private AudioSource audioSource;
 
     [Header("Parameters about the object being purchased")]
     [SerializeField] GameObject itemToBuy;
@@ -30,11 +31,15 @@ public class ShopZone : MonoBehaviour
                     CurrencyManager.instance.SpendCurrency(itemCost);
                     fullPrice--;
                     priceText.text = fullPrice.ToString();
-                    //Возможная логика вставки звука траты монет
+                    if (!audioSource.isPlaying)
+                    {
+                        audioSource.Play();
+                    }
                 }
                 else
                 {
                     Debug.Log("Not enough currency to buy the item!");
+                    audioSource.Pause();
                 }
             }
             frameCount = 0;
@@ -48,8 +53,11 @@ public class ShopZone : MonoBehaviour
     {
         if (fullPrice <= 0)
         {
-            itemToBuy.SetActive(true);
             buyZoneSystem.CountZone++;
+            itemToBuy.SetActive(true);
+
+            PlayerSoundManager.manager.PlaySpawnObjSound();
+
             Destroy(gameObject);
         }
     }

@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
-using UnityEngine.Events;
+﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PickupObject : MonoBehaviour
 {
@@ -62,7 +62,7 @@ public class PickupObject : MonoBehaviour
             objToPickUp.tag = "UnPickupable";
             SetTransfromObj(objToPickUp);
             meshRenderer.enabled = true;
-            //Логика проигрывания звука поднятие предмета
+            if (isPlayer) PlayerSoundManager.manager.PlayHarvestPlantSound(); 
         }
         else if (objToPickUp.CompareTag("Selling"))
         {

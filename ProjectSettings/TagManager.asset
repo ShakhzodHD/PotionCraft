@@ -13,6 +13,7 @@ TagManager:
   - Generator
   - Stand
   - Craft
+  - Floor
   layers:
   - Default
   - TransparentFX

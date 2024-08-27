@@ -91,7 +91,7 @@ public class CraftingSystem : MonoBehaviour
         if (isUseCrystal == true)
         {
             worker.SetNeedsCrystalForCraft(true);
-        }     
+        }
     }
 
     private int CountChildrenWithName(string name, Transform parent)
