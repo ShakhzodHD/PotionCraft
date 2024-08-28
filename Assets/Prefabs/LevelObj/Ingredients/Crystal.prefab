@@ -94,6 +94,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d07969232d82d1f42b4c8487b5e1a384, type: 3}
       insertIndex: -1
       addedObject: {fileID: -3325975501584899777}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d07969232d82d1f42b4c8487b5e1a384, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4917247680131621616}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d07969232d82d1f42b4c8487b5e1a384, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 38240696540500665}
   m_SourcePrefab: {fileID: 100100000, guid: d07969232d82d1f42b4c8487b5e1a384, type: 3}
 --- !u!1 &4593340457361052116 stripped
 GameObject:
@@ -138,3 +144,31 @@ MonoBehaviour:
   resourceTypeEnum: 0
   selectedIngredientEnum: 2
   selectedPotionEnum: 0
+--- !u!114 &-4917247680131621616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4593340457361052116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7c19a973f7edc4c9b2e72f8d8a5255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPlantEffect: {fileID: 5621633944473406742, guid: 27ce5c3c92f6b2f4da2c586eabea310a, type: 3}
+  particleColorFirst: {r: 0.53333336, g: 0.42745098, b: 0.52156866, a: 0.9372549}
+  particleColorSecond: {r: 0.5320754, g: 0.19999394, b: 0.12749729, a: 0.88235295}
+--- !u!114 &38240696540500665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4593340457361052116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5224529ce7aaff45b032d76a33d3515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: abfac60046899bd48814ae408ce90f0e, type: 3}

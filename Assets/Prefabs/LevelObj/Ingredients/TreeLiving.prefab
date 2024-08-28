@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4576056942781035771}
   - component: {fileID: 4903964267859730921}
   - component: {fileID: 7415937121178461226}
+  - component: {fileID: 446008397745175284}
+  - component: {fileID: 7793483643724773678}
   m_Layer: 0
   m_Name: TreeLiving
   m_TagString: Untagged
@@ -121,3 +123,31 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01, y: 0.006, z: 0.01}
   m_Center: {x: 0, y: 0.004, z: 0}
+--- !u!114 &446008397745175284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263455966247035585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7c19a973f7edc4c9b2e72f8d8a5255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPlantEffect: {fileID: 1091478983910544802, guid: 301b11982acc5884b9c36686abecad97, type: 3}
+  particleColorFirst: {r: 0.21754569, g: 0.050544634, b: 0.86415094, a: 0.93333334}
+  particleColorSecond: {r: 0.21568628, g: 0.050980393, b: 0.5372549, a: 0}
+--- !u!114 &7793483643724773678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263455966247035585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5224529ce7aaff45b032d76a33d3515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: d5c8c8b6f4941f242a7eb4f6e07e1520, type: 3}

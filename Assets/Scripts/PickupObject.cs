@@ -62,7 +62,9 @@ public class PickupObject : MonoBehaviour
             objToPickUp.tag = "UnPickupable";
             SetTransfromObj(objToPickUp);
             meshRenderer.enabled = true;
-            if (isPlayer) PlayerSoundManager.manager.PlayHarvestPlantSound(); 
+
+            objToPickUp.GetComponent<PlaySpawnEffect>().Play();
+            objToPickUp.GetComponent<PlaySpawnSound>().Play();
         }
         else if (objToPickUp.CompareTag("Selling"))
         {

@@ -18,7 +18,7 @@ public class ResourceGenerator : MonoBehaviour
 
     private bool isGenerate = true;
 
-    void Start()
+    private void Start()
     {
         StartGenerate();
     }

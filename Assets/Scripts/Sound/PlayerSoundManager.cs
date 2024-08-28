@@ -13,7 +13,6 @@ public class PlayerSoundManager : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip[] runningFloor;
     [SerializeField] private AudioClip[] runningTerrain;
-    [SerializeField] private AudioClip harvest;
     [SerializeField] private AudioClip potion;
     [SerializeField] private AudioClip spawnObj;
     [SerializeField] private AudioClip buyDecor;
@@ -81,9 +80,9 @@ public class PlayerSoundManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         isFootstepSoundPlaying = false;
     }
-    public void PlayHarvestPlantSound()
+    public void PlayHarvestSound(AudioClip clip)
     {
-        audioSource.PlayOneShot(harvest);
+        audioSource.PlayOneShot(clip);
     }
     public void PlayCraftPotionSound()
     {

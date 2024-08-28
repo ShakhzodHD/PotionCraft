@@ -1,9 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuyDecorSystem : MonoBehaviour
 {
     [SerializeField] private GameObject[] items;
     [SerializeField] private int[] prices;
+
+    [SerializeField] private Text[] pricesText;
+    private void Start()
+    {
+        for (int i = 0; i < prices.Length; i++)
+        {
+            pricesText[i].text = prices[i].ToString();
+        }
+    }
     public void BuyItem(int index)
     {
         if (items.Length != prices.Length)
@@ -15,6 +25,7 @@ public class BuyDecorSystem : MonoBehaviour
         {
             items[index].SetActive(true);
             CurrencyManager.instance.SpendCurrency(prices[index]);
+            pricesText[index].text = "Куплено!";
         }
         else
         {
