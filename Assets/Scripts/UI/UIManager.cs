@@ -6,6 +6,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private RectTransform panel1; 
     [SerializeField] private RectTransform panel2;
     [SerializeField] private RectTransform escPanel;
+    [SerializeField] private RectTransform guidPanel;
+    [SerializeField] private RectTransform tutorialPanel;
 
     [SerializeField] private RectTransform additionalPanel;
 
@@ -96,6 +98,40 @@ public class UIManager : MonoBehaviour
             bool isActive = !escPanel.gameObject.activeSelf;
             SetPanelState(escPanel, isActive);
             
+            if (isActive == true)
+            {
+                pause.SetPause();
+            }
+            else
+            {
+                pause.RemovePause();
+            }
+        }
+    }
+    public void ToggleGuidPanel()
+    {
+        if (guidPanel != null)
+        {
+            bool isActive = !guidPanel.gameObject.activeSelf;
+            SetPanelState(guidPanel, isActive);
+
+            if (isActive == true)
+            {
+                pause.SetPause();
+            }
+            else
+            {
+                pause.RemovePause();
+            }
+        }
+    }
+    public void ToggleTutorialPanel()
+    {
+        if (tutorialPanel != null)
+        {
+            bool isActive = !tutorialPanel.gameObject.activeSelf;
+            SetPanelState(tutorialPanel, isActive);
+
             if (isActive == true)
             {
                 pause.SetPause();

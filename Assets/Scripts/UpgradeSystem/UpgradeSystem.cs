@@ -35,7 +35,12 @@ public class UpgradeSystem : MonoBehaviour
         {
             upgradeManager.ApplyUpgrade(_upgrade);
             CurrencyManager.instance.SpendCurrency(upgradePrice);
+            PlayerSoundManager.manager.PlayUpgradeSound();
             UpdateUI();
+        }
+        else
+        {
+            PlayerSoundManager.manager.PlayCanselSound();
         }
     }
     public void UpgradeSpeedMovement() { Upgrade(_speedMovementUpgrade); }

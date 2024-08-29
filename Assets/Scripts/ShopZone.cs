@@ -45,6 +45,10 @@ public class ShopZone : MonoBehaviour
             frameCount = 0;
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        audioSource.Pause();
+    }
     private void Update()
     {
         BuyItem();

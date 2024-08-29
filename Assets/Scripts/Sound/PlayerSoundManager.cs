@@ -17,6 +17,7 @@ public class PlayerSoundManager : MonoBehaviour
     [SerializeField] private AudioClip spawnObj;
     [SerializeField] private AudioClip buyDecor;
     [SerializeField] private AudioClip upgradeSound;
+    [SerializeField] private AudioClip canselSound;
 
     [SerializeField] private CharacterController characterController;
 
@@ -92,12 +93,17 @@ public class PlayerSoundManager : MonoBehaviour
     {
         audioSource.PlayOneShot(spawnObj);
     }
-    public void PlayBuyDecorSound() //Called from button in UI
+    public void PlayBuyDecorSound() 
     {
         audioSource.PlayOneShot(buyDecor);
     }
-    public void PlayUpgradeSound() //Called from button in UI
+    public void PlayUpgradeSound()
+
     {
         audioSource.PlayOneShot(upgradeSound);
+    }
+    public void PlayCanselSound()
+    {
+        audioSource.PlayOneShot(canselSound);
     }
 }

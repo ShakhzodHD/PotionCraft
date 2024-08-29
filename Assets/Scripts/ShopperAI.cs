@@ -168,6 +168,8 @@ public class ShopperAI : MonoBehaviour
                 currentState = State.Return;
                 MoveToNextState();
                 isCheckingTradeable = false;
+                yield return new WaitForSeconds(0.5f);
+                exchange.isTradeable = false;
             }
         }
     }

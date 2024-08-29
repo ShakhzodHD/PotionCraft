@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6b35d0be65bed448b5f8021ef07dcc7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.11
+      value: -12.181625
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6b35d0be65bed448b5f8021ef07dcc7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000023841858
+      value: -0.0099983215
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6b35d0be65bed448b5f8021ef07dcc7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.863202
+      value: 13.58278
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6b35d0be65bed448b5f8021ef07dcc7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -204,14 +204,16 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2.5}
   pathToPointExit:
   - {x: 0, y: 0, z: 17.5}
+  - {x: -22, y: 0, z: 17.5}
   posStandRegen: {x: -5.5, y: 0, z: 6.5}
   posStandPower: {x: 5.5, y: 0, z: 6.5}
   posStandNecromancy: {x: 5.5, y: 0, z: 2.5}
   posStandCurse: {x: -5.5, y: 0, z: 2.5}
   currentNeed: 
   exchange: {fileID: 0}
+  buyers: {fileID: 0}
   movementSpeed: 2
-  timeOfDestroying: 7
+  timeOfDestroying: 10
 --- !u!114 &5624624880745638763
 MonoBehaviour:
   m_ObjectHideFlags: 0

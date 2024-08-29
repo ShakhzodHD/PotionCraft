@@ -50,7 +50,6 @@ public class ProcessExchange : MonoBehaviour
         {
             CurrencyManager.instance.AddCurrency(potionPrice.GetPrice());
         }
-
         isTradeable = true;
         inReadyPlayer = false;
         inReadyBuyer = false;

@@ -203,14 +203,16 @@ MonoBehaviour:
   - {x: 0, y: 0, z: -2.5}
   pathToPointExit:
   - {x: 0, y: 0, z: 17.5}
+  - {x: 15, y: 0, z: 17.5}
   posStandRegen: {x: -5.5, y: 0, z: 6.5}
   posStandPower: {x: 5.5, y: 0, z: 6.5}
   posStandNecromancy: {x: 5.5, y: 0, z: 2.5}
   posStandCurse: {x: -5.5, y: 0, z: 2.5}
   currentNeed: 
   exchange: {fileID: 0}
+  buyers: {fileID: 0}
   movementSpeed: 2
-  timeOfDestroying: 7
+  timeOfDestroying: 10
 --- !u!114 &9118526508747170918
 MonoBehaviour:
   m_ObjectHideFlags: 0

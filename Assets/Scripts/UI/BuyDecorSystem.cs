@@ -25,10 +25,12 @@ public class BuyDecorSystem : MonoBehaviour
         {
             items[index].SetActive(true);
             CurrencyManager.instance.SpendCurrency(prices[index]);
+            PlayerSoundManager.manager.PlayBuyDecorSound();
             pricesText[index].text = "Куплено!";
         }
         else
         {
+            PlayerSoundManager.manager.PlayCanselSound();
             Debug.Log("Not enough gold");
         }
     }
