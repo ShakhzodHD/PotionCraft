@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Resource.cs" />
     <Compile Include="Assets\Scripts\Sound\PlaySpawnSound.cs" />
     <Compile Include="Assets\Scripts\ShopZone.cs" />
+    <Compile Include="Assets\Scripts\DialogueSystem\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\RealizeUpgrades\CapacityUpgrade.cs" />
     <Compile Include="Assets\Scripts\Animation\CarryngAnimation.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\RealizeUpgrades\SpeedActionUpgrade.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Assets\Scripts\UpgradeSystem\IUpgrade.cs" />
     <Compile Include="Assets\Scripts\Sound\PlayerSoundManager.cs" />
     <Compile Include="Assets\Scripts\ProcessExchange.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonPulse.cs" />
     <Compile Include="Assets\Scripts\Animtaion\AnimationDoor.cs" />
     <Compile Include="Assets\Scripts\CraftingSystem.cs" />
     <Compile Include="Assets\Scripts\ShopperAI.cs" />

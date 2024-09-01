@@ -2,6 +2,15 @@ using UnityEngine;
 
 public class PauseSystem : MonoBehaviour
 {
+    private static PauseSystem instance;
+    public static PauseSystem Instance
+    {
+        get { return instance; }
+    }
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         RemovePause();
