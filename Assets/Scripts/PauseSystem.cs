@@ -11,10 +11,6 @@ public class PauseSystem : MonoBehaviour
     {
         instance = this;
     }
-    private void Start()
-    {
-        RemovePause();
-    }
     public void SetPause()
     {
         Time.timeScale = 0.0f;

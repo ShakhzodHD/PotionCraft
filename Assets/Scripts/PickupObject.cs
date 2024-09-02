@@ -69,6 +69,11 @@ public class PickupObject : MonoBehaviour
         else if (objToPickUp.CompareTag("Selling"))
         {
             SetTransfromObj(objToPickUp);
+
+            if (ActivatorDialogue.instanse != null)
+            {
+                ActivatorDialogue.instanse.Craft();
+            }
         }
 
         ResetPickupProgressUI();

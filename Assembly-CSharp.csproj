@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\UpgradeSystem\RealizeUpgrades\SpeedMovementUpgrade.cs" />
     <Compile Include="Assets\Scripts\BuyZoneSystem\ChangeColors.cs" />
     <Compile Include="Assets\Scripts\ScenesSystem\SwitchingLevels.cs" />
+    <Compile Include="Assets\Scripts\DialogueSystem\ActivatorDialogue.cs" />
     <Compile Include="Assets\Scripts\PauseSystem.cs" />
     <Compile Include="Assets\Scripts\StorageManager.cs" />
     <Compile Include="Assets\Scripts\BuyZoneSystem\ActivatorChangeColor.cs" />

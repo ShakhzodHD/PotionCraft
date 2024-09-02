@@ -15661,7 +15661,6 @@ GameObject:
   - component: {fileID: 1438762619}
   - component: {fileID: 1438762618}
   - component: {fileID: 1438762617}
-  - component: {fileID: 1438762621}
   m_Layer: 5
   m_Name: ButtonBook
   m_TagString: Untagged
@@ -15783,21 +15782,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438762615}
   m_CullTransparentMesh: 1
---- !u!114 &1438762621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438762615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37b55c84bd301a148bfcb92ba8487509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startColor: {r: 1, g: 1, b: 1, a: 1}
-  endColor: {r: 1, g: 0, b: 0, a: 1}
-  pulseSpeed: 2
 --- !u!1 &1456090620
 GameObject:
   m_ObjectHideFlags: 0
@@ -17203,6 +17187,8 @@ MonoBehaviour:
   pos1: {fileID: 1279678815}
   pos2: {fileID: 1377201526}
   pos3: {fileID: 1268362768}
+  pos4: {fileID: 1551112087}
+  buttonForPulse: {fileID: 1438762615}
 --- !u!1 &1558663305
 GameObject:
   m_ObjectHideFlags: 0

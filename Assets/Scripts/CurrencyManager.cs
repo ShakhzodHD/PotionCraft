@@ -54,8 +54,4 @@ public class CurrencyManager : MonoBehaviour
             Debug.LogWarning("Not enough currency!");
         }
     }
-    public void InfinityGold()
-    {
-        currencyAmount = 10000;
-    }
 }

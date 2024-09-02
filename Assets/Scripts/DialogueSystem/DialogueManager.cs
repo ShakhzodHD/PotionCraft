@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager instance;
     public Text dialogueText; // —сылка на Text элемент дл€ отображени€ диалогов
     public GameObject dialoguePanel; // —сылка на панель дл€ диалогов
     public List<string> dialogues; // —писок строк с диалогами
@@ -14,8 +15,15 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Transform pos1;
     [SerializeField] private Transform pos2;
     [SerializeField] private Transform pos3;
+    [SerializeField] private Transform pos4;
+
+    [SerializeField] private GameObject buttonForPulse;
 
     private Transform previousCameraTarget;
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Update()
     {
@@ -37,10 +45,13 @@ public class DialogueManager : MonoBehaviour
     }
     public void ContinueDualogue()
     {
+        PauseSystem.Instance.SetPause();
         dialoguePanel.SetActive(true);
     }
     public void ShowDialogue()
     {
+        PauseSystem.Instance.SetPause();
+
         if (currentDialogueIndex == 2)
         {
             cameraController.target = pos1.transform;
@@ -52,9 +63,12 @@ public class DialogueManager : MonoBehaviour
         if (currentDialogueIndex == 4)
         {
             cameraController.target = previousCameraTarget.transform;
+            buttonForPulse.AddComponent<ButtonPulseColor>();
+
         }
         if (currentDialogueIndex == 5)
         {
+            Destroy(buttonForPulse.GetComponent<ButtonPulseColor>());
             EndDialogue();
         }
         if (currentDialogueIndex == 6)
@@ -88,5 +102,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         dialoguePanel.SetActive(false);
+
+        PauseSystem.Instance.RemovePause();
     }
 }

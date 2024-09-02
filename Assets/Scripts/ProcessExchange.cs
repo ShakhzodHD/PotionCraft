@@ -55,6 +55,11 @@ public class ProcessExchange : MonoBehaviour
         inReadyBuyer = false;
         potionPrice = null;
         UpdatePutProgressUI(0);
+
+        if (ActivatorDialogue.instanse != null)
+        {
+            ActivatorDialogue.instanse.Sell();
+        }
     }
     public void UpdatePutProgressUI(float progress)
     {

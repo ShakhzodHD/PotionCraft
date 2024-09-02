@@ -5,7 +5,7 @@ public class ButtonPulseColor : MonoBehaviour
 {
     [SerializeField] private Color startColor = Color.white;
     [SerializeField] private Color endColor = Color.red;
-    [SerializeField] private float pulseSpeed = 1.0f; 
+    [SerializeField] private float pulseSpeed = 2.0f; 
 
     private Image buttonImage;
     private float lerpTime;
@@ -23,5 +23,9 @@ public class ButtonPulseColor : MonoBehaviour
 
         // Интерполируем между startColor и endColor на основе lerpValue
         buttonImage.color = Color.Lerp(startColor, endColor, lerpValue);
+    }
+    private void OnDestroy()
+    {
+        buttonImage.color = startColor;
     }
 }
