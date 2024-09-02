@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,27 +6,38 @@ public class ButtonPulseColor : MonoBehaviour
 {
     [SerializeField] private Color startColor = Color.white;
     [SerializeField] private Color endColor = Color.red;
-    [SerializeField] private float pulseSpeed = 2.0f; 
+    [SerializeField] private float pulseDuration = 0.45f; 
 
     private Image buttonImage;
-    private float lerpTime;
 
+    private float colorFactor; 
     private void Start()
     {
-        buttonImage = GetComponent<Image>();  // Получаем компонент Image кнопки
-        lerpTime = 0f;  // Изначально начнем с начала интервала
+        buttonImage = GetComponent<Image>();
+        StartCoroutine(PulseColor());
     }
-
-    private void Update()
+    private IEnumerator PulseColor()
     {
-        lerpTime += Time.deltaTime * pulseSpeed;  // Увеличиваем время пульсации
-        float lerpValue = Mathf.PingPong(lerpTime, 1);  // Получаем значение для интерполяции от 0 до 1
+        while (true) 
+        {
+            for (float t = 0; t < pulseDuration; t += Time.unscaledDeltaTime)
+            {
+                float normalizedTime = t / pulseDuration; 
+                buttonImage.color = Color.Lerp(startColor, endColor, normalizedTime);
+                yield return null; 
+            }
 
-        // Интерполируем между startColor и endColor на основе lerpValue
-        buttonImage.color = Color.Lerp(startColor, endColor, lerpValue);
+            for (float t = 0; t < pulseDuration; t += Time.unscaledDeltaTime)
+            {
+                float normalizedTime = t / pulseDuration;
+                buttonImage.color = Color.Lerp(endColor, startColor, normalizedTime);
+                yield return null;
+            }
+        }
     }
     private void OnDestroy()
     {
         buttonImage.color = startColor;
+
     }
 }

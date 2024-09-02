@@ -24,14 +24,6 @@ public class DialogueManager : MonoBehaviour
     {
         instance = this;
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            ContinueDualogue();
-        }
-    }
     private void Start()
     {
         StartDialogue();
