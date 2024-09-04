@@ -114,15 +114,6 @@ public class UIManager : MonoBehaviour
         {
             bool isActive = !guidPanel.gameObject.activeSelf;
             SetPanelState(guidPanel, isActive);
-
-            if (isActive == true)
-            {
-                pause.SetPause();
-            }
-            else
-            {
-                pause.RemovePause();
-            }
         }
     }
     public void ToggleTutorialPanel()

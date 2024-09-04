@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\CurrencyManager.cs" />
     <Compile Include="Assets\Scripts\Animation\GoblinAnimationController.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\RealizeUpgrades\SpeedMovementUpgrade.cs" />
+    <Compile Include="Assets\Resources\UI Images\BookPages\CurlPagelEffect.cs" />
     <Compile Include="Assets\Scripts\BuyZoneSystem\ChangeColors.cs" />
     <Compile Include="Assets\Scripts\ScenesSystem\SwitchingLevels.cs" />
     <Compile Include="Assets\Scripts\DialogueSystem\ActivatorDialogue.cs" />

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class UISwitchingPages : MonoBehaviour
@@ -10,10 +11,21 @@ public class UISwitchingPages : MonoBehaviour
     }
     public void Switching(int index)
     {
+        StartCoroutine(Enable(index));
+        StartCoroutine(Disable());
+    }
+    private IEnumerator Enable(int index)
+    {
+        yield return new WaitForSeconds(1.5f);
+        panels[index].gameObject.SetActive(true);
+    }
+    private IEnumerator Disable()
+    {
+        yield return new WaitForSeconds(0.5f);
+
         for (int i = 0; i < panels.Length; i++)
         {
             panels[i].gameObject.SetActive(false);
         }
-        panels[index].gameObject.SetActive(true);
     }
 }

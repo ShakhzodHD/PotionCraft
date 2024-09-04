@@ -26,7 +26,7 @@ public class DialogueManager : MonoBehaviour
     }
     private void Start()
     {
-        StartDialogue();
+        //StartDialogue();
         previousCameraTarget = cameraController.target;
     }
     public void StartDialogue()
