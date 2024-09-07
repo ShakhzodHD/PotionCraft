@@ -68,15 +68,15 @@
     <Compile Include="Assets\Scripts\UpgradeSystem\Upgrade.cs" />
     <Compile Include="Assets\Scripts\Sound\MusicManager.cs" />
     <Compile Include="Assets\Scripts\NPC\GoblinSeller.cs" />
+    <Compile Include="Assets\Scripts\NPC\VisualizationDesires\VisualozationLookAtCamera.cs" />
     <Compile Include="Assets\Scripts\Sound\UISoundManager.cs" />
     <Compile Include="Assets\Scripts\CurrencyManager.cs" />
     <Compile Include="Assets\Scripts\Animation\GoblinAnimationController.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\RealizeUpgrades\SpeedMovementUpgrade.cs" />
-    <Compile Include="Assets\Resources\UI Images\BookPages\CurlPagelEffect.cs" />
     <Compile Include="Assets\Scripts\BuyZoneSystem\ChangeColors.cs" />
+    <Compile Include="Assets\Scripts\NPC\VisualizationDesires\VisualizationDesires.cs" />
     <Compile Include="Assets\Scripts\ScenesSystem\SwitchingLevels.cs" />
     <Compile Include="Assets\Scripts\DialogueSystem\ActivatorDialogue.cs" />
-    <Compile Include="Assets\Scripts\UI\UISwitchingPages.cs" />
     <Compile Include="Assets\Scripts\PauseSystem.cs" />
     <Compile Include="Assets\Scripts\StorageManager.cs" />
     <Compile Include="Assets\Scripts\BuyZoneSystem\ActivatorChangeColor.cs" />
@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\DialogueSystem\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\RealizeUpgrades\CapacityUpgrade.cs" />
     <Compile Include="Assets\Scripts\Animation\CarryngAnimation.cs" />
+    <Compile Include="Assets\Scripts\NPC\ShopperAI.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\RealizeUpgrades\SpeedActionUpgrade.cs" />
     <Compile Include="Assets\Scripts\BuyerPick.cs" />
     <Compile Include="Assets\Scripts\TriggerZoneForExchange.cs" />
@@ -98,9 +99,9 @@
     <Compile Include="Assets\Scripts\Sound\PlayerSoundManager.cs" />
     <Compile Include="Assets\Scripts\ProcessExchange.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonPulse.cs" />
+    <Compile Include="Assets\Scripts\UI\RecipeBook\CurlPagelEffect.cs" />
     <Compile Include="Assets\Scripts\Animtaion\AnimationDoor.cs" />
     <Compile Include="Assets\Scripts\CraftingSystem.cs" />
-    <Compile Include="Assets\Scripts\ShopperAI.cs" />
     <Compile Include="Assets\Scripts\UI\CurrencyUI.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\UpgradeManager.cs" />
     <Compile Include="Assets\Scripts\StoragePlants.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\TriggerZoneUI.cs" />
+    <Compile Include="Assets\Scripts\UI\RecipeBook\UISwitchingPages.cs" />
     <Compile Include="Assets\Scripts\UI\TogglePanel.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\UI\RecruitGoblinSystem.cs" />

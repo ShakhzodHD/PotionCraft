@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 674f7f406814aa045b2def0cbe0a0950, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6838681
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 674f7f406814aa045b2def0cbe0a0950, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 674f7f406814aa045b2def0cbe0a0950, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.2738714
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 674f7f406814aa045b2def0cbe0a0950, type: 3}
       propertyPath: m_LocalRotation.w
@@ -95,6 +95,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 674f7f406814aa045b2def0cbe0a0950, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5738308236744015454}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 674f7f406814aa045b2def0cbe0a0950, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6860037620114569566}
   m_SourcePrefab: {fileID: 100100000, guid: 674f7f406814aa045b2def0cbe0a0950, type: 3}
 --- !u!1 &5509538811648904423 stripped
 GameObject:
@@ -197,8 +200,6 @@ MonoBehaviour:
   posStandNecromancy: {x: 5.5, y: 0, z: 2.5}
   posStandCurse: {x: -5.5, y: 0, z: 2.5}
   currentNeed: 
-  exchange: {fileID: 0}
-  buyers: {fileID: 0}
   movementSpeed: 2
   timeOfDestroying: 10
 --- !u!114 &5738308236744015454
@@ -215,3 +216,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopper: {fileID: 0}
   isItemInPurchase: 0
+--- !u!114 &6860037620114569566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5509538811648904423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e05ac00ead0f74ca00bda7ddc17cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualPrefab: {fileID: 1564304974391125698, guid: 17bbfd18a7996024fa74a9777be646ec, type: 3}
+  logos:
+  - {fileID: 985615140, guid: eb4ccc91a34e7d14e8590f013cecbffe, type: 3}
+  - {fileID: -575909430, guid: eb4ccc91a34e7d14e8590f013cecbffe, type: 3}
+  - {fileID: -896730490, guid: eb4ccc91a34e7d14e8590f013cecbffe, type: 3}
+  - {fileID: 1367133993, guid: eb4ccc91a34e7d14e8590f013cecbffe, type: 3}

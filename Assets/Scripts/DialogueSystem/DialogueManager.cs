@@ -5,10 +5,10 @@ using System.Collections.Generic;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
-    public Text dialogueText; // Ссылка на Text элемент для отображения диалогов
-    public GameObject dialoguePanel; // Ссылка на панель для диалогов
-    public List<string> dialogues; // Список строк с диалогами
-    public int currentDialogueIndex = 0; // Индекс текущего диалога}
+    public Text dialogueText; 
+    public GameObject dialoguePanel; 
+    public List<string> dialogues; 
+    public int currentDialogueIndex = 0; 
 
     [SerializeField] private CameraController cameraController;
 
@@ -26,13 +26,13 @@ public class DialogueManager : MonoBehaviour
     }
     private void Start()
     {
-        //StartDialogue();
+        StartDialogue();
         previousCameraTarget = cameraController.target;
     }
     public void StartDialogue()
     {
-        dialoguePanel.SetActive(true); // Показать панель диалога
-        currentDialogueIndex = 0; // Начать с первого диалога
+        dialoguePanel.SetActive(true); 
+        currentDialogueIndex = 0; 
         ShowDialogue();
     }
     public void ContinueDualogue()
@@ -77,7 +77,7 @@ public class DialogueManager : MonoBehaviour
         }
         if (currentDialogueIndex < dialogues.Count)
         {
-            dialogueText.text = dialogues[currentDialogueIndex]; // Отображать текущий диалог
+            dialogueText.text = dialogues[currentDialogueIndex]; 
         }
         else
         {

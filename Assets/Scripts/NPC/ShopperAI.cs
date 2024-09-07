@@ -20,9 +20,10 @@ public class ShopperAI : MonoBehaviour
     public string currentNeed;
     public static int numberStands = 4;
 
-    [SerializeField] private ProcessExchange exchange;
-    [SerializeField] private SpawnerBuyers buyers;
+    private ProcessExchange exchange;
+    private SpawnerBuyers buyers;
 
+    private VisualizationDesires desires;
     private BuyerPick buyerPick;
     private Animator animator;
 
@@ -47,6 +48,7 @@ public class ShopperAI : MonoBehaviour
     {
         buyerPick = GetComponent<BuyerPick>();
         animator = GetComponent<Animator>();
+        desires = GetComponent<VisualizationDesires>();
         exchange = FindObjectOfType<ProcessExchange>();
         buyers = FindObjectOfType<SpawnerBuyers>();
     }
@@ -213,6 +215,8 @@ public class ShopperAI : MonoBehaviour
     {
         int randomIndex = UnityEngine.Random.Range(0, possibleNeeds.Length);
         currentNeed = possibleNeeds[randomIndex];
+
+        desires.AddVisual(currentNeed);
     }
 
     private void DestroyObj()
