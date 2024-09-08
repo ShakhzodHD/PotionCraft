@@ -25,27 +25,37 @@ public class UpgradeSystem : MonoBehaviour
     {
         UpdateUI();
     }
-    private void Upgrade(IUpgrade _upgrade)
+    private void Upgrade(IUpgrade _upgrade, bool isReward)
     {
-        if (_upgrade.GetPrice() == -1) return;
-
-        int upgradePrice = upgradeManager.GetUpgradePrice(_upgrade);
-
-        if (CurrencyManager.instance.CanAfford(upgradePrice))
+        if (!isReward)
         {
-            upgradeManager.ApplyUpgrade(_upgrade);
-            CurrencyManager.instance.SpendCurrency(upgradePrice);
-            PlayerSoundManager.manager.PlayUpgradeSound();
-            UpdateUI();
+            if (_upgrade.GetPrice() == -1) return;
+
+            int upgradePrice = upgradeManager.GetUpgradePrice(_upgrade);
+
+            if (CurrencyManager.instance.CanAfford(upgradePrice))
+            {
+                upgradeManager.ApplyUpgrade(_upgrade);
+                CurrencyManager.instance.SpendCurrency(upgradePrice);
+                PlayerSoundManager.manager.PlayUpgradeSound();
+                UpdateUI();
+            }
+            else
+            {
+                PlayerSoundManager.manager.PlayCanselSound();
+            }
         }
         else
         {
-            PlayerSoundManager.manager.PlayCanselSound();
+            upgradeManager.ApplyUpgrade(_upgrade);
+            PlayerSoundManager.manager.PlayUpgradeSound();
+            UpdateUI();
         }
+        
     }
-    public void UpgradeSpeedMovement() { Upgrade(_speedMovementUpgrade); }
-    public void UpgradeCapacity() { Upgrade(_capacityUpgrade); }
-    public void UpgradeSpeedAction() { Upgrade(_speedActionUpgrade); }
+    public void UpgradeSpeedMovement(bool isReward) { Upgrade(_speedMovementUpgrade, isReward); }
+    public void UpgradeCapacity(bool isReward) { Upgrade(_capacityUpgrade, isReward); }
+    public void UpgradeSpeedAction(bool isReward) { Upgrade(_speedActionUpgrade, isReward); }
     private void UpdateUI()
     {
         UpdateUpgradePrice(_speedPriceText, _speedMovementUpgrade);
