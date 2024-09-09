@@ -1,29 +1,38 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class UpgradeSystem : MonoBehaviour
 {
     UpgradeManager upgradeManager = new UpgradeManager();
 
-    [Header("Ссылки на обьекты с улучшениями")]
+    [Header("РЎСЃС‹Р»РєРё РЅР° РѕР±СЊРµРєС‚С‹ СЃ СѓР»СѓС‡С€РµРЅРёСЏРјРё")]
     [SerializeField] private SpeedMovementUpgrade _speedMovementUpgrade;
     [SerializeField] private CapacityUpgrade _capacityUpgrade;
     [SerializeField] private SpeedActionUpgrade _speedActionUpgrade;
 
-    [Header("Ссылки на текст в UI")]
+    [Header("РЎСЃС‹Р»РєРё РЅР° С‚РµРєСЃС‚ РІ UI")]
 
-    [Header("Цены")]
+    [Header("Р¦РµРЅС‹")]
     [SerializeField] private Text _speedPriceText;
     [SerializeField] private Text _capacityPriceText;
     [SerializeField] private Text _actionPriceText;
-    [Header("Названия")]
+    [Header("РќР°Р·РІР°РЅРёСЏ")]
     [SerializeField] private Text nameSpeedMovementText;
     [SerializeField] private Text nameCapacityText;
     [SerializeField] private Text nameSpeedActionText;
 
+    private string _speedMovementText;
+    private string _capacityText;
+    private string _speedActionText;
+
+    private string _priceText;
+    private string _finishText;
+
     private void Start()
     {
         UpdateUI();
+        UpdateLanguage();
     }
     private void Upgrade(IUpgrade _upgrade, bool isReward)
     {
@@ -58,13 +67,15 @@ public class UpgradeSystem : MonoBehaviour
     public void UpgradeSpeedAction(bool isReward) { Upgrade(_speedActionUpgrade, isReward); }
     private void UpdateUI()
     {
+        UpdateLanguage();
+
         UpdateUpgradePrice(_speedPriceText, _speedMovementUpgrade);
         UpdateUpgradePrice(_capacityPriceText, _capacityUpgrade);
         UpdateUpgradePrice(_actionPriceText, _speedActionUpgrade);
 
-        UpdateNameText(nameSpeedMovementText, _speedMovementUpgrade, "Скорость передвижения ");
-        UpdateNameText(nameCapacityText, _capacityUpgrade, "Грузоподъемность ");
-        UpdateNameText(nameSpeedActionText, _speedActionUpgrade, "Скорость действия ");
+        UpdateNameText(nameSpeedMovementText, _speedMovementUpgrade, _speedMovementText);
+        UpdateNameText(nameCapacityText, _capacityUpgrade, _capacityText);
+        UpdateNameText(nameSpeedActionText, _speedActionUpgrade, _speedActionText);
     }
     private void UpdateUpgradePrice(Text text, IUpgrade _upgrade)
     {
@@ -73,11 +84,11 @@ public class UpgradeSystem : MonoBehaviour
             int price = _upgrade.GetPrice();
             if (price == -1)
             {
-                text.text = "Достигнут максимальный уровень";
+                text.text = _finishText;
             }
             else
             {
-                text.text = "Цена: " + price;
+                text.text = _priceText + price;
             }
         }
     }
@@ -94,6 +105,52 @@ public class UpgradeSystem : MonoBehaviour
             {
                 text.text = name + level.ToString();
             }
+        }
+    }
+    private void UpdateLanguage()
+    {
+        switch (YandexGame.lang)
+        {
+            case "ru":
+                _speedMovementText = "РЎРєРѕСЂРѕСЃС‚СЊ РїРµСЂРµРґРІРёР¶РµРЅРёРµ ";
+                _capacityText = "Р“СЂСѓРґРѕРїРѕРґСЊРµРјРЅРѕСЃС‚СЊ ";
+                _speedActionText = "РЎРєРѕСЂРѕСЃС‚СЊ СЃР±РѕСЂР° ";
+
+                _priceText = "Р¦РµРЅР°: ";
+                _finishText = "Р”РѕСЃС‚РёРіРЅСѓС‚ РјР°РєСЃРёРјСѓРј";
+                break;
+            case "en":
+                _speedMovementText = "Movement Speed ";
+                _capacityText = "Carrying Capacity " ;
+                _speedActionText = "Harvesting Speed ";
+
+                _priceText = "Price: ";
+                _finishText = "Maximum reached";
+                break;
+            case "tr":
+                _speedMovementText = "Hareket HД±zД± ";
+                _capacityText = "YГјk Kapasitesi ";
+                _speedActionText = "Hasat HД±zД± ";
+
+                _priceText = "Fiyat: ";
+                _finishText = "Maksimuma ulaЕџД±ldД±";
+                break;
+            case "kk":
+                _speedMovementText = "ТљРѕР·Т“Р°Р»Сѓ Р¶С‹Р»РґР°РјРґС‹Т“С‹ ";
+                _capacityText = "Р–ТЇРє РєУ©С‚РµСЂРіС–С€С‚С–Рє ";
+                _speedActionText = "Р–РёРЅР°Сѓ Р¶С‹Р»РґР°РјРґС‹Т“С‹ ";
+
+                _priceText = "Р‘Р°Т“Р°: ";
+                _finishText = "РЁРµРєРєРµ Р¶РµС‚С‚С–";
+                break;
+            default:
+                _speedMovementText = "Movement Speed ";
+                _capacityText = "Carrying Capacity ";
+                _speedActionText = "Harvesting Speed ";
+
+                _priceText = "Price: ";
+                _finishText = "Maximum level reached";
+                break;
         }
     }
 }

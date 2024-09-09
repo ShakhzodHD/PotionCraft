@@ -104,10 +104,10 @@
     <Compile Include="Assets\Scripts\StorageManager.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\ReceivingPurchaseExample.cs" />
     <Compile Include="Assets\Scripts\BuyZoneSystem\ActivatorChangeColor.cs" />
+    <Compile Include="Assets\YandexGame\ScriptsYG\Payments\PurchaseYG.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\UpgradeSystem.cs" />
     <Compile Include="Assets\Scripts\ThrowingObjects.cs" />
     <Compile Include="Assets\Scripts\Animation\Plant\PlantAnimationController.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\Payments\PurchaseYG.cs" />
     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\Scripts\Resource.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\TimerBeforeAdsYG.cs" />
@@ -121,8 +121,8 @@
     <Compile Include="Assets\YandexGame\WorkingData\SavesYG.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\RealizeUpgrades\CapacityUpgrade.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\ActivityOnAuthorizationYG.cs" />
-    <Compile Include="Assets\Scripts\Animation\CarryngAnimation.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Leaderboards\LBPlayerDataYG.cs" />
+    <Compile Include="Assets\Scripts\Animation\CarryngAnimation.cs" />
     <Compile Include="Assets\Scripts\NPC\ShopperAI.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\RealizeUpgrades\SpeedActionUpgrade.cs" />
     <Compile Include="Assets\Scripts\BuyerPick.cs" />
@@ -164,6 +164,7 @@
     <Compile Include="Assets\YandexGame\ScriptsYG\Leaderboards\InternalScripts\UtilsLB.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\DebugViewing.cs" />
+    <Compile Include="Assets\Ads\YGInterlineAds.cs" />
     <Compile Include="Assets\Scripts\UI\RecruitGoblinSystem.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\LanguageYG.cs" />
     <Compile Include="Assets\Scripts\StorageCrystal.cs" />

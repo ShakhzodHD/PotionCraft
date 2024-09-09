@@ -1,13 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using YG;
 
 public class DialogueManager : MonoBehaviour
 {
+    //Код полное дерьмо в падлу рефакторить
     public static DialogueManager instance;
     public Text dialogueText; 
     public GameObject dialoguePanel; 
-    public List<string> dialogues; 
+    [SerializeField] private List<string> dialogues;
+    [SerializeField] private List<string> dialoguesEn;
+    [SerializeField] private List<string> dialoguesTr;
+    [SerializeField] private List<string> dialoguesKk;
     public int currentDialogueIndex = 0; 
 
     [SerializeField] private CameraController cameraController;
@@ -77,7 +82,24 @@ public class DialogueManager : MonoBehaviour
         }
         if (currentDialogueIndex < dialogues.Count)
         {
-            dialogueText.text = dialogues[currentDialogueIndex]; 
+            switch (YandexGame.lang)
+            {
+                case "ru":
+                    dialogueText.text = dialogues[currentDialogueIndex];
+                    break;
+                case "en":
+                    dialogueText.text = dialoguesEn[currentDialogueIndex];
+                    break;
+                case "tr":
+                    dialogueText.text = dialoguesTr[currentDialogueIndex];
+                    break;
+                case "kk":
+                    dialogueText.text = dialoguesKk[currentDialogueIndex];
+                    break;
+                default:
+                    dialogueText.text = dialoguesEn[currentDialogueIndex];
+                    break;
+            }
         }
         else
         {
