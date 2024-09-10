@@ -4,7 +4,8 @@ using YG;
 
 public class BuyDecorSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject[] items;
+    public GameObject[] items;
+
     [SerializeField] private int[] prices;
 
     [SerializeField] private Text[] pricesText;
@@ -31,13 +32,19 @@ public class BuyDecorSystem : MonoBehaviour
             items[index].SetActive(true);
             CurrencyManager.instance.SpendCurrency(prices[index]);
             PlayerSoundManager.manager.PlayBuyDecorSound();
-            pricesText[index].text = _priceTextLanguage;
+            SetSellText(index);
+
+            SaveManager.instance.SaveDecor(index);
         }
         else
         {
             PlayerSoundManager.manager.PlayCanselSound();
             Debug.Log("Not enough gold");
         }
+    }
+    public void SetSellText(int index)
+    {
+        pricesText[index].text = _priceTextLanguage;
     }
     private void PickLanguage()
     {

@@ -66,7 +66,6 @@
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\LangYGAdditionalText.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\ForVisualScriptYG.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Payments\ConsumePurchasesYG.cs" />
-    <Compile Include="Assets\YandexGame\Example\Scripts\SaverTest.cs" />
     <Compile Include="Assets\Scripts\PickupObject.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\OpenAuthorizationDialog.cs" />
     <Compile Include="Assets\Scripts\SpawnerBuyers.cs" />
@@ -104,6 +103,7 @@
     <Compile Include="Assets\Scripts\StorageManager.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\ReceivingPurchaseExample.cs" />
     <Compile Include="Assets\Scripts\BuyZoneSystem\ActivatorChangeColor.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem\SaveManager.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Payments\PurchaseYG.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\UpgradeSystem.cs" />
     <Compile Include="Assets\Scripts\ThrowingObjects.cs" />
@@ -158,6 +158,7 @@
     <Compile Include="Assets\YandexGame\ScriptsYG\Inside\CallingAnEvent.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\YandexMetricaExample.cs" />
     <Compile Include="Assets\Scripts\UI\TriggerZoneUI.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem\LoadManager.cs" />
     <Compile Include="Assets\Scripts\UI\RecipeBook\UISwitchingPages.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\NewResultLBExample.cs" />
     <Compile Include="Assets\Scripts\UI\TogglePanel.cs" />

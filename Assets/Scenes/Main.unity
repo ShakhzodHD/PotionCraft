@@ -4552,6 +4552,79 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &309960378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 309960379}
+  - component: {fileID: 309960380}
+  - component: {fileID: 309960381}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &309960379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309960378}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1207462193}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309960380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309960378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c9340fd6e6e394887aa2351c9e19c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &309960381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309960378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1218e0d55fddcf4baa32d920e2cc7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buyDecorSystem: {fileID: 1558663307}
+  recruitGoblinSystem: {fileID: 1778548600}
+  plants:
+  - {fileID: 94279206}
+  - {fileID: 1206078608}
+  - {fileID: 1537000180}
+  crafts:
+  - {fileID: 832587949}
+  - {fileID: 2029565542}
+  - {fileID: 1354964847}
+  - {fileID: 386691408}
+  stands:
+  - {fileID: 832587949}
+  - {fileID: 1234476019}
+  - {fileID: 1985771248}
+  - {fileID: 993248800}
 --- !u!1 &323956321
 GameObject:
   m_ObjectHideFlags: 0
@@ -15014,6 +15087,7 @@ Transform:
   - {fileID: 930798224}
   - {fileID: 1881160803}
   - {fileID: 834365353}
+  - {fileID: 309960379}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1207499284

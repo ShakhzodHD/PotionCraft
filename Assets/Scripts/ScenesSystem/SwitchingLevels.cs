@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SwitchingLevels : MonoBehaviour
 {
-    public void LoadLevel(string sceneName)
+    public void LoadLevel(int index)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(index);
     }
 }

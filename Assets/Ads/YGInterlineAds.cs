@@ -22,7 +22,6 @@ public class YGInterlineAds : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log(YandexGame.timerShowAd);
             if (YandexGame.timerShowAd >= 60 && !isAdShowing)
             {
                 adsPanel.gameObject.SetActive(true);

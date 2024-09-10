@@ -10,25 +10,23 @@ namespace YG
         public string language = "ru";
         public bool promptDone;
 
-        // Тестовые сохранения для демо сцены
-        // Можно удалить этот код, но тогда удалите и демо (папка Example)
-        public int money = 1;                       // Можно задать полям значения по умолчанию
-        public string newPlayerName = "Hello!";
-        public bool[] openLevels = new bool[3];
-
         // Ваши сохранения
 
-        // ...
-
-        // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
+        public int goldAmount;
+        public bool[] _openPlants = new bool[3];
+        public bool[] _openCrafts = new bool[4]; 
+        public bool[] _openStands = new bool[4];
+        public bool[] _openRecruit = new bool[5];
+        public bool[] _openDecor = new bool[4];
+        //update system
+        //buy zone system
+        //value in buy zone
 
 
         // Вы можете выполнить какие то действия при загрузке сохранений
         public SavesYG()
         {
-            // Допустим, задать значения по умолчанию для отдельных элементов массива
-
-            openLevels[1] = true;
+            _openStands[0] = true;
         }
     }
 }

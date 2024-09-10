@@ -54,4 +54,11 @@ public class CurrencyManager : MonoBehaviour
             Debug.LogWarning("Not enough currency!");
         }
     }
+    public void LoadGold(int amount)
+    {
+        if (amount > 0)
+        {
+            currencyAmount = amount;
+        }
+    }
 }

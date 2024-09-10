@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class RecruitGoblinSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject[] goblins;
+    public GameObject[] goblins;
+
     [SerializeField] private int[] pricesGoblins;
     public void BuyGoblin(int index)
     {
@@ -11,6 +12,8 @@ public class RecruitGoblinSystem : MonoBehaviour
         {
             goblins[index].gameObject.SetActive(true);
             CurrencyManager.instance.SpendCurrency(pricesGoblins[index]);
+
+            SaveManager.instance.SaveRecruit(index);
         }
     }
 }

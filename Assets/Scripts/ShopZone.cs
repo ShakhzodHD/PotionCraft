@@ -62,6 +62,8 @@ public class ShopZone : MonoBehaviour
 
             PlayerSoundManager.manager.PlaySpawnObjSound();
 
+            SaveManager.instance.SaveObjects(itemToBuy);
+
             Destroy(gameObject);
         }
     }
