@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class PickupObject : MonoBehaviour
 {
-    public int inventoryLimit;
-    public float pickupDelay;
+    [HideInInspector] public int inventoryLimit;
+    [HideInInspector] public float pickupDelay;
 
     [SerializeField] private bool isPlayer;
     [SerializeField] private Image pickupProgressBar;

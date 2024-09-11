@@ -9,10 +9,11 @@ public class ShopZone : MonoBehaviour
 
     [Header("Parameters about the object being purchased")]
     [SerializeField] GameObject itemToBuy;
-    [SerializeField] private int fullPrice;
     [SerializeField] private int itemCost;
 
     [SerializeField] private float framesPerUpdate = 3;
+
+    public int fullPrice;
 
     private float frameCount = 0;
     private void Start()

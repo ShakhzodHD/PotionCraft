@@ -1,9 +1,17 @@
 using UnityEngine;
 using YG;
 
-public class SaveManager : MonoBehaviour
+public class SaveManager : MonoBehaviour 
 {
+    // код полное дерьмо сделанное на коленьках, когда нибудь зарефакторю
+
     public static SaveManager instance;
+    [SerializeField] private SpeedMovementUpgrade speedMovementUpgrade;
+    [SerializeField] private CapacityUpgrade capacityUpgrade;
+    [SerializeField] private SpeedActionUpgrade speedActionUpgrade;
+
+    [SerializeField] private BuyZoneSystem buyZoneSystem;
+    [SerializeField] private ShopZone[] shopZones;
 
     private void Awake()
     {
@@ -27,11 +35,6 @@ public class SaveManager : MonoBehaviour
     public void SaveGold()
     {
         YandexGame.savesData.goldAmount = CurrencyManager.instance.currencyAmount;
-    }
-    private void OnApplicationQuit()
-    {
-        SaveGold();
-        SaveProgress();
     }
     public void SaveDecor(int index)
     {
@@ -83,9 +86,54 @@ public class SaveManager : MonoBehaviour
         
         SaveProgress();
     }
-
+    public void Save<T>(T upgrade) where T : IUpgrade
+    {
+        if (upgrade is SpeedMovementUpgrade speedMovementUpgrade)
+        {
+            YandexGame.savesData._levelSpeedMovement = speedMovementUpgrade.Level;
+        }
+        if (upgrade is CapacityUpgrade capacity)
+        {
+            YandexGame.savesData._levelCapacity = capacity.Level;
+        }
+        if (upgrade is SpeedActionUpgrade speedAction)
+        {
+            YandexGame.savesData._levelSpeedAction = speedAction.Level;
+        }
+    }
+    public void SaveBuyZone()
+    {
+        YandexGame.savesData._countBuyZone = buyZoneSystem.CountZone;
+        SaveProgress();
+    }
+    private void SaveAllShopZoneValue()
+    {
+        for (int i = 0; i < shopZones.Length; i++)
+        {
+            if (shopZones[i] != null && shopZones[i].isActiveAndEnabled)
+            {
+                YandexGame.savesData._valueCurrentBuyZone = shopZones[i].fullPrice;
+            }
+        }
+        SaveProgress();
+    }
+    public void SaveStateTutoral(bool isComplete)
+    {
+        YandexGame.savesData._completeTutorial = isComplete;
+        SaveProgress();
+    }
     private void SaveProgress()
     {
         YandexGame.SaveProgress();
+    }
+    private void OnApplicationQuit()
+    {
+        SaveGold();
+        Save(speedMovementUpgrade);
+        Save(capacityUpgrade);
+        Save(speedActionUpgrade);
+        SaveProgress();
+        SaveBuyZone();
+        SaveAllShopZoneValue();
     }
 }

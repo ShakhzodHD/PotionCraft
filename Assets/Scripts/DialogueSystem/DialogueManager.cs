@@ -7,8 +7,11 @@ public class DialogueManager : MonoBehaviour
 {
     //Код полное дерьмо в падлу рефакторить
     public static DialogueManager instance;
+
     public Text dialogueText; 
-    public GameObject dialoguePanel; 
+    public GameObject dialoguePanel;
+    public bool isCompete;
+
     [SerializeField] private List<string> dialogues;
     [SerializeField] private List<string> dialoguesEn;
     [SerializeField] private List<string> dialoguesTr;
@@ -31,11 +34,16 @@ public class DialogueManager : MonoBehaviour
     }
     private void Start()
     {
-        StartDialogue();
-        previousCameraTarget = cameraController.target;
+        if (isCompete == false)
+        {
+            StartDialogue();
+        }
     }
     public void StartDialogue()
     {
+        Debug.Log("Ну стартуем ебать");
+
+        previousCameraTarget = cameraController.target;
         dialoguePanel.SetActive(true); 
         currentDialogueIndex = 0; 
         ShowDialogue();
@@ -104,6 +112,11 @@ public class DialogueManager : MonoBehaviour
         else
         {
             EndDialogue();
+        }
+        if (currentDialogueIndex >= dialogues.Count)
+        {
+            YandexGame.savesData._completeTutorial = true;
+            isCompete = true;
         }
     }
 

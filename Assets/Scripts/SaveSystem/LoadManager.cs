@@ -3,6 +3,8 @@ using YG;
 
 public class LoadManager : MonoBehaviour
 {
+    // аналогично когда нибудь зарефакторю
+
     public static LoadManager instance;
 
     [SerializeField] private BuyDecorSystem buyDecorSystem;
@@ -10,6 +12,17 @@ public class LoadManager : MonoBehaviour
     [SerializeField] private GameObject[] plants;
     [SerializeField] private GameObject[] crafts;
     [SerializeField] private GameObject[] stands;
+
+    [Header("Upgrades")]
+    [SerializeField] private SpeedMovementUpgrade speedMovementUpgrade;
+    [SerializeField] private CapacityUpgrade capacityUpgrade;
+    [SerializeField] private SpeedActionUpgrade speedActionUpgrade;
+
+    [SerializeField] private PickupObject playerPickup;
+
+    [SerializeField] private BuyZoneSystem buyZoneSystem;
+    [SerializeField] private ShopZone[] shopZones;
+
 
     private void Awake()
     {
@@ -36,7 +49,17 @@ public class LoadManager : MonoBehaviour
         LoadDecor();
         LoadRecruts();
         LoadObjects();
+
+        LoadUpgrades(speedMovementUpgrade);
+        LoadUpgrades(capacityUpgrade);
+        LoadUpgrades(speedActionUpgrade);
+
+        LoadBuyZone();
+        LoadCurrentShopZoneValue();
+
+        LoadStateTutoral();
     }
+
     public void LoadDecor()
     {
         GameObject[] items = buyDecorSystem.items;
@@ -82,6 +105,45 @@ public class LoadManager : MonoBehaviour
                 stands[i].SetActive(true);
             }
         }
+    }
+    public void LoadUpgrades<T>(T upgrade) where T : IUpgrade
+    {
+        if (upgrade is SpeedMovementUpgrade speedMovementUpgrade)
+        {
+            int currentLevel = YandexGame.savesData._levelSpeedMovement;
+            speedMovementUpgrade.Level = currentLevel;
+            PlayerController.moveSpeed = speedMovementUpgrade.numberUpgradeForMovementSpeed[currentLevel];
+        }
+        if (upgrade is CapacityUpgrade capacity)
+        {
+            int currentLevel = YandexGame.savesData._levelCapacity;
+            capacity.Level = currentLevel;
+            playerPickup.inventoryLimit = capacity.inventoryLimitUpgradeForLevels[currentLevel];
+        }
+        if (upgrade is SpeedActionUpgrade speedAction)
+        {
+            int currentLevel = YandexGame.savesData._levelSpeedAction;
+            speedAction.Level = currentLevel;
+            playerPickup.pickupDelay = speedAction.delayUpgradeForLevels[currentLevel];
+        }
+    }
+    public void LoadBuyZone()
+    {
+        buyZoneSystem.CountZone = YandexGame.savesData._countBuyZone;
+    }
+    private void LoadCurrentShopZoneValue()
+    {
+        for (int i = 0; i < shopZones.Length; i++)
+        {
+            if (shopZones[i] != null && shopZones[i].isActiveAndEnabled)
+            {
+                shopZones[i].fullPrice = YandexGame.savesData._valueCurrentBuyZone;
+            }
+        }
+    }
+    public void LoadStateTutoral()
+    {
+        DialogueManager.instance.isCompete = YandexGame.savesData._completeTutorial;
     }
     private void OnEnable()
     {

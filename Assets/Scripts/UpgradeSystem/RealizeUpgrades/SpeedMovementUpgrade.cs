@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using YG;
 
 public class SpeedMovementUpgrade : MonoBehaviour, IUpgrade
 {
@@ -8,11 +9,15 @@ public class SpeedMovementUpgrade : MonoBehaviour, IUpgrade
     [SerializeField] private int maxLevels = 3;
 
     [SerializeField] private int[] priceUpgradeForLevels;
-    [SerializeField] private float[] numberUpgradeForMovementSpeed;
+    public float[] numberUpgradeForMovementSpeed;
 
     private int level;
 
-    public int Level => level;
+    public int Level
+    {
+        get => level;
+        set => level = value; 
+    }
     public int BasePrice { get { return basePrice; } set { basePrice = value; } }
     public SpeedMovementUpgrade(int basePrice, int maxLevels)
     {
