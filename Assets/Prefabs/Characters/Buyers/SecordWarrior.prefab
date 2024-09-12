@@ -90,6 +90,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -6046746317718208568}
   m_SourcePrefab: {fileID: 100100000, guid: b0da8b5c0b4b82f4a86093538f14a9b5, type: 3}
+--- !u!4 &2372713617671504425 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2277503322890294729, guid: b0da8b5c0b4b82f4a86093538f14a9b5, type: 3}
+  m_PrefabInstance: {fileID: 4650314875490330654}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5496737268680742223 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b0da8b5c0b4b82f4a86093538f14a9b5, type: 3}
@@ -227,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopper: {fileID: 0}
+  handPosition: {fileID: 2372713617671504425}
   isItemInPurchase: 0
 --- !u!114 &-6046746317718208568
 MonoBehaviour:

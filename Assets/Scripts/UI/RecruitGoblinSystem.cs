@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RecruitGoblinSystem : MonoBehaviour
 {
     public GameObject[] goblins;
+    public Button[] buttons;
 
     [SerializeField] private int[] pricesGoblins;
     public void BuyGoblin(int index)
@@ -13,7 +15,12 @@ public class RecruitGoblinSystem : MonoBehaviour
             goblins[index].gameObject.SetActive(true);
             CurrencyManager.instance.SpendCurrency(pricesGoblins[index]);
 
+            RemoveButtonInteractable(index);
             SaveManager.instance.SaveRecruit(index);
         }
+    }
+    public void RemoveButtonInteractable(int index)
+    {
+        buttons[index].interactable = false;
     }
 }

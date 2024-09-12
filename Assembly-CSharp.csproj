@@ -132,6 +132,7 @@
     <Compile Include="Assets\YandexGame\ScriptsYG\GameReadyAPI\GRA_yg.cs" />
     <Compile Include="Assets\Scripts\TriggerZoneForExchange.cs" />
     <Compile Include="Assets\Scripts\ResourceGenerator.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonDisabler.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\IUpgrade.cs" />
     <Compile Include="Assets\Scripts\Sound\PlayerSoundManager.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\ImageLoadYG.cs" />

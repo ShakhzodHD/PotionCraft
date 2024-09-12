@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.LowLevel;
 using YG;
 
 public class LoadManager : MonoBehaviour
@@ -22,6 +23,7 @@ public class LoadManager : MonoBehaviour
 
     [SerializeField] private BuyZoneSystem buyZoneSystem;
     [SerializeField] private ShopZone[] shopZones;
+    [SerializeField] private ButtonDisabler buttonDisabler;
 
     [HideInInspector] public string _priceTextLanguage;
     private void Awake()
@@ -80,6 +82,7 @@ public class LoadManager : MonoBehaviour
             if (YandexGame.savesData._openRecruit[i] == true)
             {
                 goblins[i].gameObject.SetActive(true);
+                recruitGoblinSystem.RemoveButtonInteractable(i);
             }
         }
     }
@@ -114,18 +117,33 @@ public class LoadManager : MonoBehaviour
             int currentLevel = YandexGame.savesData._levelSpeedMovement;
             speedMovementUpgrade.Level = currentLevel;
             PlayerController.moveSpeed = speedMovementUpgrade.numberUpgradeForMovementSpeed[currentLevel];
+
+            if (currentLevel == speedMovementUpgrade.MaxLevel) 
+            {
+                buttonDisabler.TryButtonDisable();
+            }
         }
         if (upgrade is CapacityUpgrade capacity)
         {
             int currentLevel = YandexGame.savesData._levelCapacity;
             capacity.Level = currentLevel;
             playerPickup.inventoryLimit = capacity.inventoryLimitUpgradeForLevels[currentLevel];
+
+            if (currentLevel == capacity.MaxLevel) 
+            {
+                buttonDisabler.TryButtonDisable();
+            }
         }
         if (upgrade is SpeedActionUpgrade speedAction)
         {
             int currentLevel = YandexGame.savesData._levelSpeedAction;
             speedAction.Level = currentLevel;
             playerPickup.pickupDelay = speedAction.delayUpgradeForLevels[currentLevel];
+
+            if (currentLevel == speedAction.MaxLevel)
+            {
+                buttonDisabler.TryButtonDisable();
+            }
         }
     }
     public void LoadBuyZone()

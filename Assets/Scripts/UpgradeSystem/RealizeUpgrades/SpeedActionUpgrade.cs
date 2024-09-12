@@ -18,7 +18,7 @@ public class SpeedActionUpgrade : MonoBehaviour, IUpgrade
         get => level;
         set => level = value;
     }
-
+    public int MaxLevel => maxLevels;
     public int BasePrice { get { return basePrice; } set { basePrice = value; } }
     private void Awake()
     {
@@ -40,10 +40,6 @@ public class SpeedActionUpgrade : MonoBehaviour, IUpgrade
             level++;
             Debug.Log("Улучшена скорость крафта до уровня " + level);
             playerPickup.pickupDelay = delayUpgradeForLevels[level];
-        }
-        else
-        {
-            Debug.LogWarning("Достигнут максимальный уровень для этого улучшения!");
         }
     }
 }
