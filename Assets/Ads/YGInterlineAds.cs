@@ -10,7 +10,9 @@ public class YGInterlineAds : MonoBehaviour
 
     private float countdownTime = 2f;
     private float currentCountdownTime; 
-    private bool isAdShowing = false; 
+    private bool isAdShowing = false;
+
+    private string baseText;
 
     private void Start()
     {
@@ -27,9 +29,11 @@ public class YGInterlineAds : MonoBehaviour
                 adsPanel.gameObject.SetActive(true);
                 PauseSystem.Instance.SetPause();
 
+                baseText = timerText.text;
+
                 while (currentCountdownTime > 0)
                 {
-                    timerText.text = "Реклама через: " + Mathf.Ceil(currentCountdownTime);
+                    timerText.text = baseText + Mathf.Ceil(currentCountdownTime);
                     yield return null; 
                     currentCountdownTime -= Time.unscaledDeltaTime; 
                 }

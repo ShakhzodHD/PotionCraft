@@ -8,16 +8,16 @@ public class BuyDecorSystem : MonoBehaviour
 
     [SerializeField] private int[] prices;
 
-    [SerializeField] private Text[] pricesText;
-
-    private string _priceTextLanguage;
+    public Text[] pricesText;
+    public Button[] buttons;
     private void Start()
     {
-        PickLanguage();
-
         for (int i = 0; i < prices.Length; i++)
         {
-            pricesText[i].text = prices[i].ToString();
+            if (YandexGame.savesData._openDecor[i] == false)
+            {
+                pricesText[i].text = prices[i].ToString();
+            }
         }
     }
     public void BuyItem(int index)
@@ -44,27 +44,11 @@ public class BuyDecorSystem : MonoBehaviour
     }
     public void SetSellText(int index)
     {
-        pricesText[index].text = _priceTextLanguage;
+        pricesText[index].text = LoadManager.instance._priceTextLanguage;
+        RemoveButtonInteractable(index);
     }
-    private void PickLanguage()
+    private void RemoveButtonInteractable(int index)
     {
-        switch (YandexGame.lang)
-        {
-            case "ru":
-                _priceTextLanguage = "Куплено!";
-                break;
-            case "en":
-                _priceTextLanguage = "Purchased!";
-                break;
-            case "tr":
-                _priceTextLanguage = "Satın alındı!";
-                break;
-            case "kk":
-                _priceTextLanguage = "Сатып алынды!";
-                break;
-            default:
-                _priceTextLanguage = "Purchased!";
-                break;
-        }
+        buttons[index].interactable = false;
     }
 }

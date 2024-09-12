@@ -1,9 +1,9 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using YG;
 
 public class SaveManager : MonoBehaviour 
 {
-    // код полное дерьмо сделанное на коленьках, когда нибудь зарефакторю
+    // РєРѕРґ РїРѕР»РЅРѕРµ РґРµСЂСЊРјРѕ СЃРґРµР»Р°РЅРЅРѕРµ РЅР° РєРѕР»РµРЅСЊРєР°С…, РєРѕРіРґР° РЅРёР±СѓРґСЊ Р·Р°СЂРµС„Р°РєС‚РѕСЂСЋ
 
     public static SaveManager instance;
     [SerializeField] private SpeedMovementUpgrade speedMovementUpgrade;
@@ -12,7 +12,6 @@ public class SaveManager : MonoBehaviour
 
     [SerializeField] private BuyZoneSystem buyZoneSystem;
     [SerializeField] private ShopZone[] shopZones;
-
     private void Awake()
     {
         if (instance == null)
@@ -34,7 +33,7 @@ public class SaveManager : MonoBehaviour
     }
     public void SaveGold()
     {
-        YandexGame.savesData.goldAmount = CurrencyManager.instance.currencyAmount;
+        YandexGame.savesData._goldAmount = CurrencyManager.instance.currencyAmount;
     }
     public void SaveDecor(int index)
     {

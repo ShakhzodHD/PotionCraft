@@ -1,9 +1,9 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using YG;
 
 public class LoadManager : MonoBehaviour
 {
-    // аналогично когда нибудь зарефакторю
+    // Р°РЅР°Р»РѕРіРёС‡РЅРѕ РєРѕРіРґР° РЅРёР±СѓРґСЊ Р·Р°СЂРµС„Р°РєС‚РѕСЂСЋ
 
     public static LoadManager instance;
 
@@ -23,7 +23,7 @@ public class LoadManager : MonoBehaviour
     [SerializeField] private BuyZoneSystem buyZoneSystem;
     [SerializeField] private ShopZone[] shopZones;
 
-
+    [HideInInspector] public string _priceTextLanguage;
     private void Awake()
     {
         if (instance == null)
@@ -45,7 +45,7 @@ public class LoadManager : MonoBehaviour
     }
     public void GetLoad()
     {
-        CurrencyManager.instance.LoadGold(YandexGame.savesData.goldAmount);
+        CurrencyManager.instance.LoadGold(YandexGame.savesData._goldAmount);
         LoadDecor();
         LoadRecruts();
         LoadObjects();
@@ -58,6 +58,7 @@ public class LoadManager : MonoBehaviour
         LoadCurrentShopZoneValue();
 
         LoadStateTutoral();
+        LoadStateDecorItem();
     }
 
     public void LoadDecor()
@@ -144,6 +145,38 @@ public class LoadManager : MonoBehaviour
     public void LoadStateTutoral()
     {
         DialogueManager.instance.isCompete = YandexGame.savesData._completeTutorial;
+    }
+    public void LoadStateDecorItem()
+    {
+        PickLanguage();
+        for (int i = 0; i < buyDecorSystem.buttons.Length; i++) 
+        {
+            if (YandexGame.savesData._openDecor[i] == true)
+            {
+                buyDecorSystem.SetSellText(i);
+            }
+        }
+    }
+    private void PickLanguage()
+    {
+        switch (YandexGame.lang)
+        {
+            case "ru":
+                _priceTextLanguage = "РљСѓРїР»РµРЅРѕ!";
+                break;
+            case "en":
+                _priceTextLanguage = "Purchased!";
+                break;
+            case "tr":
+                _priceTextLanguage = "SatД±n alД±ndД±!";
+                break;
+            case "kk":
+                _priceTextLanguage = "РЎР°С‚С‹Рї Р°Р»С‹РЅРґС‹!";
+                break;
+            default:
+                _priceTextLanguage = "Purchased!";
+                break;
+        }
     }
     private void OnEnable()
     {

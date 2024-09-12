@@ -12,11 +12,12 @@ namespace YG
 
         // Ваши сохранения
 
-        public int goldAmount;
+        public int _goldAmount;
         public bool[] _openPlants = new bool[3];
         public bool[] _openCrafts = new bool[4]; 
         public bool[] _openStands = new bool[4];
         public bool[] _openRecruit = new bool[5];
+
         public bool[] _openDecor = new bool[4];
 
         public int _levelSpeedMovement;
@@ -31,6 +32,8 @@ namespace YG
         // Вы можете выполнить какие то действия при загрузке сохранений
         public SavesYG()
         {
+            _goldAmount = 10000;
+
             _openStands[0] = true;
 
             _levelSpeedMovement = 0;
