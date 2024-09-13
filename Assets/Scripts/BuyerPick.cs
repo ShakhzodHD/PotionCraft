@@ -3,7 +3,6 @@
 public class BuyerPick : MonoBehaviour
 {
     [SerializeField] private ShopperAI shopper;
-    [SerializeField] private Transform handPosition;
 
     public bool isItemInPurchase = false;
     private GameObject item;
@@ -25,7 +24,7 @@ public class BuyerPick : MonoBehaviour
     private void TakeForBuy()
     {
         isItemInPurchase = true;
-        item.transform.SetParent(handPosition);
+        item.transform.SetParent(transform);
         item.tag = "Untagged";
     }
 

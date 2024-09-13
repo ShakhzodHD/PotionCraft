@@ -85,12 +85,6 @@ public class SaveManager : MonoBehaviour
         
         SaveProgress();
     }
-    public void SaveUpdate()
-    {
-        Save(speedMovementUpgrade);
-        Save(capacityUpgrade);
-        Save(speedActionUpgrade);
-    }
     public void Save<T>(T upgrade) where T : IUpgrade
     {
         if (upgrade is SpeedMovementUpgrade speedMovementUpgrade)
@@ -134,7 +128,9 @@ public class SaveManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         SaveGold();
-        SaveUpdate();
+        Save(speedMovementUpgrade);
+        Save(capacityUpgrade);
+        Save(speedActionUpgrade);
         SaveProgress();
         SaveBuyZone();
         SaveAllShopZoneValue();

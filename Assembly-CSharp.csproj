@@ -106,7 +106,6 @@
     <Compile Include="Assets\Scripts\Animation\CarryngAnimation.cs" />
     <Compile Include="Assets\Scripts\NPC\ShopperAI.cs" />
     <Compile Include="Assets\Scripts\BuyerPick.cs" />
-    <Compile Include="Assets\Scripts\UI\ButtonDisabler.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\ImageLoadYG.cs" />
     <Compile Include="Assets\Scripts\ProcessExchange.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\EnvironmentData\EnvirData_yg.cs" />
@@ -114,11 +113,13 @@
     <Compile Include="Assets\Scripts\UI\RecipeBook\CurlPagelEffect.cs" />
     <Compile Include="Assets\Scripts\Animtaion\AnimationDoor.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\UnityToolbag-main\ConditionallyVisiblePropertyDrawer\Runtime\ConditionallyVisibleAttribute.cs" />
+    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\InitExample.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\GetPlayerYG.cs" />
     <Compile Include="Assets\Scripts\UI\BuyDecorSystem.cs" />
     <Compile Include="Assets\Scripts\PotionPrice.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\YandexMetricaExample.cs" />
     <Compile Include="Assets\Scripts\UI\RecipeBook\UISwitchingPages.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\NewResultLBExample.cs" />
@@ -1126,14 +1127,6 @@
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.InputSystem">
-      <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.InputSystem.ForUI">
-      <HintPath>Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">

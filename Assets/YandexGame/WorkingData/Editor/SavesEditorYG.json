@@ -1,0 +1,43 @@
+{
+    "idSave": 112,
+    "isFirstSession": false,
+    "language": "en",
+    "promptDone": false,
+    "_goldAmount": 6650,
+    "_openPlants": [
+        true,
+        false,
+        false
+    ],
+    "_openCrafts": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "_openStands": [
+        true,
+        false,
+        false,
+        false
+    ],
+    "_openRecruit": [
+        true,
+        true,
+        true,
+        false,
+        false
+    ],
+    "_openDecor": [
+        true,
+        true,
+        true,
+        true
+    ],
+    "_levelSpeedMovement": 0,
+    "_levelCapacity": 0,
+    "_levelSpeedAction": 0,
+    "_countBuyZone": 1,
+    "_valueCurrentBuyZone": 50,
+    "_completeTutorial": false
+}

@@ -3,8 +3,19 @@ using YG;
 
 public class DeviceTypeManager : MonoBehaviour
 {
-    private void Start()
+    [SerializeField] private PlayerController controller;
+    [SerializeField] private Joystick currentJoystick;
+    public void DefineDivaceType()
     {
-        Debug.Log(YandexGame.EnvironmentData.deviceType);
+        if (YandexGame.EnvironmentData.isMobile)
+        {
+            controller.isMovile = true;
+            Instantiate(currentJoystick);
+        }
+        else
+        {
+            controller.isMovile = false;
+            Destroy(currentJoystick.gameObject);
+        }
     }
 }

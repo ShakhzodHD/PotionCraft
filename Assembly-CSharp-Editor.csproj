@@ -65,7 +65,9 @@
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\Editor\CSVFileEditorWindow.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\Editor\TranslationTableEditorWindow.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Storage\Editor\CloudStorage_build.cs" />
+    <Compile Include="Assets\Joystick Pack\Scripts\Editor\DynamicJoystickEditor.cs" />
     <Compile Include="Assets\Editor\UpgradeArrayEditorBase.cs" />
+    <Compile Include="Assets\Joystick Pack\Scripts\Editor\JoystickEditor.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\Editor\AutoLocalizationMasseWindow.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\UnityToolbag-main\ConditionallyVisiblePropertyDrawer\Editor\ConditionallyVisiblePropertyDrawer.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ModifyIndexFile\SaveQuitGame.cs" />
@@ -1092,14 +1094,6 @@
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.InputSystem">
-      <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.InputSystem.ForUI">
-      <HintPath>Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">

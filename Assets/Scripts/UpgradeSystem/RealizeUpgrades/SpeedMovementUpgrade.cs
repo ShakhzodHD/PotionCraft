@@ -18,7 +18,6 @@ public class SpeedMovementUpgrade : MonoBehaviour, IUpgrade
         get => level;
         set => level = value; 
     }
-    public int MaxLevel => maxLevels;
     public int BasePrice { get { return basePrice; } set { basePrice = value; } }
     public SpeedMovementUpgrade(int basePrice, int maxLevels)
     {
@@ -45,6 +44,10 @@ public class SpeedMovementUpgrade : MonoBehaviour, IUpgrade
             level++;
             PlayerController.moveSpeed = numberUpgradeForMovementSpeed[level];
             StorageManager.putDelay = 0;
+        }
+        else
+        {
+            Debug.LogWarning("Достигнут максимальный уровень для этого улучшения!");
         }
     }
 }

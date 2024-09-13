@@ -19,8 +19,6 @@ public class CapacityUpgrade : MonoBehaviour, IUpgrade
         get => level;
         set => level = value;
     }
-    public int MaxLevel => maxLevels;
-
     public int BasePrice { get { return basePrice; } set { basePrice = value; } }
     private void Awake()
     {
@@ -41,6 +39,10 @@ public class CapacityUpgrade : MonoBehaviour, IUpgrade
             level++;
             Debug.Log("Улучшена грузоподьемность до уровня " + level);
             playerPickup.inventoryLimit = inventoryLimitUpgradeForLevels[level];
+        }
+        else
+        {
+            Debug.LogWarning("Достигнут максимальный уровень для этого улучшения!");
         }
     }
 }
