@@ -7,7 +7,7 @@ public class DeviceTypeManager : MonoBehaviour
     [SerializeField] private Joystick currentJoystick;
     public void DefineDivaceType()
     {
-        if (YandexGame.EnvironmentData.isMobile)
+        if (YandexGame.EnvironmentData.isMobile || YandexGame.EnvironmentData.isTablet)
         {
             controller.isMovile = true;
             Instantiate(currentJoystick);

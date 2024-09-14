@@ -60,35 +60,35 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.33f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\YandexGame\ScriptsYG\Language\Editor\CSVManager.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ModifyIndexFile\ModifyBuildManager.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\BuildLog.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\Editor\CSVFileEditorWindow.cs" />
+    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ArchivingBuild.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\Editor\TranslationTableEditorWindow.cs" />
+    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ModifyIndexFile\BackgroundFormat.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Storage\Editor\CloudStorage_build.cs" />
+    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\CreateYandexGameEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\DynamicJoystickEditor.cs" />
     <Compile Include="Assets\Editor\UpgradeArrayEditorBase.cs" />
+    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ModifyIndexFile\PixelRatioMobile.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\JoystickEditor.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\Editor\AutoLocalizationMasseWindow.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\UnityToolbag-main\ConditionallyVisiblePropertyDrawer\Editor\ConditionallyVisiblePropertyDrawer.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ModifyIndexFile\SaveQuitGame.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\EnvironmentData\Editor\EnvirData_build.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\Utils\PackageDownloader.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\PostProcessBuild.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\Language\Editor\FontMasseInstallEditorWindow.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ModifyIndexFile\LogoFormat.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\Language\Editor\CSVManager.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ArchivingBuild.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ModifyIndexFile\BackgroundFormat.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\CreateYandexGameEditor.cs" />
-    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ModifyIndexFile\PixelRatioMobile.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Editor\DocumentationEditor.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\InfoYG\Editor\InfoYGEditor.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\Editor\LanguageYGEditor.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ModifyIndexFile\MetricaCounterID.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Editor\Utils\DefineSymbols.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Authorization\Editor\Auth_build.cs" />
+    <Compile Include="Assets\YandexGame\ScriptsYG\UnityToolbag-main\ConditionallyVisiblePropertyDrawer\Editor\ConditionallyVisiblePropertyDrawer.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ModifyIndexFile\AdWhenLoadingGame.cs" />
+    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ModifyIndexFile\SaveQuitGame.cs" />
+    <Compile Include="Assets\YandexGame\ScriptsYG\EnvironmentData\Editor\EnvirData_build.cs" />
+    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\Utils\PackageDownloader.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Payments\Editor\Payments_build.cs" />
+    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\PostProcessBuild.cs" />
+    <Compile Include="Assets\YandexGame\ScriptsYG\Language\Editor\FontMasseInstallEditorWindow.cs" />
+    <Compile Include="Assets\YandexGame\ScriptsYG\Editor\PostProcessBuild\ModifyIndexFile\LogoFormat.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Leaderboards\Editor\Leaderboards_build.cs" />
   </ItemGroup>
   <ItemGroup>
