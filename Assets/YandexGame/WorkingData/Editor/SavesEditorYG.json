@@ -1,16 +1,16 @@
 {
-    "idSave": 244,
+    "idSave": 453,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
-    "_goldAmount": 6650,
+    "_goldAmount": 6350,
     "_openPlants": [
         true,
         false,
         false
     ],
     "_openCrafts": [
-        false,
+        true,
         false,
         false,
         false
@@ -35,9 +35,9 @@
         true
     ],
     "_levelSpeedMovement": 0,
-    "_levelCapacity": 0,
+    "_levelCapacity": 1,
     "_levelSpeedAction": 0,
-    "_countBuyZone": 1,
+    "_countBuyZone": 2,
     "_valueCurrentBuyZone": 50,
-    "_completeTutorial": false
+    "_completeTutorial": true
 }
