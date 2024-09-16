@@ -1,16 +1,16 @@
 {
-    "idSave": 453,
+    "idSave": 6,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
-    "_goldAmount": 6350,
+    "_goldAmount": 10000,
     "_openPlants": [
-        true,
+        false,
         false,
         false
     ],
     "_openCrafts": [
-        true,
+        false,
         false,
         false,
         false
@@ -22,22 +22,28 @@
         false
     ],
     "_openRecruit": [
-        true,
-        true,
-        true,
+        false,
+        false,
+        false,
         false,
         false
     ],
     "_openDecor": [
-        true,
-        true,
-        true,
-        true
+        false,
+        false,
+        false,
+        false
     ],
     "_levelSpeedMovement": 0,
-    "_levelCapacity": 1,
+    "_levelCapacity": 0,
     "_levelSpeedAction": 0,
-    "_countBuyZone": 2,
+    "_countBuyZone": 0,
     "_valueCurrentBuyZone": 50,
-    "_completeTutorial": true
+    "_completeTutorial": false,
+    "_buttonEffectsUnlocked": [
+        false,
+        false,
+        false
+    ],
+    "_activeButtonIndex": -1
 }

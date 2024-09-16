@@ -4,13 +4,13 @@ namespace YG
     [System.Serializable]
     public class SavesYG
     {
-        // "Технические сохранения" для работы плагина (Не удалять)
+        // Tech saves (dont remove)
         public int idSave;
         public bool isFirstSession = true;
         public string language = "ru";
         public bool promptDone;
 
-        // Ваши сохранения
+        // Saves
 
         public int _goldAmount;
         public bool[] _openPlants = new bool[3];
@@ -29,7 +29,10 @@ namespace YG
 
         public bool _completeTutorial;
 
-        // Вы можете выполнить какие то действия при загрузке сохранений
+        public bool[] _buttonEffectsUnlocked = new bool[3];
+        public int _activeButtonIndex;
+
+        // Init
         public SavesYG()
         {
             _goldAmount = 10000;
@@ -44,6 +47,8 @@ namespace YG
             _valueCurrentBuyZone = 50;
 
             _completeTutorial = false;
+
+            _activeButtonIndex = -1;
         }
     }
 }

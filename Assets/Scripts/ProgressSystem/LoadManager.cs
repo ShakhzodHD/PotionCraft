@@ -23,8 +23,9 @@ public class LoadManager : MonoBehaviour
     [SerializeField] private BuyZoneSystem buyZoneSystem;
     [SerializeField] private ShopZone[] shopZones;
 
-    [SerializeField] private DeviceTypeManager deviceType;    
-    
+    [SerializeField] private DeviceTypeManager deviceType;
+
+    [SerializeField] private UIButtonManager buttonManager;
 
     [HideInInspector] public string _priceTextLanguage;
     private void Awake()
@@ -60,6 +61,8 @@ public class LoadManager : MonoBehaviour
         LoadBuyZone();
         LoadCurrentShopZoneValue();
 
+        LoadUnlockEffecs();
+        LoadActiveEffect();
         LoadStateTutoral();
         LoadStateDecorItem();
         deviceType.DefineDivaceType();
@@ -160,6 +163,16 @@ public class LoadManager : MonoBehaviour
                 buyDecorSystem.SetSellText(i);
             }
         }
+    }
+    public void LoadUnlockEffecs()
+    {
+        bool[] unlockedEffects = YandexGame.savesData._buttonEffectsUnlocked;
+
+        buttonManager.SetUnlockEffect = unlockedEffects;
+    }
+    public void LoadActiveEffect()
+    {
+        buttonManager.SetActiveButton(YandexGame.savesData._activeButtonIndex);
     }
     private void PickLanguage()
     {

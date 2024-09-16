@@ -121,6 +121,16 @@ public class SaveManager : MonoBehaviour
         YandexGame.savesData._completeTutorial = isComplete;
         SaveProgress();
     }
+    public void SaveUnlockEffecs(int index)
+    {
+        YandexGame.savesData._buttonEffectsUnlocked[index] = true;
+        SaveProgress();
+    }
+    public void SaveActiveEffect(int index)
+    {
+        YandexGame.savesData._activeButtonIndex = index;
+        SaveProgress();
+    }
     private void SaveProgress()
     {
         YandexGame.SaveProgress();

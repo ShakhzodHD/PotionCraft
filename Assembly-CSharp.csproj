@@ -63,7 +63,9 @@
     <Compile Include="Assets\Scripts\UI\DelayUIUpdater.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\PromptYG.cs" />
     <Compile Include="Assets\Scripts\ParticleSystem\PlaySpawnEffect.cs" />
+    <Compile Include="Assets\Scripts\UI\Custom\UIButtonManager.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\LangYGAdditionalText.cs" />
+    <Compile Include="Assets\Scripts\UI\Custom\ButtonActionCurseEffect.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\ForVisualScriptYG.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Payments\ConsumePurchasesYG.cs" />
     <Compile Include="Assets\Scripts\PickupObject.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Assets\Scripts\NPC\GoblinWorkeAI.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Leaderboards\InternalScripts\Leaderboards_yg.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\YandexMetrica\JsonUtils.cs" />
+    <Compile Include="Assets\Scripts\UI\UITogglePanel.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\Upgrade.cs" />
     <Compile Include="Assets\YandexGame\DebuggingMode\Scripts\DebuggingModeYG.cs" />
     <Compile Include="Assets\Scripts\Sound\MusicManager.cs" />
@@ -111,11 +114,13 @@
     <Compile Include="Assets\Scripts\Animation\Plant\PlantAnimationController.cs" />
     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\Scripts\Resource.cs" />
+    <Compile Include="Assets\Scripts\UI\Custom\IButtonAction.cs" />
     <Compile Include="Assets\Scripts\ProgressSystem\ResetProgress.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\TimerBeforeAdsYG.cs" />
     <Compile Include="Assets\Scripts\Sound\VolumeManager.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\LanguageExample.cs" />
     <Compile Include="Assets\Ads\YGRewardedManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Custom\ButtonActionSparksEffect.cs" />
     <Compile Include="Assets\Scripts\Sound\PlaySpawnSound.cs" />
     <Compile Include="Assets\Scripts\ShopZone.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Leaderboards\LeaderboardYG.cs" />
@@ -135,6 +140,7 @@
     <Compile Include="Assets\Scripts\ResourceGenerator.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\IUpgrade.cs" />
     <Compile Include="Assets\Scripts\Sound\PlayerSoundManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Custom\ButtonActionHeartEffect.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\ImageLoadYG.cs" />
     <Compile Include="Assets\Scripts\ProcessExchange.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\EnvironmentData\EnvirData_yg.cs" />
