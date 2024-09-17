@@ -1206,6 +1206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 63542083}
   - component: {fileID: 63542085}
+  - component: {fileID: 63542086}
   - component: {fileID: 63542084}
   m_Layer: 5
   m_Name: CustomizationPanel
@@ -1277,6 +1278,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63542082}
   m_CullTransparentMesh: 1
+--- !u!114 &63542086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63542082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbed3d3cf97fe824d89cbcb057e8904a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiManager: {fileID: 0}
 --- !u!1 &67867469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1371,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67867469}
   m_CullTransparentMesh: 1
+--- !u!1 &68470276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 87a65c2749b355f4aa3d65eaac4b4d97, type: 3}
+  m_PrefabInstance: {fileID: 239169795}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &75935300 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5593787320874065491, guid: 185105da6654412499d37d6f379598c8, type: 3}
@@ -4498,7 +4517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 87a65c2749b355f4aa3d65eaac4b4d97, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5684,6 +5703,7 @@ MonoBehaviour:
   - {fileID: 1278163550}
   - {fileID: 1092086705}
   - {fileID: 1938995980}
+  customElement: {fileID: 612503656}
 --- !u!114 &309960381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5730,6 +5750,7 @@ MonoBehaviour:
   - {fileID: 1938995980}
   deviceType: {fileID: 1823385335}
   buttonManager: {fileID: 612503654}
+  customElement: {fileID: 612503656}
   _priceTextLanguage: 
 --- !u!114 &309960382
 MonoBehaviour:
@@ -9815,6 +9836,7 @@ GameObject:
   - component: {fileID: 612503653}
   - component: {fileID: 612503654}
   - component: {fileID: 612503655}
+  - component: {fileID: 612503656}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -9909,6 +9931,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c6ad28d599dd847a8e4dbd0e0e14e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &612503656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612503650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac461bd169e4e3e47953bec024f08945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wings: {fileID: 68470276}
+  wingsElement: {fileID: 229986518}
 --- !u!1 &617392528
 GameObject:
   m_ObjectHideFlags: 0
@@ -12616,13 +12652,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 612503654}
-        m_TargetAssemblyTypeName: UIButtonManager, Assembly-CSharp
-        m_MethodName: OnButtonClicked
-        m_Mode: 2
+      - m_Target: {fileID: 612503656}
+        m_TargetAssemblyTypeName: UIEnableCustomElement, Assembly-CSharp
+        m_MethodName: ToggleElement
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 815645812}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

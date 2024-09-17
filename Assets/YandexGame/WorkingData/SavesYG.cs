@@ -32,6 +32,8 @@ namespace YG
         public bool[] _buttonEffectsUnlocked = new bool[3];
         public int _activeButtonIndex;
 
+        public bool _isWings;
+
         // Init
         public SavesYG()
         {
@@ -49,6 +51,8 @@ namespace YG
             _completeTutorial = false;
 
             _activeButtonIndex = -1;
+
+            _isWings = false;
         }
     }
 }

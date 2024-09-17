@@ -62,13 +62,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\DelayUIUpdater.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\PromptYG.cs" />
+    <Compile Include="Assets\Scripts\UI\Custom\ButtonActionCurseEffect.cs" />
     <Compile Include="Assets\Scripts\ParticleSystem\PlaySpawnEffect.cs" />
     <Compile Include="Assets\Scripts\UI\Custom\UIButtonManager.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\LangYGAdditionalText.cs" />
-    <Compile Include="Assets\Scripts\UI\Custom\ButtonActionCurseEffect.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\ForVisualScriptYG.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Payments\ConsumePurchasesYG.cs" />
     <Compile Include="Assets\Scripts\PickupObject.cs" />
+    <Compile Include="Assets\Scripts\UI\Custom\UIEnableCustomElement.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\OpenAuthorizationDialog.cs" />
     <Compile Include="Assets\Scripts\SpawnerBuyers.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Payments\InternalScripts\Payments_yg.cs" />

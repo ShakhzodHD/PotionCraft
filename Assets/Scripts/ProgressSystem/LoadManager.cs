@@ -26,6 +26,7 @@ public class LoadManager : MonoBehaviour
     [SerializeField] private DeviceTypeManager deviceType;
 
     [SerializeField] private UIButtonManager buttonManager;
+    [SerializeField] private UIEnableCustomElement customElement;
 
     [HideInInspector] public string _priceTextLanguage;
     private void Awake()
@@ -63,6 +64,7 @@ public class LoadManager : MonoBehaviour
 
         LoadUnlockEffecs();
         LoadActiveEffect();
+        LoadStateWings();
         LoadStateTutoral();
         LoadStateDecorItem();
         deviceType.DefineDivaceType();
@@ -173,6 +175,10 @@ public class LoadManager : MonoBehaviour
     public void LoadActiveEffect()
     {
         buttonManager.SetActiveButton(YandexGame.savesData._activeButtonIndex);
+    }
+    private void LoadStateWings()
+    {
+        customElement.StateElement = YandexGame.savesData._isWings;
     }
     private void PickLanguage()
     {
