@@ -43,7 +43,6 @@ public class SpeedMovementUpgrade : MonoBehaviour, IUpgrade
         {
             level++;
             PlayerController.moveSpeed = numberUpgradeForMovementSpeed[level];
-            StorageManager.putDelay = 0;
         }
         else
         {

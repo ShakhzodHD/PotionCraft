@@ -56,7 +56,7 @@ public class CurrencyManager : MonoBehaviour
     }
     public void LoadGold(int amount)
     {
-        if (amount > 0)
+        if (amount >= 0)
         {
             currencyAmount = amount;
         }

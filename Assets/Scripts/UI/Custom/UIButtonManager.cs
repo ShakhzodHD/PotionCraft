@@ -11,7 +11,10 @@ public class UIButtonManager : MonoBehaviour
     private Dictionary<Button, IButtonAction> buttonActions;
 
     private bool[] isEffectUnlocked;
-
+    public Button ActiveButton
+    {
+        get { return activeButton; }
+    }
     public int GetButtonCount()
     {
         return buttons.Count;
@@ -132,11 +135,5 @@ public class UIButtonManager : MonoBehaviour
         SetActiveButton(buttons[buttonIndex]);
 
         SaveManager.instance.SaveUnlockEffecs(buttonIndex);
-    }
-    public void SetActiveButton(int buttonIndex)
-    {
-        if (buttonIndex <= -1) return;
-
-        SetActiveButton(buttons[buttonIndex]);
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using YG;
 
 public class ActivatorDialogue : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class ActivatorDialogue : MonoBehaviour
     }
     public void Craft()
     {
-        if (!isCrafted) 
+        if (!isCrafted && YandexGame.savesData._completeTutorial == false) 
         {
             HandleDialogue();
             isCrafted = true; 
@@ -20,7 +21,7 @@ public class ActivatorDialogue : MonoBehaviour
     }
     public void Sell()
     {
-        if (!isSold)
+        if (!isSold && YandexGame.savesData._completeTutorial == false)
         {
             HandleDialogue();
             isSold = true;

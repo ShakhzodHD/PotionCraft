@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class StorageManager : MonoBehaviour
 {
     public Image putProgressBar;
-    public static float putDelay = 1f;
+    public static float putDelay = 1.5f;
     public int maxCount;
 
     [SerializeField] private string namePotionForKeep;

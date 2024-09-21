@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopper: {fileID: 0}
+  handPosition: {fileID: 7922448623085284416}
   isItemInPurchase: 0
 --- !u!114 &-175809957202329269
 MonoBehaviour:
@@ -247,3 +248,8 @@ MonoBehaviour:
   - {fileID: -575909430, guid: eb4ccc91a34e7d14e8590f013cecbffe, type: 3}
   - {fileID: -896730490, guid: eb4ccc91a34e7d14e8590f013cecbffe, type: 3}
   - {fileID: 1367133993, guid: eb4ccc91a34e7d14e8590f013cecbffe, type: 3}
+--- !u!4 &7922448623085284416 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2277503322890294729, guid: f6b35d0be65bed448b5f8021ef07dcc7, type: 3}
+  m_PrefabInstance: {fileID: 979145647424652919}
+  m_PrefabAsset: {fileID: 0}

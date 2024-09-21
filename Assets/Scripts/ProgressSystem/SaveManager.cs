@@ -14,6 +14,8 @@ public class SaveManager : MonoBehaviour
     [SerializeField] private ShopZone[] shopZones;
 
     [SerializeField] private UIEnableCustomElement customElement;
+    [SerializeField] private UIButtonManager buttonManager;
+    [SerializeField] private SpawnerBuyers buyers;
     private void Awake()
     {
         if (instance == null)
@@ -137,6 +139,10 @@ public class SaveManager : MonoBehaviour
     {
         YandexGame.savesData._isWings = customElement.StateElement;
     }
+    public void SaveSpawnParameters()
+    {
+        YandexGame.savesData._levelSpawn = buyers.CurrentIncreaseLevel;
+    }
     private void SaveProgress()
     {
         YandexGame.SaveProgress();
@@ -150,6 +156,7 @@ public class SaveManager : MonoBehaviour
         SaveBuyZone();
         SaveAllShopZoneValue();
         SaveStateWings();
+        SaveSpawnParameters();
 
         SaveProgress();
     }

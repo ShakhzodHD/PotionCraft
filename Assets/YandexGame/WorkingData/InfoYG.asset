@@ -305,8 +305,8 @@ MonoBehaviour:
     priceCurrencyCode: YAN
     currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
     consumed: 1
-  metricaEnable: 0
-  metricaCounterID: 0
+  metricaEnable: 1
+  metricaCounterID: 98367139
   debug: 1
   archivingBuild: 1
   logoImageFormat: 1

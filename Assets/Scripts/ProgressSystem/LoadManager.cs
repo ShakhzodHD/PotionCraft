@@ -27,6 +27,7 @@ public class LoadManager : MonoBehaviour
 
     [SerializeField] private UIButtonManager buttonManager;
     [SerializeField] private UIEnableCustomElement customElement;
+    [SerializeField] private SpawnerBuyers buyers;
 
     [HideInInspector] public string _priceTextLanguage;
     private void Awake()
@@ -62,11 +63,11 @@ public class LoadManager : MonoBehaviour
         LoadBuyZone();
         LoadCurrentShopZoneValue();
 
-        LoadUnlockEffecs();
-        LoadActiveEffect();
-        LoadStateWings();
         LoadStateTutoral();
+        LoadUnlockEffecs();
+        LoadStateWings();
         LoadStateDecorItem();
+        LoadSpawnLevel();
         deviceType.DefineDivaceType();
     }
 
@@ -153,6 +154,7 @@ public class LoadManager : MonoBehaviour
     }
     public void LoadStateTutoral()
     {
+        Debug.Log("Загрузка "+YandexGame.savesData._completeTutorial);
         DialogueManager.instance.isCompete = YandexGame.savesData._completeTutorial;
     }
     public void LoadStateDecorItem()
@@ -172,13 +174,17 @@ public class LoadManager : MonoBehaviour
 
         buttonManager.SetUnlockEffect = unlockedEffects;
     }
-    public void LoadActiveEffect()
-    {
-        buttonManager.SetActiveButton(YandexGame.savesData._activeButtonIndex);
-    }
     private void LoadStateWings()
     {
         customElement.StateElement = YandexGame.savesData._isWings;
+    }
+    private void LoadSpawnLevel()
+    {
+        int count = YandexGame.savesData._levelSpawn;
+        for (int i = 0; i < count; i++)
+        {
+            buyers.IncreaseSpawnParameters();
+        }
     }
     private void PickLanguage()
     {

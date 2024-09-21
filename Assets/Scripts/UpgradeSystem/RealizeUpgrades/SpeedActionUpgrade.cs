@@ -38,12 +38,8 @@ public class SpeedActionUpgrade : MonoBehaviour, IUpgrade
         if (level < maxLevels)
         {
             level++;
-            Debug.Log("Улучшена скорость крафта до уровня " + level);
             playerPickup.pickupDelay = delayUpgradeForLevels[level];
-        }
-        else
-        {
-            Debug.LogWarning("Достигнут максимальный уровень для этого улучшения!");
+            StorageManager.putDelay = delayUpgradeForLevels[level];
         }
     }
 }

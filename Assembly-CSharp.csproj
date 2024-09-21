@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\UpgradeSystem\Upgrade.cs" />
     <Compile Include="Assets\YandexGame\DebuggingMode\Scripts\DebuggingModeYG.cs" />
     <Compile Include="Assets\Scripts\Sound\MusicManager.cs" />
+    <Compile Include="Assets\A Yandex\YGInterlineAds.cs" />
     <Compile Include="Assets\Scripts\NPC\GoblinSeller.cs" />
     <Compile Include="Assets\Scripts\NPC\VisualizationDesires\VisualozationLookAtCamera.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Payments\PaymentsCatalogYG.cs" />
@@ -120,7 +121,6 @@
     <Compile Include="Assets\YandexGame\ScriptsYG\TimerBeforeAdsYG.cs" />
     <Compile Include="Assets\Scripts\Sound\VolumeManager.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\LanguageExample.cs" />
-    <Compile Include="Assets\Ads\YGRewardedManager.cs" />
     <Compile Include="Assets\Scripts\UI\Custom\ButtonActionSparksEffect.cs" />
     <Compile Include="Assets\Scripts\Sound\PlaySpawnSound.cs" />
     <Compile Include="Assets\Scripts\ShopZone.cs" />
@@ -150,6 +150,7 @@
     <Compile Include="Assets\Scripts\UI\ButtonPulse.cs" />
     <Compile Include="Assets\Scripts\UI\RecipeBook\CurlPagelEffect.cs" />
     <Compile Include="Assets\Scripts\Animtaion\AnimationDoor.cs" />
+    <Compile Include="Assets\A Yandex\YGRewardedManager.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\UnityToolbag-main\ConditionallyVisiblePropertyDrawer\Runtime\ConditionallyVisibleAttribute.cs" />
     <Compile Include="Assets\Scripts\NPC\VisualizationDesires\FadeDesires.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\SwitchSceneTest.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="Assets\Scripts\UI\CurrencyUI.cs" />
     <Compile Include="Assets\Scripts\UpgradeSystem\UpgradeManager.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\InitExample.cs" />
+    <Compile Include="Assets\Scripts\PassiveSourceGold.cs" />
     <Compile Include="Assets\Scripts\StoragePlants.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\Lang_yg.cs" />
     <Compile Include="Assets\Scripts\BuyZoneSystem\BuyZoneSystem.cs" />
@@ -177,9 +179,9 @@
     <Compile Include="Assets\YandexGame\ScriptsYG\Leaderboards\InternalScripts\UtilsLB.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\DebugViewing.cs" />
-    <Compile Include="Assets\Ads\YGInterlineAds.cs" />
     <Compile Include="Assets\Scripts\UI\RecruitGoblinSystem.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\LanguageYG.cs" />
+    <Compile Include="Assets\A Yandex\Metrics\MetricSender.cs" />
     <Compile Include="Assets\Scripts\StorageCrystal.cs" />
   </ItemGroup>
   <ItemGroup>

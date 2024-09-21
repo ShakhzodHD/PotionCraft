@@ -1,4 +1,6 @@
 ﻿
+using UnityEngine.UI;
+
 namespace YG
 {
     [System.Serializable]
@@ -34,10 +36,15 @@ namespace YG
 
         public bool _isWings;
 
+        public int _levelSpawn;
+
+        //metrics
+        public bool[] _isFirstClickButtons = new bool[3]; //oder buttonts: custom, decor, recipe 
+
         // Init
         public SavesYG()
         {
-            _goldAmount = 10000;
+            _goldAmount = 100;
 
             _openStands[0] = true;
 
@@ -53,6 +60,13 @@ namespace YG
             _activeButtonIndex = -1;
 
             _isWings = false;
+
+            _levelSpawn = 0;
+
+            for (int i = 0; i< _isFirstClickButtons.Length; i++)
+            {
+                _isFirstClickButtons[i] = true;
+            }
         }
     }
 }

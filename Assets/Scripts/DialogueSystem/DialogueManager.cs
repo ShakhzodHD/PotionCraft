@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using YG;
+using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Transform pos4;
 
     [SerializeField] private GameObject buttonForPulse;
+    [SerializeField] private RectTransform buttonCustom;
 
     private Transform previousCameraTarget;
     private void Awake()
@@ -34,15 +36,18 @@ public class DialogueManager : MonoBehaviour
     }
     private void Start()
     {
+        Debug.Log(isCompete);
         if (isCompete == false)
         {
             StartDialogue();
         }
+        else
+        {
+            buttonCustom.gameObject.SetActive(true);
+        }
     }
     public void StartDialogue()
     {
-        Debug.Log("Ну стартуем ебать");
-
         previousCameraTarget = cameraController.target;
         dialoguePanel.SetActive(true); 
         currentDialogueIndex = 0; 
@@ -117,6 +122,9 @@ public class DialogueManager : MonoBehaviour
         {
             YandexGame.savesData._completeTutorial = true;
             isCompete = true;
+            
+            Destroy(gameObject);
+            buttonCustom.gameObject.SetActive(true);
         }
     }
 

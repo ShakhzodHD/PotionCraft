@@ -38,6 +38,9 @@ public class ButtonPulseColor : MonoBehaviour
     private void OnDestroy()
     {
         buttonImage.color = startColor;
-
+    }
+    public void DestroyComponent()
+    {
+        Destroy(this);
     }
 }
