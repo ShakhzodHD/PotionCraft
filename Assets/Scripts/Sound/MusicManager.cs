@@ -7,7 +7,7 @@ public class MusicManager : MonoBehaviour
     private int currentTrackIndex = 0;
     private float trackTime = 0f;
 
-    void Awake()
+    private void Awake()
     {
         if (FindObjectsOfType<MusicManager>().Length > 1)
         {
@@ -23,15 +23,19 @@ public class MusicManager : MonoBehaviour
         PlayNextTrack();
     }
 
-    void Update()
+    private void Update()
     {
         if (!audioSource.isPlaying && !IsPaused())
         {
             PlayNextTrack();
         }
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            PlayNextTrack();
+        }
     }
 
-    void PlayNextTrack()
+    private void PlayNextTrack()
     {
         if (musicClips.Length > 0)
         {
@@ -42,7 +46,7 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    void OnApplicationPause(bool pauseStatus)
+    private void OnApplicationPause(bool pauseStatus)
     {
         if (pauseStatus)
         {
@@ -55,7 +59,7 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    void OnApplicationFocus(bool focusStatus)
+    private void OnApplicationFocus(bool focusStatus)
     {
         if (!focusStatus)
         {

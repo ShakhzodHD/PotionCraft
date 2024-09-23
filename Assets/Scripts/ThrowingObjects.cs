@@ -7,13 +7,17 @@ public class ThrowingObjects : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            foreach (Transform child in transform)
+            Throw();
+        }
+    }
+    public void Throw()
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.CompareTag("UnPickupable") || child.CompareTag("Selling"))
             {
-                if (child.CompareTag("UnPickupable") || child.CompareTag("Selling"))
-                {
-                    pickupObject.RemoveItem(child.gameObject);
-                    Destroy(child.gameObject);
-                }
+                pickupObject.RemoveItem(child.gameObject);
+                Destroy(child.gameObject);
             }
         }
     }

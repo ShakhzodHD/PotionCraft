@@ -37,7 +37,6 @@ public class SpawnerBuyers : MonoBehaviour
         }
 
         timerToIncrease = timeToIncrease;
-        Debug.Log("Текущий уровень: " + currentIncreaseLevel);
     }
 
     private void Update()
@@ -62,11 +61,13 @@ public class SpawnerBuyers : MonoBehaviour
         currentBuyerCount++;
     }
 
-    public void IncreaseSpawnParameters()
+    private void IncreaseSpawnParameters()
     {
         currentIncreaseLevel++;
-        Debug.Log("Текущий уровень: " + currentIncreaseLevel);
-
+        IncreaseValue();
+    }
+    public void IncreaseValue()
+    {
         maxBuyers += maxBuyersIncreaseRate;
 
         spawnInterval = Mathf.Max(0.5f, spawnInterval - spawnIntervalReductionRate);

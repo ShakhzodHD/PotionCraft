@@ -183,7 +183,7 @@ public class LoadManager : MonoBehaviour
         int count = YandexGame.savesData._levelSpawn;
         for (int i = 0; i < count; i++)
         {
-            buyers.IncreaseSpawnParameters();
+            buyers.IncreaseValue();
         }
     }
     private void PickLanguage()
