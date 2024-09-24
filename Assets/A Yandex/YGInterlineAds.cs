@@ -5,6 +5,8 @@ using YG;
 
 public class YGInterlineAds : MonoBehaviour
 {
+    [SerializeField] private int cooldowns;
+
     [SerializeField] private RectTransform adsPanel;
     [SerializeField] private Text timerText;
 
@@ -16,6 +18,8 @@ public class YGInterlineAds : MonoBehaviour
 
     private void Start()
     {
+        if (cooldowns <= 60) { cooldowns = 60; }
+
         currentCountdownTime = countdownTime; 
         StartCoroutine(InvokeShowFullScreenAd());
     }
@@ -24,7 +28,7 @@ public class YGInterlineAds : MonoBehaviour
     {
         while (true)
         {
-            if (YandexGame.timerShowAd >= 60 && !isAdShowing)
+            if (YandexGame.timerShowAd >= cooldowns && !isAdShowing)
             {
                 adsPanel.gameObject.SetActive(true);
                 PauseSystem.Instance.SetPause();

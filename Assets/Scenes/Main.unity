@@ -8457,6 +8457,17 @@ MonoBehaviour:
   processTranslateLabel: 
   componentTextField: 0
   countLang: 0
+--- !u!114 &518568613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4531221575033204646, guid: 185105da6654412499d37d6f379598c8, type: 3}
+  m_PrefabInstance: {fileID: 1564699601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &519913400 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1177094790000761356, guid: 185105da6654412499d37d6f379598c8, type: 3}
@@ -10855,6 +10866,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1129750318}
   m_SourcePrefab: {fileID: 100100000, guid: 4d7cc98ae5cab2947a8d9fa3c15e4fa8, type: 3}
+--- !u!114 &657298876 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7771901185520210836, guid: 185105da6654412499d37d6f379598c8, type: 3}
+  m_PrefabInstance: {fileID: 1564699601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &663861943
 GameObject:
   m_ObjectHideFlags: 0
@@ -13634,6 +13656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03bc5a2cb13afa548a162a3a87b67428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldowns: 90
   adsPanel: {fileID: 1781779769}
   timerText: {fileID: 1018626454}
 --- !u!1 &836049488
@@ -13716,6 +13739,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 828254980177862656, guid: e83b1df87e436094988f3470d10cf4bd, type: 3}
   m_PrefabInstance: {fileID: 1977795977}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &840374343 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2637104402342207422, guid: 185105da6654412499d37d6f379598c8, type: 3}
+  m_PrefabInstance: {fileID: 1564699601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &850019677 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 7910603292438892066, guid: 2926918c21e8a214694513185f1b232d, type: 3}
@@ -21609,6 +21643,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3780484343709852408, guid: 4182aadda585f6c488a8f4a25f6151e9, type: 3}
   m_PrefabInstance: {fileID: 1262221677}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1297298083 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 983453078557051436, guid: 185105da6654412499d37d6f379598c8, type: 3}
+  m_PrefabInstance: {fileID: 1564699601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1301244164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21828,7 +21873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldPerInterval: 5
-  intervalDuration: 10
+  intervalDuration: 20
   spawnGoldEffect: {fileID: 8024176622892312081, guid: fe458af2911c0e546950c4833949e301, type: 3}
   offsetPositionSpawn: {x: 0, y: 2.5, z: 0}
 --- !u!1 &1309601574
@@ -36570,7 +36615,13 @@ MonoBehaviour:
   - {fileID: 1375442968}
   - {fileID: 1179514348}
   - {fileID: 1236593700}
-  pricesGoblins: 2c010000900100005802000020030000e8030000
+  pricesGoblins: 2c010000c2010000bc02000084030000b0040000
+  buttons:
+  - {fileID: 2044513274}
+  - {fileID: 840374343}
+  - {fileID: 1297298083}
+  - {fileID: 518568613}
+  - {fileID: 657298876}
 --- !u!1 &1779950785
 GameObject:
   m_ObjectHideFlags: 0
@@ -37217,11 +37268,11 @@ MonoBehaviour:
   - {fileID: 96816494416034598, guid: a4a2bd8a6c55d844eba9fe7f480d958e, type: 3}
   - {fileID: 5509538811648904423, guid: 835311c6567e78e4b975a1bcdb01bf00, type: 3}
   - {fileID: 5496737268680742223, guid: 9c06d9aae6266e8418bbf344c059c917, type: 3}
-  spawnInterval: 60
+  spawnInterval: 75
   maxBuyers: 3
-  spawnIntervalReductionRate: 20
+  spawnIntervalReductionRate: 15
   maxBuyersIncreaseRate: 1
-  timeToIncrease: 120
+  timeToIncrease: 140
 --- !u!1 &1805150487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4700723387181936500, guid: 13f8e31f48eec1a4d89f36bfc05df56e, type: 3}
@@ -38707,9 +38758,9 @@ MonoBehaviour:
   musicClips:
   - {fileID: 8300000, guid: de40c6b0b814ca243b0fb002e5c3f74f, type: 3}
   - {fileID: 8300000, guid: 2de08e7b6e9b1f04387f449313a8adce, type: 3}
-  - {fileID: 8300000, guid: 2c61d780f973be0438f2ff7166f45221, type: 3}
-  - {fileID: 8300000, guid: b992f9725c283904595242b0c969d167, type: 3}
-  - {fileID: 8300000, guid: b47545cbe16387e4b8ea607da5bca59e, type: 3}
+  - {fileID: 8300000, guid: 67f4cd19281d4a94793740cf739a7295, type: 3}
+  - {fileID: 8300000, guid: 0994142f4514fd74280d41e46cc5b89a, type: 3}
+  - {fileID: 8300000, guid: 9b7059ce7e9322044a5cc96dc9f0ee60, type: 3}
 --- !u!1 &1881452682
 GameObject:
   m_ObjectHideFlags: 0
@@ -42014,6 +42065,17 @@ MonoBehaviour:
   processTranslateLabel: 
   componentTextField: 0
   countLang: 0
+--- !u!114 &2044513274 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 762862578351501210, guid: 185105da6654412499d37d6f379598c8, type: 3}
+  m_PrefabInstance: {fileID: 1564699601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2045742227
 GameObject:
   m_ObjectHideFlags: 0
