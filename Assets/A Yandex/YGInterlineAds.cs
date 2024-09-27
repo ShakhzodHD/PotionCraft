@@ -31,7 +31,6 @@ public class YGInterlineAds : MonoBehaviour
             if (YandexGame.timerShowAd >= cooldowns && !isAdShowing)
             {
                 adsPanel.gameObject.SetActive(true);
-                PauseSystem.Instance.SetPause();
 
                 baseText = timerText.text;
 
@@ -57,7 +56,6 @@ public class YGInterlineAds : MonoBehaviour
         isAdShowing = true;
         YandexGame.FullscreenShow();
         adsPanel.gameObject.SetActive(false);
-        PauseSystem.Instance.RemovePause();
 
         isAdShowing = false;
     }

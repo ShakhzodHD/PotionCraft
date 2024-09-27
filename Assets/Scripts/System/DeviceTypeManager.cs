@@ -11,13 +11,11 @@ public class DeviceTypeManager : MonoBehaviour
         if (YandexGame.EnvironmentData.isMobile || YandexGame.EnvironmentData.isTablet)
         {
             controller.isMovile = true;
-            Instantiate(currentJoystick);
-            Instantiate(throwButton);
         }
         else
         {
             controller.isMovile = false;
-            Destroy(currentJoystick.gameObject);
+            currentJoystick.gameObject.SetActive(false);
             Destroy(throwButton.gameObject);
         }
     }

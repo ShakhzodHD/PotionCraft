@@ -19,16 +19,4 @@ public class PauseSystem : MonoBehaviour
     {
         Time.timeScale = 1.0f;
     }
-
-    private void OnApplicationPause(bool pause)
-    {
-        if (pause)
-        {
-            SetPause();
-        }
-        else
-        {
-            RemovePause();
-        }
-    }
 }

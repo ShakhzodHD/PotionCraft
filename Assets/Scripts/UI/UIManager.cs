@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private RectTransform tutorialPanel;
 
     [SerializeField] private RectTransform additionalPanel;
+    [SerializeField] private RectTransform controlsPanel;
 
     [Header("Outline")]
     [SerializeField] private Outline outlinePlayer;
@@ -122,6 +123,23 @@ public class UIManager : MonoBehaviour
         {
             bool isActive = !tutorialPanel.gameObject.activeSelf;
             SetPanelState(tutorialPanel, isActive);
+
+            if (isActive == true)
+            {
+                pause.SetPause();
+            }
+            else
+            {
+                pause.RemovePause();
+            }
+        }
+    }
+    public void ToggleControlslPanel()
+    {
+        if (controlsPanel != null)
+        {
+            bool isActive = !controlsPanel.gameObject.activeSelf;
+            SetPanelState(controlsPanel, isActive);
 
             if (isActive == true)
             {
