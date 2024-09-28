@@ -16,7 +16,7 @@ public class DeviceTypeManager : MonoBehaviour
         {
             controller.isMovile = false;
             currentJoystick.gameObject.SetActive(false);
-            Destroy(throwButton.gameObject);
+            throwButton.gameObject.SetActive(false);
         }
     }
 }

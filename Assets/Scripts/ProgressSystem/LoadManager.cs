@@ -42,7 +42,7 @@ public class LoadManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void Start()
+    private void OnShowWindowGame()
     {
         if (YandexGame.SDKEnabled == true)
         {
@@ -210,10 +210,12 @@ public class LoadManager : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.GetDataEvent += GetLoad;
+        YandexGame.onShowWindowGame += OnShowWindowGame; 
     }
 
     private void OnDisable()
     {
         YandexGame.GetDataEvent -= GetLoad;
+        YandexGame.onShowWindowGame -= OnShowWindowGame; 
     }
 }

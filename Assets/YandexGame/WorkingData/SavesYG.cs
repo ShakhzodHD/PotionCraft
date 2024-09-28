@@ -1,7 +1,4 @@
-﻿
-using UnityEngine.UI;
-
-namespace YG
+﻿namespace YG
 {
     [System.Serializable]
     public class SavesYG

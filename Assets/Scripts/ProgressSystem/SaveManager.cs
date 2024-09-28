@@ -28,12 +28,32 @@ public class SaveManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void Start()
+    private void OnEnable()
     {
-        if (YandexGame.SDKEnabled == true)
-        {
-            SaveGold();
-        }
+        YandexGame.onShowWindowGame += OnShowWindowGame; // Подписываемся на открытие
+        YandexGame.onHideWindowGame += OnHideWindowGame; // Подписываемся на закрытие
+    }
+    private void OnDisable()
+    {
+        YandexGame.onShowWindowGame -= OnShowWindowGame; // Отписываемся от открытия
+        YandexGame.onHideWindowGame -= OnHideWindowGame; // Отписываемся от закрытия
+    }
+    private void OnShowWindowGame()
+    {
+        // логика при открытии вкладки игры
+    }
+    private void OnHideWindowGame()
+    {
+        SaveGold();
+        Save(speedMovementUpgrade);
+        Save(capacityUpgrade);
+        Save(speedActionUpgrade);
+        SaveBuyZone();
+        SaveAllShopZoneValue();
+        SaveStateWings();
+        SaveSpawnParameters();
+
+        SaveProgress();
     }
     public void SaveGold()
     {
@@ -146,18 +166,5 @@ public class SaveManager : MonoBehaviour
     private void SaveProgress()
     {
         YandexGame.SaveProgress();
-    }
-    private void OnApplicationQuit()
-    {
-        SaveGold();
-        Save(speedMovementUpgrade);
-        Save(capacityUpgrade);
-        Save(speedActionUpgrade);
-        SaveBuyZone();
-        SaveAllShopZoneValue();
-        SaveStateWings();
-        SaveSpawnParameters();
-
-        SaveProgress();
     }
 }

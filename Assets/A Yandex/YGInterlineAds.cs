@@ -37,6 +37,7 @@ public class YGInterlineAds : MonoBehaviour
                 while (currentCountdownTime > 0)
                 {
                     timerText.text = baseText + Mathf.Ceil(currentCountdownTime);
+                    PauseSystem.Instance.SetPause();
                     yield return null; 
                     currentCountdownTime -= Time.unscaledDeltaTime; 
                 }
