@@ -65,7 +65,7 @@ public class UpgradeSystem : MonoBehaviour
     public void UpgradeSpeedMovement(bool isReward) { Upgrade(_speedMovementUpgrade, isReward); }
     public void UpgradeCapacity(bool isReward) { Upgrade(_capacityUpgrade, isReward); }
     public void UpgradeSpeedAction(bool isReward) { Upgrade(_speedActionUpgrade, isReward); }
-    private void UpdateUI()
+    public void UpdateUI()
     {
         UpdateLanguage();
 
