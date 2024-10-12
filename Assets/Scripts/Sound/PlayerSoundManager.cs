@@ -18,6 +18,7 @@ public class PlayerSoundManager : MonoBehaviour
     [SerializeField] private AudioClip buyDecor;
     [SerializeField] private AudioClip upgradeSound;
     [SerializeField] private AudioClip canselSound;
+    [SerializeField] private AudioClip putItemCraft;
 
     [SerializeField] private CharacterController characterController;
 
@@ -105,5 +106,9 @@ public class PlayerSoundManager : MonoBehaviour
     public void PlayCanselSound()
     {
         audioSource.PlayOneShot(canselSound);
+    }
+    public void PlayPutItemCraft()
+    {
+        audioSource.PlayOneShot(putItemCraft);
     }
 }

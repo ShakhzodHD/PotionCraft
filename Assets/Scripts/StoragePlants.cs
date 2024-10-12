@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -5,6 +6,19 @@ public class StoragePlants : StorageManager
 {
     private Coroutine putCoroutine;
     private int localCount = 0;
+    public event Action<int> OnLocalCountChanged;
+    public int LocalCount 
+    { 
+        get { return localCount; }
+        set
+        {
+            if (localCount != value)
+            {
+                localCount = value;
+                OnLocalCountChanged?.Invoke(localCount);
+            }
+        }
+    }    
 
     public Resource.Ingredients statusIngredients;
 
@@ -68,12 +82,12 @@ public class StoragePlants : StorageManager
         }
 
         PutObj(obj, isPlayer);
-        localCount++;
+        LocalCount++;
         putCoroutine = null;
     }
 
     public override void CleaningAfterCraft()
     {
-        localCount = 0;
+        LocalCount = 0;
     }
 }

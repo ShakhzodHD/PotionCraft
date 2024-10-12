@@ -92,6 +92,7 @@
     <Compile Include="Assets\YandexGame\ScriptsYG\Initialization\InitYGAttribute.cs" />
     <Compile Include="Assets\Scripts\CurrencyManager.cs" />
     <Compile Include="Assets\Scripts\ProgressSystem\SaveManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Crafts\ThrowingText.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Language\UtilsLang.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\ReviewYG.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Payments\InternalScripts\UtilsPayments.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Assets\Scripts\PauseSystem.cs" />
     <Compile Include="Assets\Scripts\ProgressSystem\LoadManager.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\AdNotificationYG.cs" />
+    <Compile Include="Assets\Scripts\UI\Crafts\IndicatorCountItemsUI.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Authorization\Auth_yg.cs" />
     <Compile Include="Assets\Scripts\StorageManager.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\ReceivingPurchaseExample.cs" />

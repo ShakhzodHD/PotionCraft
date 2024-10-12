@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -5,7 +6,19 @@ public class StorageCrystal : StorageManager
 {
     private Coroutine putCoroutine;
     private int localCount = 0;
-
+    public event Action<int> OnLocalCrystalCountChanged;
+    public int LocalCount
+    {
+        get { return localCount; }
+        set
+        {
+            if (localCount != value)
+            {
+                localCount = value;
+                OnLocalCrystalCountChanged?.Invoke(localCount);
+            }
+        }
+    }
     public Resource.Ingredients statusIngredients;
 
     protected override void Awake()
@@ -72,12 +85,12 @@ public class StorageCrystal : StorageManager
         }
 
         PutObj(obj, isPlayer);
-        localCount++;
+        LocalCount++;
         putCoroutine = null;
     }
 
     public override void CleaningAfterCraft()
     {
-        localCount = 0;
+        LocalCount = 0;
     }
 }
