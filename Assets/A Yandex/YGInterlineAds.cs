@@ -7,6 +7,7 @@ public class YGInterlineAds : MonoBehaviour
 {
     [SerializeField] private int cooldowns;
 
+    [SerializeField] private UIManager manager;
     [SerializeField] private RectTransform adsPanel;
     [SerializeField] private Text timerText;
 
@@ -15,7 +16,6 @@ public class YGInterlineAds : MonoBehaviour
     private bool isAdShowing = false;
 
     private string baseText;
-
     private void Start()
     {
         if (cooldowns <= 60) { cooldowns = 60; }
@@ -28,8 +28,11 @@ public class YGInterlineAds : MonoBehaviour
     {
         while (true)
         {
-            if (YandexGame.timerShowAd >= cooldowns && !isAdShowing)
+            Debug.Log(YandexGame.timerShowAd);
+            if (YandexGame.timerShowAd >= cooldowns && !isAdShowing && !manager.IsAnyWindowOpen)
             {
+                yield return new WaitForSeconds(1);
+
                 adsPanel.gameObject.SetActive(true);
 
                 baseText = timerText.text;

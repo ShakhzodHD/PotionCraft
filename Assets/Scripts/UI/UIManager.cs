@@ -18,7 +18,13 @@ public class UIManager : MonoBehaviour
     [Header("Pause")]
     [SerializeField] private PauseSystem pause;
 
-    private RectTransform activePanel = null; 
+    private RectTransform activePanel = null;
+    private bool isAnyWindowOpen = false;
+    public bool IsAnyWindowOpen
+    {
+        get { return isAnyWindowOpen; }
+        set { isAnyWindowOpen = value; }
+    }
 
     public void SetPanelState(RectTransform panel, bool isActive)
     {
@@ -31,6 +37,7 @@ public class UIManager : MonoBehaviour
 
             activePanel = panel;
             panel.gameObject.SetActive(isActive);
+            IsAnyWindowOpen = isActive;
 
             UpdateOutlineState(isActive);
         }
@@ -38,6 +45,7 @@ public class UIManager : MonoBehaviour
         {
             panel.gameObject.SetActive(isActive);
             UpdateOutlineState(isActive);
+            IsAnyWindowOpen = isActive;
         }
     }
 
@@ -78,6 +86,7 @@ public class UIManager : MonoBehaviour
             activePanel.gameObject.SetActive(false);
             activePanel = null;
             UpdateOutlineState(false);
+            IsAnyWindowOpen = false;
         }
     }
 

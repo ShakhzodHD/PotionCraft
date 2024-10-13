@@ -12906,6 +12906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldowns: 90
+  manager: {fileID: 612503652}
   adsPanel: {fileID: 1781779769}
   timerText: {fileID: 1018626454}
 --- !u!1 &836049488
@@ -40614,10 +40615,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 961664412428825363, guid: 1a59f87e625beb14ab72bf89e5d75d2d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a59f87e625beb14ab72bf89e5d75d2d, type: 3}
 --- !u!1 &2034301142
 GameObject:
@@ -47594,10 +47592,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1133804207668315619, guid: 0a71fb8cf7714bf4f939e463299a47dd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a71fb8cf7714bf4f939e463299a47dd, type: 3}
 --- !u!4 &68191856530031155 stripped
 Transform:
@@ -47683,10 +47678,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6472552880981943936, guid: d28ec4067306c1d4ea4f24f7d1448ec9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d28ec4067306c1d4ea4f24f7d1448ec9, type: 3}
 --- !u!4 &717967210709773044 stripped
 Transform:
@@ -48011,10 +48003,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 196045709515142843, guid: 45b27e792af0a65479c88f659eabd44c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b27e792af0a65479c88f659eabd44c, type: 3}
 --- !u!1001 &4926299656572845709
 PrefabInstance:
