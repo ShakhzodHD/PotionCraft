@@ -5,52 +5,58 @@ using YG;
 
 public class YGInterlineAds : MonoBehaviour
 {
-    [SerializeField] private int cooldowns;
-
+    private float coolDown = 90;
+    private float timerShowAd = 0;
     [SerializeField] private UIManager manager;
     [SerializeField] private RectTransform adsPanel;
     [SerializeField] private Text timerText;
-
     private float countdownTime = 2f;
-    private float currentCountdownTime; 
+    private float currentCountdownTime;
     private bool isAdShowing = false;
-
     private string baseText;
+
     private void Start()
     {
-        if (cooldowns <= 60) { cooldowns = 60; }
-
-        currentCountdownTime = countdownTime; 
+        currentCountdownTime = countdownTime;
         StartCoroutine(InvokeShowFullScreenAd());
+    }
+
+    private void Update()
+    {
+        timerShowAd += Time.deltaTime;
     }
 
     private IEnumerator InvokeShowFullScreenAd()
     {
         while (true)
         {
-            Debug.Log(YandexGame.timerShowAd);
-            if (YandexGame.timerShowAd >= cooldowns && !isAdShowing && !manager.IsAnyWindowOpen)
+            Debug.Log($"Timer: {timerShowAd}, isAdShowing: {isAdShowing}, AnyWindowOpen: {manager.IsAnyWindowOpen}");
+
+            if (timerShowAd >= coolDown && !isAdShowing && !manager.IsAnyWindowOpen)
             {
                 yield return new WaitForSeconds(1);
+                if (manager.IsAnyWindowOpen) continue;
 
                 adsPanel.gameObject.SetActive(true);
-
                 baseText = timerText.text;
 
                 while (currentCountdownTime > 0)
                 {
                     timerText.text = baseText + Mathf.Ceil(currentCountdownTime);
                     PauseSystem.Instance.SetPause();
-                    yield return null; 
-                    currentCountdownTime -= Time.unscaledDeltaTime; 
+                    yield return null;
+                    currentCountdownTime -= Time.unscaledDeltaTime;
                 }
 
                 ShowFullScreenAd();
+                adsPanel.gameObject.SetActive(false);
                 currentCountdownTime = countdownTime;
+                timerShowAd = 0;
             }
             else
             {
-                yield return null;
+                adsPanel.gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.3f);
             }
         }
     }
@@ -59,8 +65,6 @@ public class YGInterlineAds : MonoBehaviour
     {
         isAdShowing = true;
         YandexGame.FullscreenShow();
-        adsPanel.gameObject.SetActive(false);
-
         isAdShowing = false;
     }
 }
